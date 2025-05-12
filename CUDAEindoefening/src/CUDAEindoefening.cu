@@ -6,7 +6,7 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "/home/bowen/CUDAEindoefening/stb/stb_image_write.h"
 
-// Convolution kernel
+// Convolution
 __global__ void convolution_cuda(unsigned char* input, unsigned char* output, int width, int height, int channels, const int* kernel, int kernel_size) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -104,24 +104,31 @@ __global__ void average_pooling(unsigned char* input, unsigned char* output, int
 int main() {
     const char* input_path = "input.png";
     int width, height, channels;
+
+    // === Load input image ===
     unsigned char* input_image = stbi_load(input_path, &width, &height, &channels, 0);
     if (!input_image) {
         printf("Failed to load image.\n");
         return 1;
     }
 
+    // === Initialize CUDA context to reduce timing spikes ===
+    cudaFree(0);=
+
+    // === Strip alpha channel if present ===
     if (channels == 4) {
         unsigned char* rgb_image = (unsigned char*)malloc(width * height * 3);
         for (int i = 0; i < width * height; i++) {
             rgb_image[i * 3 + 0] = input_image[i * 4 + 0];
             rgb_image[i * 3 + 1] = input_image[i * 4 + 1];
-            rgb_image[i * 3 + 2] = input_image[i * 4 + 2]; 
+            rgb_image[i * 3 + 2] = input_image[i * 4 + 2];
         }
-        free(input_image); 
+        free(input_image);
         input_image = rgb_image;
         channels = 3;
     }
 
+    // === Kernel Definition ===
     const int kernelSize = 3;
     int host_kernel[kernelSize * kernelSize] = {
         1, 0, -1,
@@ -129,11 +136,13 @@ int main() {
         1, 0, -1
     };
 
+    // === Allocate memory sizes ===
     size_t img_size = width * height * channels * sizeof(unsigned char);
     size_t pooled_width = width / 2;
     size_t pooled_height = height / 2;
     size_t pooled_img_size = pooled_width * pooled_height * channels * sizeof(unsigned char);
 
+    // === Device memory ===
     unsigned char *d_input, *d_output_full, *d_output_pooled;
     int* d_kernel;
 
@@ -149,7 +158,7 @@ int main() {
     dim3 gridDim_full((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
     dim3 gridDim_pooled((pooled_width + blockDim.x - 1) / blockDim.x, (pooled_height + blockDim.y - 1) / blockDim.y);
 
-    // Host buffers
+    // === Host result buffers ===
     unsigned char* result_full = (unsigned char*)malloc(img_size);
     unsigned char* result_pooled = (unsigned char*)malloc(pooled_img_size);
 
@@ -158,7 +167,6 @@ int main() {
     cudaDeviceSynchronize();
     cudaMemcpy(result_full, d_output_full, img_size, cudaMemcpyDeviceToHost);
     stbi_write_png("convolution.png", width, height, channels, result_full, width * channels);
-
 
     // === MAX POOLING ===
     max_pooling<<<gridDim_pooled, blockDim>>>(d_input, d_output_pooled, width, height, channels);
@@ -178,13 +186,14 @@ int main() {
     cudaMemcpy(result_pooled, d_output_pooled, pooled_img_size, cudaMemcpyDeviceToHost);
     stbi_write_png("average_pooling.png", pooled_width, pooled_height, channels, result_pooled, pooled_width * channels);
 
+    // === Output ===
     printf("Afbeeldingen opgeslagen:\n");
     printf(" - convolution.png\n");
     printf(" - max_pooling.png\n");
     printf(" - min_pooling.png\n");
     printf(" - average_pooling.png\n");
 
-    // Cleanup
+    // === Cleanup ===
     stbi_image_free(input_image);
     free(result_full);
     free(result_pooled);
