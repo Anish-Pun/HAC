@@ -24,6 +24,3 @@
 ## Requirements
 
 ## Contributing
-
-<img src= "https://github.com/Anish-Pun/CUDA_Eindoefening/blob/main/CUDAEindoefening/src/input.png?raw=true" width="4408" height="2132">
-<img src= "https://github.com/Anish-Pun/CUDA_Eindoefening/blob/main/CUDAEindoefening/src/average_pooling.jpg?raw=true" width="2204" height="1066">
