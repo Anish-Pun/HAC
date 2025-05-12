@@ -6,7 +6,7 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "/home/bowen/CUDAEindoefening/stb/stb_image_write.h"
 
-// convolution
+// Convolution kernel
 __global__ void convolution_cuda(unsigned char* input, unsigned char* output, int width, int height, int channels, const int* kernel, int kernel_size) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -31,70 +31,73 @@ __global__ void convolution_cuda(unsigned char* input, unsigned char* output, in
 }
 
 // Max Pooling
-__global__ void max_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels, int pool_size) {
+__global__ void max_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
-    int half_pool = pool_size / 2;
 
-    if (x >= width || y >= height) return;
+    int out_width = width / 2;
+    int out_height = height / 2;
+
+    if (x >= out_width || y >= out_height) return;
 
     for (int c = 0; c < channels; c++) {
         unsigned char max_val = 0;
-        for (int ky = -half_pool; ky <= half_pool; ky++) {
-            for (int kx = -half_pool; kx <= half_pool; kx++) {
-                int ix = min(max(x + kx, 0), width - 1);
-                int iy = min(max(y + ky, 0), height - 1);
+        for (int ky = 0; ky < 2; ky++) {
+            for (int kx = 0; kx < 2; kx++) {
+                int ix = x * 2 + kx;
+                int iy = y * 2 + ky;
                 unsigned char pixel = input[(iy * width + ix) * channels + c];
                 max_val = max(max_val, pixel);
             }
         }
-        output[(y * width + x) * channels + c] = max_val;
+        output[(y * out_width + x) * channels + c] = max_val;
     }
 }
 
 // Min Pooling
-__global__ void min_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels, int pool_size) {
+__global__ void min_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
-    int half_pool = pool_size / 2;
 
-    if (x >= width || y >= height) return;
+    int out_width = width / 2;
+    int out_height = height / 2;
+
+    if (x >= out_width || y >= out_height) return;
 
     for (int c = 0; c < channels; c++) {
         unsigned char min_val = 255;
-        for (int ky = -half_pool; ky <= half_pool; ky++) {
-            for (int kx = -half_pool; kx <= half_pool; kx++) {
-                int ix = min(max(x + kx, 0), width - 1);
-                int iy = min(max(y + ky, 0), height - 1);
+        for (int ky = 0; ky < 2; ky++) {
+            for (int kx = 0; kx < 2; kx++) {
+                int ix = x * 2 + kx;
+                int iy = y * 2 + ky;
                 unsigned char pixel = input[(iy * width + ix) * channels + c];
                 min_val = min(min_val, pixel);
             }
         }
-        output[(y * width + x) * channels + c] = min_val;
+        output[(y * out_width + x) * channels + c] = min_val;
     }
 }
 
 // Average Pooling
-__global__ void average_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels, int pool_size) {
+__global__ void average_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
-    int half_pool = pool_size / 2;
 
-    if (x >= width || y >= height) return;
+    int out_width = width / 2;
+    int out_height = height / 2;
+
+    if (x >= out_width || y >= out_height) return;
 
     for (int c = 0; c < channels; c++) {
         int sum = 0;
-        int count = 0;
-        for (int ky = -half_pool; ky <= half_pool; ky++) {
-            for (int kx = -half_pool; kx <= half_pool; kx++) {
-                int ix = min(max(x + kx, 0), width - 1);
-                int iy = min(max(y + ky, 0), height - 1);
+        for (int ky = 0; ky < 2; ky++) {
+            for (int kx = 0; kx < 2; kx++) {
+                int ix = x * 2 + kx;
+                int iy = y * 2 + ky;
                 sum += input[(iy * width + ix) * channels + c];
-                count++;
             }
         }
-        unsigned char avg_val = sum / count;
-        output[(y * width + x) * channels + c] = avg_val;
+        output[(y * out_width + x) * channels + c] = sum / 4;
     }
 }
 
@@ -107,55 +110,60 @@ int main() {
         return 1;
     }
 
-    const int kernelWidth = 3;
-    const int kernelHeight = 3;
-    int host_kernel[kernelHeight * kernelWidth] = {
+    const int kernelSize = 3;
+    int host_kernel[kernelSize * kernelSize] = {
         1, 0, -1,
         1, 0, -1,
         1, 0, -1
     };
 
     size_t img_size = width * height * channels * sizeof(unsigned char);
-    unsigned char *d_input, *d_output, *d_pool_output;
+    size_t pooled_width = width / 2;
+    size_t pooled_height = height / 2;
+    size_t pooled_img_size = pooled_width * pooled_height * channels * sizeof(unsigned char);
+
+    unsigned char *d_input, *d_output_full, *d_output_pooled;
     int* d_kernel;
 
-    cudaMalloc((void**)&d_input, img_size);
-    cudaMalloc((void**)&d_output, img_size);
-    cudaMalloc((void**)&d_pool_output, img_size);
-    cudaMalloc((void**)&d_kernel, kernelWidth * kernelHeight * sizeof(int));
+    cudaMalloc(&d_input, img_size);
+    cudaMalloc(&d_output_full, img_size);
+    cudaMalloc(&d_output_pooled, pooled_img_size);
+    cudaMalloc(&d_kernel, kernelSize * kernelSize * sizeof(int));
 
     cudaMemcpy(d_input, input_image, img_size, cudaMemcpyHostToDevice);
-    cudaMemcpy(d_kernel, host_kernel, kernelWidth * kernelHeight * sizeof(int), cudaMemcpyHostToDevice);
+    cudaMemcpy(d_kernel, host_kernel, kernelSize * kernelSize * sizeof(int), cudaMemcpyHostToDevice);
 
-    dim3 blockDim(16, 16);
-    dim3 gridDim((width + 15) / 16, (height + 15) / 16);
+    dim3 blockDim(32, 32);
+    dim3 gridDim_full((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
+    dim3 gridDim_pooled((pooled_width + blockDim.x - 1) / blockDim.x, (pooled_height + blockDim.y - 1) / blockDim.y);
 
-    // Perform Convolution
-    convolution_cuda<<<gridDim, blockDim>>>(d_input, d_output, width, height, channels, d_kernel, kernelWidth);
-    cudaDeviceSynchronize();
+    // Host buffers
+    unsigned char* result_full = (unsigned char*)malloc(img_size);
+    unsigned char* result_pooled = (unsigned char*)malloc(pooled_img_size);
 
     // === CONVOLUTION ===
-    unsigned char* convolution_result = (unsigned char*)malloc(img_size);
-    cudaMemcpy(convolution_result, d_output, img_size, cudaMemcpyDeviceToHost);
-    stbi_write_jpg("convolution.jpg", width, height, channels, convolution_result, 90);
-
-    // Allocate host memory for pooling results
-    unsigned char* result_image = (unsigned char*)malloc(img_size);
+    convolution_cuda<<<gridDim_full, blockDim>>>(d_input, d_output_full, width, height, channels, d_kernel, kernelSize);
+    cudaDeviceSynchronize();
+    cudaMemcpy(result_full, d_output_full, img_size, cudaMemcpyDeviceToHost);
+    stbi_write_jpg("convolution.jpg", width, height, channels, result_full, 90);
 
     // === MAX POOLING ===
-    max_pooling<<<gridDim, blockDim>>>(d_input, d_pool_output, width, height, channels, 2);
-    cudaMemcpy(result_image, d_pool_output, img_size, cudaMemcpyDeviceToHost);
-    stbi_write_jpg("max_pooling.jpg", width, height, channels, result_image, 90);
+    max_pooling<<<gridDim_pooled, blockDim>>>(d_input, d_output_pooled, width, height, channels);
+    cudaDeviceSynchronize();
+    cudaMemcpy(result_pooled, d_output_pooled, pooled_img_size, cudaMemcpyDeviceToHost);
+    stbi_write_jpg("max_pooling.jpg", pooled_width, pooled_height, channels, result_pooled, 90);
 
     // === MIN POOLING ===
-    min_pooling<<<gridDim, blockDim>>>(d_input, d_pool_output, width, height, channels, 2);
-    cudaMemcpy(result_image, d_pool_output, img_size, cudaMemcpyDeviceToHost);
-    stbi_write_jpg("min_pooling.jpg", width, height, channels, result_image, 90);
+    min_pooling<<<gridDim_pooled, blockDim>>>(d_input, d_output_pooled, width, height, channels);
+    cudaDeviceSynchronize();
+    cudaMemcpy(result_pooled, d_output_pooled, pooled_img_size, cudaMemcpyDeviceToHost);
+    stbi_write_jpg("min_pooling.jpg", pooled_width, pooled_height, channels, result_pooled, 90);
 
     // === AVERAGE POOLING ===
-    average_pooling<<<gridDim, blockDim>>>(d_input, d_pool_output, width, height, channels, 2);
-    cudaMemcpy(result_image, d_pool_output, img_size, cudaMemcpyDeviceToHost);
-    stbi_write_jpg("average_pooling.jpg", width, height, channels, result_image, 90);
+    average_pooling<<<gridDim_pooled, blockDim>>>(d_input, d_output_pooled, width, height, channels);
+    cudaDeviceSynchronize();
+    cudaMemcpy(result_pooled, d_output_pooled, pooled_img_size, cudaMemcpyDeviceToHost);
+    stbi_write_jpg("average_pooling.jpg", pooled_width, pooled_height, channels, result_pooled, 90);
 
     printf("Afbeeldingen opgeslagen:\n");
     printf(" - convolution.jpg\n");
@@ -165,10 +173,11 @@ int main() {
 
     // Cleanup
     stbi_image_free(input_image);
-    free(result_image);
+    free(result_full);
+    free(result_pooled);
     cudaFree(d_input);
-    cudaFree(d_output);
-    cudaFree(d_pool_output);
+    cudaFree(d_output_full);
+    cudaFree(d_output_pooled);
     cudaFree(d_kernel);
 
     return 0;
