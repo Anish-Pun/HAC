@@ -10,13 +10,17 @@
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 #define MAX(a, b) ((a) > (b) ? (a) : (b))
 
+// Function to save profiling results to a markdown file
 void save_profiling_results();
 
+// Function to calculate the time difference in seconds
 double get_time_diff(struct timespec start, struct timespec end)
 {
     return (end.tv_sec - start.tv_sec) + (end.tv_nsec - start.tv_nsec) / 1e9;
 }
 
+// Perform 2D convolution on the input image
+// using the specified kernel and store the result in the output image
 void convolution(unsigned char *input, unsigned char *output, int width, int height, int channels, const int *kernel, int kernel_size)
 {
     int half_k = kernel_size / 2;
@@ -27,10 +31,13 @@ void convolution(unsigned char *input, unsigned char *output, int width, int hei
             for (int c = 0; c < channels; c++)
             {
                 int sum = 0;
+                // Apply the kernel to the surrounding pixels
                 for (int ky = -half_k; ky <= half_k; ky++)
                 {
                     for (int kx = -half_k; kx <= half_k; kx++)
                     {
+                        // Calculate the pixel coordinates
+                        // Ensure they are within the image bounds
                         int ix = MIN(MAX(x + kx, 0), width - 1);
                         int iy = MIN(MAX(y + ky, 0), height - 1);
                         int pixel = input[(iy * width + ix) * channels + c];
@@ -38,6 +45,8 @@ void convolution(unsigned char *input, unsigned char *output, int width, int hei
                         sum += pixel * kval;
                     }
                 }
+                // Clamp the result to the range [0, 255]
+                // and store it in the output image
                 sum = MIN(MAX(sum, 0), 255);
                 output[(y * width + x) * channels + c] = (unsigned char)sum;
             }
@@ -45,6 +54,8 @@ void convolution(unsigned char *input, unsigned char *output, int width, int hei
     }
 }
 
+// Perform max pooling on the input image
+// using the specified pool size and store the result in the output image
 void max_pooling(unsigned char *input, unsigned char *output, int width, int height, int channels, int pool_size)
 {
     int half_pool = pool_size / 2;
@@ -55,10 +66,13 @@ void max_pooling(unsigned char *input, unsigned char *output, int width, int hei
             for (int c = 0; c < channels; c++)
             {
                 unsigned char max_val = 0;
+                // Check the surrounding pixels within the pool size
                 for (int ky = -half_pool; ky <= half_pool; ky++)
                 {
                     for (int kx = -half_pool; kx <= half_pool; kx++)
                     {
+                        // Calculate the pixel coordinates
+                        // Ensure they are within the image bounds
                         int ix = MIN(MAX(x + kx, 0), width - 1);
                         int iy = MIN(MAX(y + ky, 0), height - 1);
                         unsigned char pixel = input[(iy * width + ix) * channels + c];
@@ -71,6 +85,7 @@ void max_pooling(unsigned char *input, unsigned char *output, int width, int hei
     }
 }
 
+// Perform min pooling on the input image
 void min_pooling(unsigned char *input, unsigned char *output, int width, int height, int channels, int pool_size)
 {
     int half_pool = pool_size / 2;
@@ -81,6 +96,7 @@ void min_pooling(unsigned char *input, unsigned char *output, int width, int hei
             for (int c = 0; c < channels; c++)
             {
                 unsigned char min_val = 255;
+                // Check the surrounding pixels within the pool size
                 for (int ky = -half_pool; ky <= half_pool; ky++)
                 {
                     for (int kx = -half_pool; kx <= half_pool; kx++)
@@ -96,7 +112,7 @@ void min_pooling(unsigned char *input, unsigned char *output, int width, int hei
         }
     }
 }
-
+// Perform average pooling on the input image
 void average_pooling(unsigned char *input, unsigned char *output, int width, int height, int channels, int pool_size)
 {
     int half_pool = pool_size / 2;
@@ -108,6 +124,8 @@ void average_pooling(unsigned char *input, unsigned char *output, int width, int
             {
                 int sum = 0;
                 int count = 0;
+                // Sum all the pixel in the pooling window
+                // and count the number of pixels
                 for (int ky = -half_pool; ky <= half_pool; ky++)
                 {
                     for (int kx = -half_pool; kx <= half_pool; kx++)
@@ -118,6 +136,7 @@ void average_pooling(unsigned char *input, unsigned char *output, int width, int
                         count++;
                     }
                 }
+                // Compuite the average and assign it to the output pixel
                 output[(y * width + x) * channels + c] = (unsigned char)(sum / count);
             }
         }
@@ -129,18 +148,20 @@ int main()
     struct timespec start, end;
     FILE *profile = fopen("PictureResult/profile.md", "w");
 
-    const char *input_path = "image.png";
+    const char *input_path = "input.png";
     int width, height, channels;
+    // Load the input image
     unsigned char *input_image = stbi_load(input_path, &width, &height, &channels, 0);
     if (!input_image)
     {
         printf("Failed to load image.\n");
         return 1;
     }
-
+    // Allocate memory for the output image
     size_t img_size = width * height * channels * sizeof(unsigned char);
     unsigned char *result_image = malloc(img_size);
 
+    // Define the kernel for convolution
     const int kernelWidth = 3;
     int host_kernel[] = {
         1, 0, -1,
@@ -177,12 +198,14 @@ int main()
     double t_avg = get_time_diff(start, end);
     stbi_write_jpg("PictureResult/average_pooling_result.png", width, height, channels, result_image, 90);
 
+    // Print output file names
     printf("Afbeeldingen opgeslagen:\n");
     printf(" - convolution_result.png\n");
     printf(" - max_pooling_result.png\n");
     printf(" - min_pooling_result.png\n");
     printf(" - average_pooling_result.png\n\n");
 
+    // Print profiling results to console
     printf(" Profiling Results\n");
     printf("| Operation         | Time (s) | Output File                |\n");
     printf("|-------------------|----------|----------------------------|\n");
@@ -202,12 +225,14 @@ int main()
         t_max,
         t_min,
         t_avg);
+    // Free allocated memory
     stbi_image_free(input_image);
     free(result_image);
 
     return 0;
 }
 
+// Write profiling results to a markdown file
 void save_profiling_results(
     const char *profile_path,
     const char *input_path,
