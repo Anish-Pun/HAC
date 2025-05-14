@@ -6,8 +6,8 @@
   </source>
   <testbench>
     <originFiles name="hls_process_images_tb.c" path="C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images_tb.c"/>
-    <originFiles name="stb_image_write.h" path="C:\SchoolWerk\HAC\HLSEindoefening\stb_image_write.h"/>
-    <originFiles name="stb_image.h" path="C:\SchoolWerk\HAC\HLSEindoefening\stb_image.h"/>
     <originFiles name="input.png" path="C:\SchoolWerk\HAC\HLSEindoefening\input.png"/>
+    <originFiles name="stb_image.h" path="C:\SchoolWerk\HAC\HLSEindoefening\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="C:\SchoolWerk\HAC\HLSEindoefening\stb_image_write.h"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

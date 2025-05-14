@@ -14,9 +14,9 @@ add_files -tb HLSEindoefening/stb_image.h
 add_files -tb HLSEindoefening/stb_image_write.h
 open_solution "solution1" -flow_target vivado
 set_part {xc7z020-clg400-1}
-create_clock -period 8 -name default
+create_clock -period 12 -name default
 source "./HLSEindoefening/solution1/directives.tcl"
 csim_design
 csynth_design
 cosim_design
-export_design -format ip_catalog
+export_design -rtl verilog -format ip_catalog

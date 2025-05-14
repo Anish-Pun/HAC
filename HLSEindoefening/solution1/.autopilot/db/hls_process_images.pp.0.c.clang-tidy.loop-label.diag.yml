@@ -2,129 +2,75 @@
 MainSourceFile:  'C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c'
 Diagnostics:     
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_5_1:  '
-    FileOffset:      5
+    Message:         'Added loop label VITIS_LOOP_7_1:  '
+    FileOffset:      7
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          7097
+        Offset:          7146
         Length:          0
-        ReplacementText: 'VITIS_LOOP_5_1: '
+        ReplacementText: 'VITIS_LOOP_7_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_6_2:  '
-    FileOffset:      6
-    FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
-    Replacements:    
-      - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          7148
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_6_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_8_3:  '
+    Message:         'Added loop label VITIS_LOOP_8_2:  '
     FileOffset:      8
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          7227
+        Offset:          7197
         Length:          0
-        ReplacementText: 'VITIS_LOOP_8_3: '
+        ReplacementText: 'VITIS_LOOP_8_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_9_4:  '
-    FileOffset:      9
+    Message:         'Added loop label VITIS_LOOP_10_3:  '
+    FileOffset:      10
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          7278
+        Offset:          7276
         Length:          0
-        ReplacementText: 'VITIS_LOOP_9_4: '
+        ReplacementText: 'VITIS_LOOP_10_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_22_1:  '
-    FileOffset:      22
+    Message:         'Added loop label VITIS_LOOP_11_4:  '
+    FileOffset:      11
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          7688
+        Offset:          7327
         Length:          0
-        ReplacementText: 'VITIS_LOOP_22_1: '
+        ReplacementText: 'VITIS_LOOP_11_4: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_23_2:  '
-    FileOffset:      23
+    Message:         'Added loop label VITIS_LOOP_30_1:  '
+    FileOffset:      30
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          7738
+        Offset:          7984
         Length:          0
-        ReplacementText: 'VITIS_LOOP_23_2: '
+        ReplacementText: 'VITIS_LOOP_30_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_35_1:  '
-    FileOffset:      35
+    Message:         'Added loop label VITIS_LOOP_31_2:  '
+    FileOffset:      31
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          8339
+        Offset:          8038
         Length:          0
-        ReplacementText: 'VITIS_LOOP_35_1: '
+        ReplacementText: 'VITIS_LOOP_31_2: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_36_2:  '
-    FileOffset:      36
+    Message:         'Added loop label VITIS_LOOP_83_1:  '
+    FileOffset:      83
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          8389
+        Offset:          10879
         Length:          0
-        ReplacementText: 'VITIS_LOOP_36_2: '
+        ReplacementText: 'VITIS_LOOP_83_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_48_1:  '
-    FileOffset:      48
+    Message:         'Added loop label VITIS_LOOP_91_2:  '
+    FileOffset:      91
     FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
     Replacements:    
       - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          8994
+        Offset:          11073
         Length:          0
-        ReplacementText: 'VITIS_LOOP_48_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_49_2:  '
-    FileOffset:      49
-    FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
-    Replacements:    
-      - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          9044
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_49_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_89_1:  '
-    FileOffset:      89
-    FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
-    Replacements:    
-      - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          10903
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_89_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_90_2:  '
-    FileOffset:      90
-    FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
-    Replacements:    
-      - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          10950
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_90_2: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_99_3:  '
-    FileOffset:      99
-    FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
-    Replacements:    
-      - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          11175
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_99_3: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_100_4:  '
-    FileOffset:      100
-    FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c'
-    Replacements:    
-      - FilePath:        'C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c'
-        Offset:          11225
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_100_4: '
+        ReplacementText: 'VITIS_LOOP_91_2: '
 ...

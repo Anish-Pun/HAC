@@ -1,70 +1,40 @@
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:157:5: warning: Added loop label VITIS_LOOP_5_1:   [xilinx-label-all-loops]
-    for (int y = 1; y < img_height - 1; y++) {
-    ^~~
-    VITIS_LOOP_5_1: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:157:5: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:158:9: warning: Added loop label VITIS_LOOP_6_2:   [xilinx-label-all-loops]
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:162:2: warning: Added loop label VITIS_LOOP_7_1:   [xilinx-label-all-loops]
+ for (int y = 1; y < img_height - 1; y++) {
+ ^~~
+ VITIS_LOOP_7_1: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:162:2: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:163:9: warning: Added loop label VITIS_LOOP_8_2:   [xilinx-label-all-loops]
         for (int x = 1; x < img_width - 1; x++) {
         ^~~
-        VITIS_LOOP_6_2: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:158:9: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:160:13: warning: Added loop label VITIS_LOOP_8_3:   [xilinx-label-all-loops]
+        VITIS_LOOP_8_2: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:163:9: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:165:13: warning: Added loop label VITIS_LOOP_10_3:   [xilinx-label-all-loops]
             for (int ky = -1; ky <= 1; ky++) {
             ^~~
-            VITIS_LOOP_8_3: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:160:13: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:161:17: warning: Added loop label VITIS_LOOP_9_4:   [xilinx-label-all-loops]
+            VITIS_LOOP_10_3: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:165:13: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:166:17: warning: Added loop label VITIS_LOOP_11_4:   [xilinx-label-all-loops]
                 for (int kx = -1; kx <= 1; kx++) {
                 ^~~
-                VITIS_LOOP_9_4: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:161:17: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:174:5: warning: Added loop label VITIS_LOOP_22_1:   [xilinx-label-all-loops]
-    for (int y = 0; y < img_height; y += 2) {
-    ^~~
-    VITIS_LOOP_22_1: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:174:5: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:175:9: warning: Added loop label VITIS_LOOP_23_2:   [xilinx-label-all-loops]
-        for (int x = 0; x < img_width; x += 2) {
+                VITIS_LOOP_11_4: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:166:17: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:185:2: warning: Added loop label VITIS_LOOP_30_1:   [xilinx-label-all-loops]
+ for (int y = 0; y < img_height - 1; y += 2) {
+ ^~~
+ VITIS_LOOP_30_1: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:185:2: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:186:9: warning: Added loop label VITIS_LOOP_31_2:   [xilinx-label-all-loops]
+        for (int x = 0; x < img_width - 1; x += 2) {
         ^~~
-        VITIS_LOOP_23_2: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:175:9: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:187:5: warning: Added loop label VITIS_LOOP_35_1:   [xilinx-label-all-loops]
-    for (int y = 0; y < img_height; y += 2) {
+        VITIS_LOOP_31_2: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:186:9: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:246:5: warning: Added loop label VITIS_LOOP_83_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < img_height * img_width; i++) {
     ^~~
-    VITIS_LOOP_35_1: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:187:5: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:188:9: warning: Added loop label VITIS_LOOP_36_2:   [xilinx-label-all-loops]
-        for (int x = 0; x < img_width; x += 2) {
-        ^~~
-        VITIS_LOOP_36_2: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:188:9: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:200:5: warning: Added loop label VITIS_LOOP_48_1:   [xilinx-label-all-loops]
-    for (int y = 0; y < img_height; y += 2) {
+    VITIS_LOOP_83_1: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:246:5: note: FIX-IT applied suggested code changes
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:254:5: warning: Added loop label VITIS_LOOP_91_2:   [xilinx-label-all-loops]
+    for (int i = 0; i < pooled_height * pooled_width; i++) {
     ^~~
-    VITIS_LOOP_48_1: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:200:5: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:201:9: warning: Added loop label VITIS_LOOP_49_2:   [xilinx-label-all-loops]
-        for (int x = 0; x < img_width; x += 2) {
-        ^~~
-        VITIS_LOOP_49_2: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:201:9: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:249:5: warning: Added loop label VITIS_LOOP_89_1:   [xilinx-label-all-loops]
-    for (int i = 0; i < img_height; i++) {
-    ^~~
-    VITIS_LOOP_89_1: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:249:5: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:250:9: warning: Added loop label VITIS_LOOP_90_2:   [xilinx-label-all-loops]
-        for (int j = 0; j < img_width; j++) {
-        ^~~
-        VITIS_LOOP_90_2: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:250:9: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:259:5: warning: Added loop label VITIS_LOOP_99_3:   [xilinx-label-all-loops]
-    for (int i = 0; i < pooled_height; i++) {
-    ^~~
-    VITIS_LOOP_99_3: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:259:5: note: FIX-IT applied suggested code changes
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:260:9: warning: Added loop label VITIS_LOOP_100_4:   [xilinx-label-all-loops]
-        for (int j = 0; j < pooled_width; j++) {
-        ^~~
-        VITIS_LOOP_100_4: 
-C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:260:9: note: FIX-IT applied suggested code changes
+    VITIS_LOOP_91_2: 
+C:\SchoolWerk\HAC\HLSEindoefening\solution1\.autopilot\db\hls_process_images.pp.0.c:254:5: note: FIX-IT applied suggested code changes

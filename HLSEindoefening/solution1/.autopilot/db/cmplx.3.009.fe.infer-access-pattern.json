@@ -1,0 +1,65 @@
+{
+  "0": {
+    "basicblocks": 9,
+    "calls": "1 3 4 2",
+    "file": "hls_process_images.c",
+    "fileloc": 52,
+    "instructions": 64,
+    "loads": {
+      "L": 4
+    },
+    "name": "process_images",
+    "total_instructions": 323
+  },
+  "1": {
+    "basicblocks": 21,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 4,
+    "instructions": 97,
+    "loads": {
+      "L": 6
+    },
+    "name": "convolution",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 97
+  },
+  "2": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 27,
+    "instructions": 56,
+    "name": "pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 56
+  },
+  "3": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 27,
+    "instructions": 53,
+    "name": "pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 53
+  },
+  "4": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 27,
+    "instructions": 53,
+    "name": "pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 53
+  }
+}

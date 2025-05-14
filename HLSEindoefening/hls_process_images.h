@@ -2,6 +2,9 @@
 #define HLS_PROCESS_IMAGES_H
 #endif
 
+#define MAX_HEIGHT 2048
+#define MAX_WIDTH 2048
+
 void convolution(unsigned char *input, unsigned char *output, int img_height, int img_width, char kernel[3][3]);
 void max_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width);
 void min_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width);

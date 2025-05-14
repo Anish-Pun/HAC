@@ -1,0 +1,101 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "5 2 3",
+    "file": "hls_process_images.c",
+    "fileloc": 52,
+    "instructions": 38,
+    "loads": {
+      "L": 4
+    },
+    "name": "process_images",
+    "total_instructions": 386
+  },
+  "1": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 27,
+    "instructions": 62,
+    "name": "pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 62
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 0,
+    "instructions": 12,
+    "name": "process_images_",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 12
+  },
+  "3": {
+    "basicblocks": 11,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 0,
+    "instructions": 47,
+    "loads": {
+      "L": 4
+    },
+    "name": "process_images_",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 47
+  },
+  "4": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 27,
+    "instructions": 59,
+    "name": "pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 59
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "6 7 4 1",
+    "file": "hls_process_images.c",
+    "fileloc": 0,
+    "instructions": 6,
+    "name": "process_images_",
+    "total_instructions": 289
+  },
+  "6": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 4,
+    "instructions": 103,
+    "loads": {
+      "L": 6
+    },
+    "name": "convolution",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 103
+  },
+  "7": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 27,
+    "instructions": 59,
+    "name": "pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 59
+  }
+}

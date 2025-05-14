@@ -145,6 +145,9 @@
 
 
 
+
+
+
 void convolution(unsigned char *input, unsigned char *output, int img_height, int img_width, char kernel[3][3]);
 void max_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width);
 void min_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width);
@@ -154,12 +157,18 @@ __attribute__((sdx_kernel("process_images", 0))) void process_images(unsigned ch
 
 
 void convolution(unsigned char *input, unsigned char *output, int img_height, int img_width, char kernel[3][3]) {
-    VITIS_LOOP_5_1: for (int y = 1; y < img_height - 1; y++) {
-        VITIS_LOOP_6_2: for (int x = 1; x < img_width - 1; x++) {
+#pragma HLS INLINE off
+#pragma HLS PIPELINE II=1
+ VITIS_LOOP_7_1: for (int y = 1; y < img_height - 1; y++) {
+        VITIS_LOOP_8_2: for (int x = 1; x < img_width - 1; x++) {
             int sum = 0;
-            VITIS_LOOP_8_3: for (int ky = -1; ky <= 1; ky++) {
-                VITIS_LOOP_9_4: for (int kx = -1; kx <= 1; kx++) {
-                    sum += input[(y + ky) * img_width + (x + kx)] * kernel[ky + 1][kx + 1];
+            VITIS_LOOP_10_3: for (int ky = -1; ky <= 1; ky++) {
+                VITIS_LOOP_11_4: for (int kx = -1; kx <= 1; kx++) {
+                    int pos_x = x + kx;
+                    int pos_y = y + ky;
+                    if (pos_x >= 0 && pos_x < img_width && pos_y >= 0 && pos_y < img_height) {
+                        sum += input[pos_y * img_width + pos_x] * kernel[ky + 1][kx + 1];
+                    }
                 }
             }
             if (sum < 0) sum = 0;
@@ -170,37 +179,26 @@ void convolution(unsigned char *input, unsigned char *output, int img_height, in
 }
 
 
-void max_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width) {
-    VITIS_LOOP_22_1: for (int y = 0; y < img_height; y += 2) {
-        VITIS_LOOP_23_2: for (int x = 0; x < img_width; x += 2) {
-            unsigned char max_val = input[y * img_width + x];
-            if (input[y * img_width + (x + 1)] > max_val) max_val = input[y * img_width + (x + 1)];
-            if (input[(y + 1) * img_width + x] > max_val) max_val = input[(y + 1) * img_width + x];
-            if (input[(y + 1) * img_width + (x + 1)] > max_val) max_val = input[(y + 1) * img_width + (x + 1)];
-            output[(y / 2) * (img_width / 2) + (x / 2)] = max_val;
-        }
-    }
-}
-
-
-void min_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width) {
-    VITIS_LOOP_35_1: for (int y = 0; y < img_height; y += 2) {
-        VITIS_LOOP_36_2: for (int x = 0; x < img_width; x += 2) {
-            unsigned char min_val = input[y * img_width + x];
-            if (input[y * img_width + (x + 1)] < min_val) min_val = input[y * img_width + (x + 1)];
-            if (input[(y + 1) * img_width + x] < min_val) min_val = input[(y + 1) * img_width + x];
-            if (input[(y + 1) * img_width + (x + 1)] < min_val) min_val = input[(y + 1) * img_width + (x + 1)];
-            output[(y / 2) * (img_width / 2) + (x / 2)] = min_val;
-        }
-    }
-}
-
-
-void average_pooling(unsigned char *input, unsigned char *output, int img_height, int img_width) {
-    VITIS_LOOP_48_1: for (int y = 0; y < img_height; y += 2) {
-        VITIS_LOOP_49_2: for (int x = 0; x < img_width; x += 2) {
-            int sum = input[y * img_width + x] + input[y * img_width + (x + 1)] + input[(y + 1) * img_width + x] + input[(y + 1) * img_width + (x + 1)];
-            output[(y / 2) * (img_width / 2) + (x / 2)] = (unsigned char)(sum / 4);
+void pooling(unsigned char *input, unsigned char *output, int img_height, int img_width, int mode) {
+#pragma HLS INLINE off
+#pragma HLS PIPELINE II=1
+ VITIS_LOOP_30_1: for (int y = 0; y < img_height - 1; y += 2) {
+        VITIS_LOOP_31_2: for (int x = 0; x < img_width - 1; x += 2) {
+            unsigned char pool_val = input[y * img_width + x];
+            if (mode == 1) {
+                if (input[y * img_width + (x + 1)] > pool_val) pool_val = input[y * img_width + (x + 1)];
+                if (input[(y + 1) * img_width + x] > pool_val) pool_val = input[(y + 1) * img_width + x];
+                if (input[(y + 1) * img_width + (x + 1)] > pool_val) pool_val = input[(y + 1) * img_width + (x + 1)];
+            } else if (mode == 2) {
+                if (input[y * img_width + (x + 1)] < pool_val) pool_val = input[y * img_width + (x + 1)];
+                if (input[(y + 1) * img_width + x] < pool_val) pool_val = input[(y + 1) * img_width + x];
+                if (input[(y + 1) * img_width + (x + 1)] < pool_val) pool_val = input[(y + 1) * img_width + (x + 1)];
+            } else {
+                int sum = input[y * img_width + x] + input[y * img_width + (x + 1)] +
+                          input[(y + 1) * img_width + x] + input[(y + 1) * img_width + (x + 1)];
+                pool_val = (unsigned char)(sum / 4);
+            }
+            output[(y / 2) * (img_width / 2) + (x / 2)] = pool_val;
         }
     }
 }
@@ -209,23 +207,25 @@ void average_pooling(unsigned char *input, unsigned char *output, int img_height
 __attribute__((sdx_kernel("process_images", 0))) void process_images(unsigned char *input, unsigned char *conv_output, unsigned char *max_output, unsigned char *min_output, unsigned char *avg_output, int img_height, int img_width) {
 #line 19 "C:/SchoolWerk/HAC/HLSEindoefening/solution1/csynth.tcl"
 #pragma HLSDIRECTIVE TOP name=process_images
-# 57 "HLSEindoefening/hls_process_images.c"
+# 52 "HLSEindoefening/hls_process_images.c"
 
 #line 7 "C:/SchoolWerk/HAC/HLSEindoefening/solution1/directives.tcl"
 #pragma HLSDIRECTIVE TOP name=process_images
-# 57 "HLSEindoefening/hls_process_images.c"
+# 52 "HLSEindoefening/hls_process_images.c"
 
 #pragma HLS INTERFACE m_axi port=input offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=conv_output offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=max_output offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=min_output offset=slave bundle=gmem
 #pragma HLS INTERFACE m_axi port=avg_output offset=slave bundle=gmem
+#pragma HLS INTERFACE s_axilite port=img_height bundle=control
+#pragma HLS INTERFACE s_axilite port=img_width bundle=control
 #pragma HLS INTERFACE s_axilite port=return bundle=control
 
- unsigned char conv_result[img_height * img_width];
-    unsigned char max_result[(img_height / 2) * (img_width / 2)];
-    unsigned char min_result[(img_height / 2) * (img_width / 2)];
-    unsigned char avg_result[(img_height / 2) * (img_width / 2)];
+ unsigned char conv_result[2048 * 2048];
+    unsigned char max_result[(2048 / 2) * (2048 / 2)];
+    unsigned char min_result[(2048 / 2) * (2048 / 2)];
+    unsigned char avg_result[(2048 / 2) * (2048 / 2)];
 
     char kernel[3][3] = {
         { 1, 0, -1 },
@@ -233,35 +233,28 @@ __attribute__((sdx_kernel("process_images", 0))) void process_images(unsigned ch
         { 1, 0, -1 }
     };
 
-
-    convolution(input, conv_result, img_height, img_width, kernel);
-
-
-    max_pooling(input, max_result, img_height, img_width);
+#pragma HLS DATAFLOW
 
 
-    min_pooling(input, min_result, img_height, img_width);
+ convolution(input, conv_result, img_height, img_width, kernel);
 
 
-    average_pooling(input, avg_result, img_height, img_width);
+    pooling(input, max_result, img_height, img_width, 1);
+    pooling(input, min_result, img_height, img_width, 2);
+    pooling(input, avg_result, img_height, img_width, 3);
 
-
-    VITIS_LOOP_89_1: for (int i = 0; i < img_height; i++) {
-        VITIS_LOOP_90_2: for (int j = 0; j < img_width; j++) {
-#pragma HLS PIPELINE
- conv_output[i * img_width + j] = conv_result[i * img_width + j];
-        }
+    VITIS_LOOP_83_1: for (int i = 0; i < img_height * img_width; i++) {
+#pragma HLS UNROLL
+ conv_output[i] = conv_result[i];
     }
-
 
     int pooled_height = img_height / 2;
     int pooled_width = img_width / 2;
-    VITIS_LOOP_99_3: for (int i = 0; i < pooled_height; i++) {
-        VITIS_LOOP_100_4: for (int j = 0; j < pooled_width; j++) {
-#pragma HLS PIPELINE
- max_output[i * pooled_width + j] = max_result[i * pooled_width + j];
-            min_output[i * pooled_width + j] = min_result[i * pooled_width + j];
-            avg_output[i * pooled_width + j] = avg_result[i * pooled_width + j];
-        }
+
+    VITIS_LOOP_91_2: for (int i = 0; i < pooled_height * pooled_width; i++) {
+#pragma HLS UNROLL
+ max_output[i] = max_result[i];
+        min_output[i] = min_result[i];
+        avg_output[i] = avg_result[i];
     }
 }

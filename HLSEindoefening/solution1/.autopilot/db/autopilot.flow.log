@@ -1,13 +1,13 @@
-INFO-FLOW: Workspace C:/SchoolWerk/HAC/HLSEindoefening/solution1 opened at Wed May 14 15:16:29 +0200 2025
-Execute     ap_set_clock -name default -period 8 -unit ns -default=false 
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+INFO-FLOW: Workspace C:/SchoolWerk/HAC/HLSEindoefening/solution1 opened at Wed May 14 20:37:34 +0200 2025
+Execute     ap_set_clock -name default -period 12 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
 Execute     set_part xc7z020-clg400-1 
 Execute       create_platform xc7z020-clg400-1 -board  
 DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis/2024.2\lib\win64.o\xv_hlsvwrap.dll
 DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2024.2/data/parts/arch.xml
 DBG:HLSDevice: init success
 INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
-Command       create_platform done; 0.83 sec.
+Command       create_platform done; 0.788 sec.
 Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
 Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
 Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
@@ -22,10 +22,10 @@ Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.g
 Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 Execute       config_compile -quiet -complex-mul-dsp=0 
-Command     set_part done; 0.877 sec.
+Command     set_part done; 0.836 sec.
 Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
 INFO: [HLS 200-1505] Using flow_target 'vivado'
-Command   open_solution done; 0.889 sec.
+Command   open_solution done; 0.847 sec.
 Execute   set_part xc7z020-clg400-1 
 INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
 Execute     create_platform xc7z020-clg400-1 -board  
@@ -44,8 +44,8 @@ Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48
 Execute     ap_part_info -name xc7z020-clg400-1 -data info 
 Execute     config_compile -quiet -complex-mul-dsp=0 
 Command   set_part done; 0.121 sec.
-Execute   create_clock -period 8 -name default 
-INFO: [HLS 200-1510] Running: create_clock -period 8 -name default 
+Execute   create_clock -period 12 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 12 -name default 
 Execute   source ./HLSEindoefening/solution1/directives.tcl 
 INFO: [HLS 200-1510] Running: source ./HLSEindoefening/solution1/directives.tcl
 Execute     set_directive_top -name process_images process_images 
@@ -57,7 +57,7 @@ INFO: [HLS 200-1510] Running: csynth_design
 Execute     ::AP::init_summary_file csynth 
 INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
 Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 318.227 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.063 seconds; current allocated memory: 317.938 MB.
 Execute       set_directive_top process_images -name=process_images 
 Execute       source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
@@ -68,8 +68,8 @@ INFO-FLOW: Handling HLSEindoefening/hls_process_images.c as C
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 INFO-FLOW: Running: GCC PP 39
 INFO-FLOW: Source preprocessing
-INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang HLSEindoefening/hls_process_images.c -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=8 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-mingw32 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.c.clang.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.c.clang.err.log
-INFO-FLOW: Done: GCC PP 39 time: 0.3 seconds per iteration
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang HLSEindoefening/hls_process_images.c -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --sysroot C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt -fhls -fno-exceptions -insert-hls-directive=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=12 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-mingw32 -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.c.clang.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.c.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
 INFO-FLOW: Source syntax check for synthesis
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/clang.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/clang.err.log
 Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c std=gnu99 -target fpga  -directive=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/.systemc_flag 
@@ -84,10 +84,13 @@ Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xil
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang-tidy.loop-label.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang-tidy.loop-label.err.log
 Execute         source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.xilinx-dataflow-lawyer.diag.yml C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.xilinx-dataflow-lawyer.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.xilinx-dataflow-lawyer.err.log
+WARNING: [HLS 214-114] Since the only kind of statements allowed in a canonical dataflow region are variable declarations and function calls, the compiler may not be able to correctly handle the region (HLSEindoefening/hls_process_images.c:73:9)
+Execute       send_msg_by_id WARNING @200-471@%s%s 1 HLSEindoefening/hls_process_images.c 
+WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file HLSEindoefening/hls_process_images.c
 Execute       ap_part_info -name xc7z020-clg400-1 -data info 
 INFO-FLOW: compiling source code to llvm bc
-INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=8 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.bc {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang.err.log
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.841 seconds; current allocated memory: 319.535 MB.
+INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=12 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot -I C:/Xilinx/Vitis/2024.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.bc {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.pp.0.c.clang.err.log
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.563 seconds; current allocated memory: 319.508 MB.
 INFO-FLOW: Linking Debug ...
 INFO-FLOW: Linking dut bc code.
 Execute       run_link_or_opt -out C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.0.bc -args  "C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/hls_process_images.g.bc"  
@@ -99,12 +102,12 @@ INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
 INFO-FLOW: Linking math bc lib
 Execute       run_link_or_opt -out C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.2.m1.bc -args C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis/2024.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis/2024.2/win64/lib/libhlsmc++_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.1.lower.bc -only-needed C:/Xilinx/Vitis/2024.2/win64/lib/libhlsm_39.bc C:/Xilinx/Vitis/2024.2/win64/lib/libhlsmc++_39.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.2.m1.bc > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
-Command       run_link_or_opt done; 1.02 sec.
+Command       run_link_or_opt done; 0.949 sec.
 Execute       run_link_or_opt -opt -out C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc -args C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=process_images -reflow-float-conversion 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=process_images -reflow-float-conversion -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
 INFO-FLOW: Running: gen_design_size_report post-opt
 INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
-Command       run_link_or_opt done; 0.448 sec.
+Command       run_link_or_opt done; 0.449 sec.
 Execute       run_link_or_opt -out C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.4.m2.bc -args C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis/2024.2/win64/lib/libfloatconversion_39.bc 
 INFO-FLOW: run_clang exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/llvm-link C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.3.fpc.bc -only-needed C:/Xilinx/Vitis/2024.2/win64/lib/libfloatconversion_39.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.4.m2.bc > C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
 Execute       run_link_or_opt -opt -out C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.5.gdce.bc -args C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=process_images 
@@ -115,55 +118,1251 @@ Execute       send_msg_by_id INFO @200-777@%s Vivado
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
 Execute       is_m_axi_addr64 
 INFO-FLOW: Doing LTO.
-INFO-FLOW: run_clang (background poll_ms 5000) exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=process_images -mllvm -hls-db-dir -mllvm C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -reflow-complete-threshold=4 -mllvm -reflow-array-promotion-threshold=64 -mllvm -assume-maxi-align=1 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-small-array-partition=true -mllvm -reflow-enable-auto-array-promotion=true -mllvm -reflow-enable-auto-array-partition-for-flatten=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -auto-unroll-tripcount-threshold=0 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -reflow-enable-codegen-with-if=true -mllvm -reflow-enable-dataflow-canon=true -mllvm -reflow-enable-dataflow-canon2=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=8 -mllvm -use_read_first_ram_in_loop=1 -mllvm -default-clock-uncertainty=2.16 -x ir C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 426 Compile/Link C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 426 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 421 Unroll/Inline (step 1) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 421 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 275 Unroll/Inline (step 2) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 275 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 281 Unroll/Inline (step 3) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 281 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
-Execute       send_msg_by_id INFO @200-1995@%s%s%s 266 Unroll/Inline (step 4) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
-INFO: [HLS 200-1995] There were 266 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
-INFO-FLOW: background_tcl error: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang exited with code 1
-INFO: [HLS 214-178] Inlining function 'convolution' into 'process_images' (HLSEindoefening/hls_process_images.c:57:0)
-INFO: [HLS 214-178] Inlining function 'max_pooling' into 'process_images' (HLSEindoefening/hls_process_images.c:57:0)
-INFO: [HLS 214-178] Inlining function 'min_pooling' into 'process_images' (HLSEindoefening/hls_process_images.c:57:0)
-INFO: [HLS 214-178] Inlining function 'average_pooling' into 'process_images' (HLSEindoefening/hls_process_images.c:57:0)
-ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:65:2)
-ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:66:5)
-ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:67:5)
-ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:68:5)
-WARNING: [HLS 214-450] Ignore address on register port 'vla' (HLSEindoefening/hls_process_images.c:15:39)
-WARNING: [HLS 214-450] Ignore address on register port 'vla3' (HLSEindoefening/hls_process_images.c:28:57)
-WARNING: [HLS 214-450] Ignore address on register port 'vla7' (HLSEindoefening/hls_process_images.c:41:57)
-WARNING: [HLS 214-450] Ignore address on register port 'vla11' (HLSEindoefening/hls_process_images.c:51:57)
-WARNING: [HLS 214-450] Ignore address on register port 'vla' (HLSEindoefening/hls_process_images.c:92:35)
-WARNING: [HLS 214-450] Ignore address on register port 'vla3' (HLSEindoefening/hls_process_images.c:102:37)
-WARNING: [HLS 214-450] Ignore address on register port 'vla7' (HLSEindoefening/hls_process_images.c:103:48)
-WARNING: [HLS 214-450] Ignore address on register port 'vla11' (HLSEindoefening/hls_process_images.c:104:48)
-ERROR: [HLS 214-135] Syn check fail!
-Execute       send_msg_by_id ERROR @200-1715@ 
-ERROR: [HLS 200-1715] Encountered problem during source synthesis
-INFO-FLOW: Error in clang_39: 
-INFO-FLOW: Caught error in elaborate: Pre-synthesis failed.
-    while executing
-"AP::ap_link_39 [::AP::get_bc_list  $dbgInfo] $skip_transform $LLVMFlags $dbgInfo"
-    (procedure "AP::compile_dut_files_39" line 60)
-    invoked from within
-"AP::compile_dut_files_39 $dut_files $dbgInfo $skip_cdt $skip_transform"
-    (procedure "AP::compile" line 108)
-    invoked from within
-"AP::compile 1 $skip_cdt $skip_transform"
-    (procedure "ap_internal_elaborate" line 83)
-    invoked from within
-"ap_internal_elaborate "
-Command     elaborate done; error code: 2; 7.706 sec.
-INFO-FLOW: Caught error in csynth_design: Pre-synthesis failed.
-    while executing
-"ap_internal_csynth_design "
-Command   csynth_design done; error code: 2; 7.754 sec.
-INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:07; Allocated memory: 2.840 MB.
-Command ap_source done; error code: 1; 8.793 sec.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: C:/Xilinx/Vitis/2024.2/win64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=process_images -mllvm -hls-db-dir -mllvm C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -reflow-complete-threshold=4 -mllvm -reflow-array-promotion-threshold=64 -mllvm -assume-maxi-align=1 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-small-array-partition=true -mllvm -reflow-enable-auto-array-promotion=true -mllvm -reflow-enable-auto-array-partition-for-flatten=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -auto-unroll-tripcount-threshold=0 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -reflow-enable-codegen-with-if=true -mllvm -reflow-enable-dataflow-canon=true -mllvm -reflow-enable-dataflow-canon2=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=12 -mllvm -use_read_first_ram_in_loop=1 -mllvm -default-clock-uncertainty=3.24 -x ir C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.5.gdce.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.lto.bc {-hls-platform-db-name=C:/Xilinx/Vitis/2024.2\common/technology\xilinx/common/platform.db} -hls-platform-name=zynq_slow -device-resource-info=BRAM_280.000000_DSP_220.000000_FF_106400.000000_LUT_53200.000000_SLICE_13300.000000_URAM_0.000000 -device-name-info=xc7z020clg400-1 2> C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 741 Compile/Link C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 741 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 790 Unroll/Inline (step 1) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 790 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 458 Unroll/Inline (step 2) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 458 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 438 Unroll/Inline (step 3) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 438 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 377 Unroll/Inline (step 4) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 377 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 306 Array/Struct (step 1) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 306 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 306 Array/Struct (step 2) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 306 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 306 Array/Struct (step 3) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 306 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 306 Array/Struct (step 4) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 306 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 323 Array/Struct (step 5) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 323 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 332 Performance (step 1) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 332 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 332 Performance (step 2) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 332 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 324 Performance (step 3) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 324 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 324 Performance (step 4) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 324 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 346 HW Transforms (step 1) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 346 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 386 HW Transforms (step 2) C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 386 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_30_1' is marked as complete unroll implied by the pipeline pragma (HLSEindoefening/hls_process_images.c:30:19)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_31_2' is marked as complete unroll implied by the pipeline pragma (HLSEindoefening/hls_process_images.c:31:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_7_1' is marked as complete unroll implied by the pipeline pragma (HLSEindoefening/hls_process_images.c:7:18)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_8_2' is marked as complete unroll implied by the pipeline pragma (HLSEindoefening/hls_process_images.c:8:25)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_10_3' is marked as complete unroll implied by the pipeline pragma (HLSEindoefening/hls_process_images.c:10:30)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_11_4' is marked as complete unroll implied by the pipeline pragma (HLSEindoefening/hls_process_images.c:11:34)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_10_3' (HLSEindoefening/hls_process_images.c:10:30) in function 'convolution' completely with a factor of 3 (HLSEindoefening/hls_process_images.c:4:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_11_4' (HLSEindoefening/hls_process_images.c:11:34) in function 'convolution' completely with a factor of 3 (HLSEindoefening/hls_process_images.c:4:0)
+INFO: [HLS 214-115] Multiple burst reads of length 2 and bit width 8 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLSEindoefening/hls_process_images.c:32:38)
+INFO: [HLS 214-115] Multiple burst reads of length 2 and bit width 8 has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLSEindoefening/hls_process_images.c:43:27)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 8 in loop 'VITIS_LOOP_83_1'(HLSEindoefening/hls_process_images.c:83:22) has been inferred on bundle 'gmem'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (HLSEindoefening/hls_process_images.c:83:22)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_91_2' (HLSEindoefening/hls_process_images.c:91:22) in function 'Block_entry_gmem_wr_proc' as it has a variable trip count (HLSEindoefening/hls_process_images.c:91:22)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_83_1' (HLSEindoefening/hls_process_images.c:83:22) in function 'Block_entry_gmem_wr_proc' as it has a variable trip count (HLSEindoefening/hls_process_images.c:83:22)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_30_1' (HLSEindoefening/hls_process_images.c:30:19) in function 'pooling.1.2' as it has a variable trip count (HLSEindoefening/hls_process_images.c:30:19)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_31_2' (HLSEindoefening/hls_process_images.c:31:26) in function 'pooling.1.2' as it has a variable trip count (HLSEindoefening/hls_process_images.c:31:26)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_30_1' (HLSEindoefening/hls_process_images.c:30:19) in function 'pooling.2.1' as it has a variable trip count (HLSEindoefening/hls_process_images.c:30:19)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_31_2' (HLSEindoefening/hls_process_images.c:31:26) in function 'pooling.2.1' as it has a variable trip count (HLSEindoefening/hls_process_images.c:31:26)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_30_1' (HLSEindoefening/hls_process_images.c:30:19) in function 'pooling.1.1' as it has a variable trip count (HLSEindoefening/hls_process_images.c:30:19)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_31_2' (HLSEindoefening/hls_process_images.c:31:26) in function 'pooling.1.1' as it has a variable trip count (HLSEindoefening/hls_process_images.c:31:26)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_7_1' (HLSEindoefening/hls_process_images.c:7:18) in function 'convolution.1.1' as it has a variable trip count (HLSEindoefening/hls_process_images.c:7:18)
+WARNING: [HLS 214-187] Cannot unroll loop 'VITIS_LOOP_8_2' (HLSEindoefening/hls_process_images.c:8:25) in function 'convolution.1.1' as it has a variable trip count (HLSEindoefening/hls_process_images.c:8:25)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.957 seconds; current allocated memory: 322.969 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.002 seconds; current allocated memory: 322.973 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top process_images -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.0.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 327.785 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.1.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.2.prechk.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.024 seconds; current allocated memory: 329.344 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.g.1.bc to C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -dce -hls-dead-arg-elim -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -lcssa -loop-simplify -phi-select-elim -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.1.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+INFO: [XFORM 203-712] Applying dataflow to function 'process_images' (HLSEindoefening/hls_process_images.c:52), detected/extracted 4 process function(s): 
+	 'entry_proc'
+	 'Block_entry_gmem_rd_proc'
+	 'Block_entry_proc.3'
+	 'Block_entry_gmem_wr_proc'.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.1.tmp.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-11] Balancing expressions in function 'pooling.2.1' (HLSEindoefening/hls_process_images.c:29:19)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'pooling.1.2' (HLSEindoefening/hls_process_images.c:27:19)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'pooling.1.1' (HLSEindoefening/hls_process_images.c:29:19)...3 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.108 seconds; current allocated memory: 351.676 MB.
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-rewind-sink-hoist -loop-outline -hls-dead-arg-elim -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.2.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+Execute           auto_get_db
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -cdfg-build C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.3.bc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.096 seconds; current allocated memory: 415.059 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 0.261 sec.
+Command     elaborate done; 7.799 sec.
+Execute     ap_eval exec zip -j C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'process_images' ...
+Execute       ap_set_top_model process_images 
+WARNING: [SYN 201-103] Legalizing function name 'convolution.1.1' to 'convolution_1_1'.
+WARNING: [SYN 201-103] Legalizing function name 'pooling.1.1' to 'pooling_1_1'.
+WARNING: [SYN 201-103] Legalizing function name 'pooling.2.1' to 'pooling_2_1'.
+WARNING: [SYN 201-103] Legalizing function name 'pooling.1.2' to 'pooling_1_2'.
+WARNING: [SYN 201-103] Legalizing function name 'Block_entry_proc.3' to 'Block_entry_proc_3'.
+Execute       get_model_list process_images -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model process_images 
+Execute       preproc_iomode -model Block_entry_gmem_wr_proc 
+Execute       preproc_iomode -model Block_entry_proc.3 
+Execute       preproc_iomode -model Block_entry_gmem_rd_proc 
+Execute       preproc_iomode -model pooling.1.2 
+Execute       preproc_iomode -model pooling.2.1 
+Execute       preproc_iomode -model pooling.1.1 
+Execute       preproc_iomode -model convolution.1.1 
+Execute       preproc_iomode -model entry_proc 
+Execute       get_model_list process_images -filter all-wo-channel 
+INFO-FLOW: Model list for configure: entry_proc convolution.1.1 pooling.1.1 pooling.2.1 pooling.1.2 Block_entry_gmem_rd_proc Block_entry_proc.3 Block_entry_gmem_wr_proc process_images
+INFO-FLOW: Configuring Module : entry_proc ...
+Execute       set_default_model entry_proc 
+Execute       apply_spec_resource_limit entry_proc 
+INFO-FLOW: Configuring Module : convolution.1.1 ...
+Execute       set_default_model convolution.1.1 
+Execute       apply_spec_resource_limit convolution.1.1 
+INFO-FLOW: Configuring Module : pooling.1.1 ...
+Execute       set_default_model pooling.1.1 
+Execute       apply_spec_resource_limit pooling.1.1 
+INFO-FLOW: Configuring Module : pooling.2.1 ...
+Execute       set_default_model pooling.2.1 
+Execute       apply_spec_resource_limit pooling.2.1 
+INFO-FLOW: Configuring Module : pooling.1.2 ...
+Execute       set_default_model pooling.1.2 
+Execute       apply_spec_resource_limit pooling.1.2 
+INFO-FLOW: Configuring Module : Block_entry_gmem_rd_proc ...
+Execute       set_default_model Block_entry_gmem_rd_proc 
+Execute       apply_spec_resource_limit Block_entry_gmem_rd_proc 
+INFO-FLOW: Configuring Module : Block_entry_proc.3 ...
+Execute       set_default_model Block_entry_proc.3 
+Execute       apply_spec_resource_limit Block_entry_proc.3 
+INFO-FLOW: Configuring Module : Block_entry_gmem_wr_proc ...
+Execute       set_default_model Block_entry_gmem_wr_proc 
+Execute       apply_spec_resource_limit Block_entry_gmem_wr_proc 
+INFO-FLOW: Configuring Module : process_images ...
+Execute       set_default_model process_images 
+Execute       apply_spec_resource_limit process_images 
+INFO-FLOW: Model list for preprocess: entry_proc convolution.1.1 pooling.1.1 pooling.2.1 pooling.1.2 Block_entry_gmem_rd_proc Block_entry_proc.3 Block_entry_gmem_wr_proc process_images
+INFO-FLOW: Preprocessing Module: entry_proc ...
+Execute       set_default_model entry_proc 
+Execute       cdfg_preprocess -model entry_proc 
+Execute       rtl_gen_preprocess entry_proc 
+INFO-FLOW: Preprocessing Module: convolution.1.1 ...
+Execute       set_default_model convolution.1.1 
+Execute       cdfg_preprocess -model convolution.1.1 
+Execute       rtl_gen_preprocess convolution.1.1 
+INFO-FLOW: Preprocessing Module: pooling.1.1 ...
+Execute       set_default_model pooling.1.1 
+Execute       cdfg_preprocess -model pooling.1.1 
+Execute       rtl_gen_preprocess pooling.1.1 
+INFO-FLOW: Preprocessing Module: pooling.2.1 ...
+Execute       set_default_model pooling.2.1 
+Execute       cdfg_preprocess -model pooling.2.1 
+Execute       rtl_gen_preprocess pooling.2.1 
+INFO-FLOW: Preprocessing Module: pooling.1.2 ...
+Execute       set_default_model pooling.1.2 
+Execute       cdfg_preprocess -model pooling.1.2 
+Execute       rtl_gen_preprocess pooling.1.2 
+INFO-FLOW: Preprocessing Module: Block_entry_gmem_rd_proc ...
+Execute       set_default_model Block_entry_gmem_rd_proc 
+Execute       cdfg_preprocess -model Block_entry_gmem_rd_proc 
+Execute       rtl_gen_preprocess Block_entry_gmem_rd_proc 
+INFO-FLOW: Preprocessing Module: Block_entry_proc.3 ...
+Execute       set_default_model Block_entry_proc.3 
+Execute       cdfg_preprocess -model Block_entry_proc.3 
+Execute       rtl_gen_preprocess Block_entry_proc.3 
+INFO-FLOW: Preprocessing Module: Block_entry_gmem_wr_proc ...
+Execute       set_default_model Block_entry_gmem_wr_proc 
+Execute       cdfg_preprocess -model Block_entry_gmem_wr_proc 
+Execute       rtl_gen_preprocess Block_entry_gmem_wr_proc 
+INFO-FLOW: Preprocessing Module: process_images ...
+Execute       set_default_model process_images 
+Execute       cdfg_preprocess -model process_images 
+Execute       rtl_gen_preprocess process_images 
+INFO-FLOW: Model list for synthesis: entry_proc convolution.1.1 pooling.1.1 pooling.2.1 pooling.1.2 Block_entry_gmem_rd_proc Block_entry_proc.3 Block_entry_gmem_wr_proc process_images
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model entry_proc 
+Execute       schedule -model entry_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.106 seconds; current allocated memory: 417.461 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling entry_proc.
+Execute       set_default_model entry_proc 
+Execute       bind -model entry_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 418.480 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.bind.adb -f 
+INFO-FLOW: Finish binding entry_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'convolution_1_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model convolution.1.1 
+Execute       schedule -model convolution.1.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'convolution.1.1': contains subloop(s) that are not unrolled.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'convolution.1.1': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.068 seconds; current allocated memory: 420.859 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.sched.adb -f 
+INFO-FLOW: Finish scheduling convolution.1.1.
+Execute       set_default_model convolution.1.1 
+Execute       bind -model convolution.1.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.041 seconds; current allocated memory: 421.152 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.bind.adb -f 
+INFO-FLOW: Finish binding convolution.1.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pooling_1_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pooling.1.1 
+Execute       schedule -model pooling.1.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'pooling.1.1': contains subloop(s) that are not unrolled.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'pooling.1.1': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 421.543 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.sched.adb -f 
+INFO-FLOW: Finish scheduling pooling.1.1.
+Execute       set_default_model pooling.1.1 
+Execute       bind -model pooling.1.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 421.738 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.bind.adb -f 
+INFO-FLOW: Finish binding pooling.1.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pooling_2_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pooling.2.1 
+Execute       schedule -model pooling.2.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'pooling.2.1': contains subloop(s) that are not unrolled.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'pooling.2.1': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.053 seconds; current allocated memory: 422.363 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.sched.adb -f 
+INFO-FLOW: Finish scheduling pooling.2.1.
+Execute       set_default_model pooling.2.1 
+Execute       bind -model pooling.2.1 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 422.531 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.bind.adb -f 
+INFO-FLOW: Finish binding pooling.2.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pooling_1_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model pooling.1.2 
+Execute       schedule -model pooling.1.2 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'pooling.1.2': contains subloop(s) that are not unrolled.
+WARNING: [SCHED 204-65] Unable to satisfy pipeline directive for function 'pooling.1.2': contains subloop(s) that are not unrolled.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.055 seconds; current allocated memory: 423.027 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.sched.adb -f 
+INFO-FLOW: Finish scheduling pooling.1.2.
+Execute       set_default_model pooling.1.2 
+Execute       bind -model pooling.1.2 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.034 seconds; current allocated memory: 423.242 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.bind.adb -f 
+INFO-FLOW: Finish binding pooling.1.2.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_gmem_rd_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block_entry_gmem_rd_proc 
+Execute       schedule -model Block_entry_gmem_rd_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.037 seconds; current allocated memory: 423.441 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Block_entry_gmem_rd_proc.
+Execute       set_default_model Block_entry_gmem_rd_proc 
+Execute       bind -model Block_entry_gmem_rd_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.028 seconds; current allocated memory: 423.535 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.bind.adb -f 
+INFO-FLOW: Finish binding Block_entry_gmem_rd_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_proc_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block_entry_proc.3 
+Execute       schedule -model Block_entry_proc.3 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.033 seconds; current allocated memory: 423.770 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.sched.adb -f 
+INFO-FLOW: Finish scheduling Block_entry_proc.3.
+Execute       set_default_model Block_entry_proc.3 
+Execute       bind -model Block_entry_proc.3 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.029 seconds; current allocated memory: 423.812 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.bind.adb -f 
+INFO-FLOW: Finish binding Block_entry_proc.3.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'Block_entry_gmem_wr_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model Block_entry_gmem_wr_proc 
+Execute       schedule -model Block_entry_gmem_wr_proc 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.039 seconds; current allocated memory: 424.242 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.sched.adb -f 
+INFO-FLOW: Finish scheduling Block_entry_gmem_wr_proc.
+Execute       set_default_model Block_entry_gmem_wr_proc 
+Execute       bind -model Block_entry_gmem_wr_proc 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.036 seconds; current allocated memory: 424.379 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.bind.adb -f 
+INFO-FLOW: Finish binding Block_entry_gmem_wr_proc.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'process_images' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model process_images 
+Execute       schedule -model process_images 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.041 seconds; current allocated memory: 424.645 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.verbose.sched.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.sched.adb -f 
+INFO-FLOW: Finish scheduling process_images.
+Execute       set_default_model process_images 
+Execute       bind -model process_images 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.031 seconds; current allocated memory: 425.074 MB.
+Execute       syn_report -verbosereport -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.verbose.bind.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.bind.adb -f 
+INFO-FLOW: Finish binding process_images.
+Execute       get_model_list process_images -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess entry_proc 
+Execute       rtl_gen_preprocess convolution.1.1 
+Execute       rtl_gen_preprocess pooling.1.1 
+Execute       rtl_gen_preprocess pooling.2.1 
+Execute       rtl_gen_preprocess pooling.1.2 
+Execute       rtl_gen_preprocess Block_entry_gmem_rd_proc 
+Execute       rtl_gen_preprocess Block_entry_proc.3 
+Execute       rtl_gen_preprocess Block_entry_gmem_wr_proc 
+Execute       rtl_gen_preprocess process_images 
+INFO-FLOW: Model list for RTL generation: entry_proc convolution.1.1 pooling.1.1 pooling.2.1 pooling.1.2 Block_entry_gmem_rd_proc Block_entry_proc.3 Block_entry_gmem_wr_proc process_images
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'entry_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model entry_proc -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'entry_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 426.309 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl entry_proc -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_entry_proc 
+Execute       gen_rtl entry_proc -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_entry_proc 
+Execute       syn_report -csynth -model entry_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/entry_proc_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model entry_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/entry_proc_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model entry_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model entry_proc -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.adb 
+Execute       db_write -model entry_proc -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info entry_proc -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'convolution_1_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model convolution.1.1 -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_31ns_63_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'convolution_1_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.065 seconds; current allocated memory: 429.379 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl convolution.1.1 -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_convolution_1_1 
+Execute       gen_rtl convolution.1.1 -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_convolution_1_1 
+Execute       syn_report -csynth -model convolution.1.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/convolution_1_1_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model convolution.1.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/convolution_1_1_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model convolution.1.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model convolution.1.1 -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.adb 
+Execute       db_write -model convolution.1.1 -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info convolution.1.1 -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pooling_1_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model pooling.1.1 -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_30ns_62_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling_1_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.137 seconds; current allocated memory: 433.059 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pooling.1.1 -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_pooling_1_1 
+Execute       gen_rtl pooling.1.1 -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_pooling_1_1 
+Execute       syn_report -csynth -model pooling.1.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/pooling_1_1_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model pooling.1.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/pooling_1_1_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model pooling.1.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model pooling.1.1 -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.adb 
+Execute       db_write -model pooling.1.1 -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info pooling.1.1 -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pooling_2_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model pooling.2.1 -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_30ns_62_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling_2_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.102 seconds; current allocated memory: 435.004 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pooling.2.1 -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_pooling_2_1 
+Execute       gen_rtl pooling.2.1 -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_pooling_2_1 
+Execute       syn_report -csynth -model pooling.2.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/pooling_2_1_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model pooling.2.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/pooling_2_1_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model pooling.2.1 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model pooling.2.1 -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.adb 
+Execute       db_write -model pooling.2.1 -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info pooling.2.1 -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pooling_1_2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model pooling.1.2 -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_20s_20s_20_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_30ns_62_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pooling_1_2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.098 seconds; current allocated memory: 437.840 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl pooling.1.2 -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_pooling_1_2 
+Execute       gen_rtl pooling.1.2 -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_pooling_1_2 
+Execute       syn_report -csynth -model pooling.1.2 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/pooling_1_2_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model pooling.1.2 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/pooling_1_2_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model pooling.1.2 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model pooling.1.2 -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.adb 
+Execute       db_write -model pooling.1.2 -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info pooling.1.2 -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_gmem_rd_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model Block_entry_gmem_rd_proc -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_gmem_rd_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.089 seconds; current allocated memory: 440.141 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block_entry_gmem_rd_proc -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_Block_entry_gmem_rd_proc 
+Execute       gen_rtl Block_entry_gmem_rd_proc -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_Block_entry_gmem_rd_proc 
+Execute       syn_report -csynth -model Block_entry_gmem_rd_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/Block_entry_gmem_rd_proc_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model Block_entry_gmem_rd_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/Block_entry_gmem_rd_proc_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model Block_entry_gmem_rd_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model Block_entry_gmem_rd_proc -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.adb 
+Execute       db_write -model Block_entry_gmem_rd_proc -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info Block_entry_gmem_rd_proc -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_proc_3' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model Block_entry_proc.3 -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'mul_31s_31s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_proc_3'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 441.223 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block_entry_proc.3 -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_Block_entry_proc_3 
+Execute       gen_rtl Block_entry_proc.3 -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_Block_entry_proc_3 
+Execute       syn_report -csynth -model Block_entry_proc.3 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/Block_entry_proc_3_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model Block_entry_proc.3 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/Block_entry_proc_3_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model Block_entry_proc.3 -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model Block_entry_proc.3 -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.adb 
+Execute       db_write -model Block_entry_proc.3 -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info Block_entry_proc.3 -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'Block_entry_gmem_wr_proc' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model Block_entry_gmem_wr_proc -top_prefix process_images_ -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'Block_entry_gmem_wr_proc'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.061 seconds; current allocated memory: 442.977 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl Block_entry_gmem_wr_proc -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images_Block_entry_gmem_wr_proc 
+Execute       gen_rtl Block_entry_gmem_wr_proc -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images_Block_entry_gmem_wr_proc 
+Execute       syn_report -csynth -model Block_entry_gmem_wr_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/Block_entry_gmem_wr_proc_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model Block_entry_gmem_wr_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/Block_entry_gmem_wr_proc_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model Block_entry_gmem_wr_proc -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model Block_entry_gmem_wr_proc -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.adb 
+Execute       db_write -model Block_entry_gmem_wr_proc -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info Block_entry_gmem_wr_proc -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'process_images' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model process_images -top_prefix  -sub_prefix process_images_ -mg_file C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.tcl 
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/input_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/conv_output' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/max_output' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/min_output' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/avg_output' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/img_height' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'process_images/img_width' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'process_images' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'img_height', 'img_width' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Bundling port 'input_r', 'conv_output', 'max_output', 'min_output' and 'avg_output' to AXI-Lite port control_r.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'process_images'.
+INFO: [HLS 200-741] Implementing PIPO process_images_conv_result_RAM_AUTO_1R1W using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'process_images_conv_result_RAM_AUTO_1R1W_memcore' using auto RAMs.
+INFO: [HLS 200-741] Implementing PIPO process_images_max_result_RAM_AUTO_1R1W using a single memory for all blocks
+INFO: [RTMG 210-278] Implementing memory 'process_images_max_result_RAM_AUTO_1R1W_memcore' using auto RAMs.
+INFO: [RTMG 210-285] Implementing FIFO 'conv_output_c_U(process_images_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'max_output_c_U(process_images_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'min_output_c_U(process_images_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'avg_output_c_U(process_images_fifo_w64_d3_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul_loc_channel_U(process_images_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'cmp3_loc_channel_U(process_images_fifo_w1_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'mul10_loc_channel_U(process_images_fifo_w32_d2_S)' using Shift Registers.
+INFO: [RTMG 210-285] Implementing FIFO 'cmp111_loc_channel_U(process_images_fifo_w1_d2_S)' using Shift Registers.
+Command       create_rtl_model done; 0.137 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.217 seconds; current allocated memory: 446.340 MB.
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       gen_rtl process_images -istop -style xilinx -f -lang vhdl -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/vhdl/process_images 
+Execute       gen_rtl process_images -istop -style xilinx -f -lang vlog -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/verilog/process_images 
+Execute       syn_report -csynth -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/process_images_csynth.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -rtlxml -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/process_images_csynth.xml 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -verbosereport -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.verbose.rpt 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       db_write -model process_images -f -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.adb 
+Execute       db_write -model process_images -bindview -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info process_images -p C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images 
+Execute       export_constraint_db -f -tool general -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.constraint.tcl 
+Execute       syn_report -designview -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.design.xml 
+Execute       syn_report -csynthDesign -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth.rpt -MHOut C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute         list_part -family xc7z020-clg400-1 
+Execute           ap_family_info -name xc7z020-clg400-1 -data names 
+Execute           ap_part_info -quiet -name xc7z020-clg400-1 -data family 
+Execute       syn_report -wcfg -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model process_images -o C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.protoinst 
+Execute       sc_get_clocks process_images 
+Execute       sc_get_portdomain process_images 
+INFO-FLOW: Model list for RTL component generation: entry_proc convolution.1.1 pooling.1.1 pooling.2.1 pooling.1.2 Block_entry_gmem_rd_proc Block_entry_proc.3 Block_entry_gmem_wr_proc process_images
+INFO-FLOW: Handling components in module [entry_proc] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [convolution_1_1] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.compgen.tcl 
+INFO-FLOW: Found component process_images_mul_32s_31ns_63_1_1.
+INFO-FLOW: Append model process_images_mul_32s_31ns_63_1_1
+INFO-FLOW: Handling components in module [pooling_1_1] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.compgen.tcl 
+INFO-FLOW: Found component process_images_mul_20s_20s_20_1_1.
+INFO-FLOW: Append model process_images_mul_20s_20s_20_1_1
+INFO-FLOW: Found component process_images_mul_32s_30ns_62_1_1.
+INFO-FLOW: Append model process_images_mul_32s_30ns_62_1_1
+INFO-FLOW: Handling components in module [pooling_2_1] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.compgen.tcl 
+INFO-FLOW: Handling components in module [pooling_1_2] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.compgen.tcl 
+INFO-FLOW: Handling components in module [Block_entry_gmem_rd_proc] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [Block_entry_proc_3] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.compgen.tcl 
+INFO-FLOW: Found component process_images_mul_31s_31s_32_1_1.
+INFO-FLOW: Append model process_images_mul_31s_31s_32_1_1
+INFO-FLOW: Found component process_images_mul_32s_32s_32_1_1.
+INFO-FLOW: Append model process_images_mul_32s_32s_32_1_1
+INFO-FLOW: Handling components in module [Block_entry_gmem_wr_proc] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.compgen.tcl 
+INFO-FLOW: Handling components in module [process_images] ... 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.tcl 
+INFO-FLOW: Found component process_images_conv_result_RAM_AUTO_1R1W_memcore.
+INFO-FLOW: Append model process_images_conv_result_RAM_AUTO_1R1W_memcore
+INFO-FLOW: Found component process_images_conv_result_RAM_AUTO_1R1W.
+INFO-FLOW: Append model process_images_conv_result_RAM_AUTO_1R1W
+INFO-FLOW: Found component process_images_max_result_RAM_AUTO_1R1W_memcore.
+INFO-FLOW: Append model process_images_max_result_RAM_AUTO_1R1W_memcore
+INFO-FLOW: Found component process_images_max_result_RAM_AUTO_1R1W.
+INFO-FLOW: Append model process_images_max_result_RAM_AUTO_1R1W
+INFO-FLOW: Found component process_images_fifo_w64_d3_S.
+INFO-FLOW: Append model process_images_fifo_w64_d3_S
+INFO-FLOW: Found component process_images_fifo_w64_d3_S.
+INFO-FLOW: Append model process_images_fifo_w64_d3_S
+INFO-FLOW: Found component process_images_fifo_w64_d3_S.
+INFO-FLOW: Append model process_images_fifo_w64_d3_S
+INFO-FLOW: Found component process_images_fifo_w64_d3_S.
+INFO-FLOW: Append model process_images_fifo_w64_d3_S
+INFO-FLOW: Found component process_images_fifo_w32_d2_S.
+INFO-FLOW: Append model process_images_fifo_w32_d2_S
+INFO-FLOW: Found component process_images_fifo_w1_d2_S.
+INFO-FLOW: Append model process_images_fifo_w1_d2_S
+INFO-FLOW: Found component process_images_fifo_w32_d2_S.
+INFO-FLOW: Append model process_images_fifo_w32_d2_S
+INFO-FLOW: Found component process_images_fifo_w1_d2_S.
+INFO-FLOW: Append model process_images_fifo_w1_d2_S
+INFO-FLOW: Found component process_images_gmem_m_axi.
+INFO-FLOW: Append model process_images_gmem_m_axi
+INFO-FLOW: Found component process_images_control_s_axi.
+INFO-FLOW: Append model process_images_control_s_axi
+INFO-FLOW: Found component process_images_control_r_s_axi.
+INFO-FLOW: Append model process_images_control_r_s_axi
+INFO-FLOW: Append model entry_proc
+INFO-FLOW: Append model convolution_1_1
+INFO-FLOW: Append model pooling_1_1
+INFO-FLOW: Append model pooling_2_1
+INFO-FLOW: Append model pooling_1_2
+INFO-FLOW: Append model Block_entry_gmem_rd_proc
+INFO-FLOW: Append model Block_entry_proc_3
+INFO-FLOW: Append model Block_entry_gmem_wr_proc
+INFO-FLOW: Append model process_images
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: process_images_mul_32s_31ns_63_1_1 process_images_mul_20s_20s_20_1_1 process_images_mul_32s_30ns_62_1_1 process_images_mul_31s_31s_32_1_1 process_images_mul_32s_32s_32_1_1 process_images_conv_result_RAM_AUTO_1R1W_memcore process_images_conv_result_RAM_AUTO_1R1W process_images_max_result_RAM_AUTO_1R1W_memcore process_images_max_result_RAM_AUTO_1R1W process_images_fifo_w64_d3_S process_images_fifo_w64_d3_S process_images_fifo_w64_d3_S process_images_fifo_w64_d3_S process_images_fifo_w32_d2_S process_images_fifo_w1_d2_S process_images_fifo_w32_d2_S process_images_fifo_w1_d2_S process_images_gmem_m_axi process_images_control_s_axi process_images_control_r_s_axi entry_proc convolution_1_1 pooling_1_1 pooling_2_1 pooling_1_2 Block_entry_gmem_rd_proc Block_entry_proc_3 Block_entry_gmem_wr_proc process_images
+INFO-FLOW: Generating C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model process_images_mul_32s_31ns_63_1_1
+INFO-FLOW: To file: write model process_images_mul_20s_20s_20_1_1
+INFO-FLOW: To file: write model process_images_mul_32s_30ns_62_1_1
+INFO-FLOW: To file: write model process_images_mul_31s_31s_32_1_1
+INFO-FLOW: To file: write model process_images_mul_32s_32s_32_1_1
+INFO-FLOW: To file: write model process_images_conv_result_RAM_AUTO_1R1W_memcore
+INFO-FLOW: To file: write model process_images_conv_result_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model process_images_max_result_RAM_AUTO_1R1W_memcore
+INFO-FLOW: To file: write model process_images_max_result_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model process_images_fifo_w64_d3_S
+INFO-FLOW: To file: write model process_images_fifo_w64_d3_S
+INFO-FLOW: To file: write model process_images_fifo_w64_d3_S
+INFO-FLOW: To file: write model process_images_fifo_w64_d3_S
+INFO-FLOW: To file: write model process_images_fifo_w32_d2_S
+INFO-FLOW: To file: write model process_images_fifo_w1_d2_S
+INFO-FLOW: To file: write model process_images_fifo_w32_d2_S
+INFO-FLOW: To file: write model process_images_fifo_w1_d2_S
+INFO-FLOW: To file: write model process_images_gmem_m_axi
+INFO-FLOW: To file: write model process_images_control_s_axi
+INFO-FLOW: To file: write model process_images_control_r_s_axi
+INFO-FLOW: To file: write model entry_proc
+INFO-FLOW: To file: write model convolution_1_1
+INFO-FLOW: To file: write model pooling_1_1
+INFO-FLOW: To file: write model pooling_2_1
+INFO-FLOW: To file: write model pooling_1_2
+INFO-FLOW: To file: write model Block_entry_gmem_rd_proc
+INFO-FLOW: To file: write model Block_entry_proc_3
+INFO-FLOW: To file: write model Block_entry_gmem_wr_proc
+INFO-FLOW: To file: write model process_images
+INFO-FLOW: Generating C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/common.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/interface.gen 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=12.000 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/vhdl' dstVlogDir='C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/vlog' tclDir='C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db' modelList='process_images_mul_32s_31ns_63_1_1
+process_images_mul_20s_20s_20_1_1
+process_images_mul_32s_30ns_62_1_1
+process_images_mul_31s_31s_32_1_1
+process_images_mul_32s_32s_32_1_1
+process_images_conv_result_RAM_AUTO_1R1W_memcore
+process_images_conv_result_RAM_AUTO_1R1W
+process_images_max_result_RAM_AUTO_1R1W_memcore
+process_images_max_result_RAM_AUTO_1R1W
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w32_d2_S
+process_images_fifo_w1_d2_S
+process_images_fifo_w32_d2_S
+process_images_fifo_w1_d2_S
+process_images_gmem_m_axi
+process_images_control_s_axi
+process_images_control_r_s_axi
+entry_proc
+convolution_1_1
+pooling_1_1
+pooling_2_1
+pooling_1_2
+Block_entry_gmem_rd_proc
+Block_entry_proc_3
+Block_entry_gmem_wr_proc
+process_images
+' expOnly='0'
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.compgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.tcl 
+Execute         source ./control.slave.tcl 
+Execute         source ./control.slave.tcl 
+Execute         source ./control_r.slave.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.317 seconds; current allocated memory: 450.855 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='process_images_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: No bind nodes found for module_name entry_proc
+INFO-FLOW: No bind nodes found for module_name Block_entry_gmem_rd_proc
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0.1 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=C:/SchoolWerk/HAC/HLSEindoefening/solution1/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='process_images_mul_32s_31ns_63_1_1
+process_images_mul_20s_20s_20_1_1
+process_images_mul_32s_30ns_62_1_1
+process_images_mul_31s_31s_32_1_1
+process_images_mul_32s_32s_32_1_1
+process_images_conv_result_RAM_AUTO_1R1W_memcore
+process_images_conv_result_RAM_AUTO_1R1W
+process_images_max_result_RAM_AUTO_1R1W_memcore
+process_images_max_result_RAM_AUTO_1R1W
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w32_d2_S
+process_images_fifo_w1_d2_S
+process_images_fifo_w32_d2_S
+process_images_fifo_w1_d2_S
+process_images_gmem_m_axi
+process_images_control_s_axi
+process_images_control_r_s_axi
+entry_proc
+convolution_1_1
+pooling_1_1
+pooling_2_1
+pooling_1_2
+Block_entry_gmem_rd_proc
+Block_entry_proc_3
+Block_entry_gmem_wr_proc
+process_images
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/top-io-be.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.constraint.tcl 
+Execute       sc_get_clocks process_images 
+Execute       source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {{BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME control_r_s_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME control_r DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE s_axilite STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }} {BINDTYPE adapter ID {} IMPL {} LATENCY {} OPTYPE {} PRAGMA {} RTLNAME gmem_m_axi_U SOURCE {} VARIABLE {} LOOP {} BUNDLEDNAME gmem DSP 0 BRAM 3 URAM 0 STORAGESUBTYPE m_axi STORAGESIZE {} STORAGEUSAGE interface DISPNAME {bind_adapter }}} cache_nodes {} report_dict {TOPINST process_images MODULE2INSTS {process_images process_images entry_proc entry_proc_U0 Block_entry_gmem_rd_proc Block_entry_gmem_rd_proc_U0 convolution_1_1 grp_convolution_1_1_fu_62 pooling_1_1 grp_pooling_1_1_fu_76 pooling_2_1 grp_pooling_2_1_fu_87 pooling_1_2 grp_pooling_1_2_fu_98 Block_entry_proc_3 Block_entry_proc_3_U0 Block_entry_gmem_wr_proc Block_entry_gmem_wr_proc_U0} INST2MODULE {process_images process_images entry_proc_U0 entry_proc Block_entry_gmem_rd_proc_U0 Block_entry_gmem_rd_proc grp_convolution_1_1_fu_62 convolution_1_1 grp_pooling_1_1_fu_76 pooling_1_1 grp_pooling_2_1_fu_87 pooling_2_1 grp_pooling_1_2_fu_98 pooling_1_2 Block_entry_proc_3_U0 Block_entry_proc_3 Block_entry_gmem_wr_proc_U0 Block_entry_gmem_wr_proc} INSTDATA {process_images {DEPTH 1 CHILDREN {entry_proc_U0 Block_entry_gmem_rd_proc_U0 Block_entry_proc_3_U0 Block_entry_gmem_wr_proc_U0}} entry_proc_U0 {DEPTH 2 CHILDREN {}} Block_entry_gmem_rd_proc_U0 {DEPTH 2 CHILDREN {grp_convolution_1_1_fu_62 grp_pooling_1_1_fu_76 grp_pooling_2_1_fu_87 grp_pooling_1_2_fu_98}} grp_convolution_1_1_fu_62 {DEPTH 3 CHILDREN {}} grp_pooling_1_1_fu_76 {DEPTH 3 CHILDREN {}} grp_pooling_2_1_fu_87 {DEPTH 3 CHILDREN {}} grp_pooling_1_2_fu_98 {DEPTH 3 CHILDREN {}} Block_entry_proc_3_U0 {DEPTH 2 CHILDREN {}} Block_entry_gmem_wr_proc_U0 {DEPTH 2 CHILDREN {}}} MODULEDATA {convolution_1_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub_fu_259_p2 SOURCE HLSEindoefening/hls_process_images.c:4 VARIABLE sub LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub2_fu_265_p2 SOURCE HLSEindoefening/hls_process_images.c:4 VARIABLE sub2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln7_fu_299_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE icmp_ln7 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_31ns_63_1_1_U9 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE empty LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln7_fu_313_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE add_ln7 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME cmp20_fu_323_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE cmp20 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME empty_55_fu_350_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE empty_55 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME slt_fu_328_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE slt LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME rev_fu_333_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE rev LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME slt46_fu_339_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE slt46 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME rev47_fu_344_p2 SOURCE HLSEindoefening/hls_process_images.c:7 VARIABLE rev47 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_1_fu_370_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_1 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_2_fu_375_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_2 LOOP VITIS_LOOP_7_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln8_fu_384_p2 SOURCE HLSEindoefening/hls_process_images.c:8 VARIABLE icmp_ln8 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln12_fu_393_p2 SOURCE HLSEindoefening/hls_process_images.c:12 VARIABLE add_ln12 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln14_fu_403_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE icmp_ln14 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln14_fu_408_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE or_ln14 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_3_fu_413_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_3 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln12_1_fu_432_p2 SOURCE HLSEindoefening/hls_process_images.c:12 VARIABLE add_ln12_1 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln14_1_fu_446_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE icmp_ln14_1 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE xor PRAGMA {} RTLNAME xor_ln14_fu_451_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE xor_ln14 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op xor} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln14_1_fu_457_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE or_ln14_1 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_4_fu_462_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_4 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sum_2_fu_476_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE sum_2 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln14_2_fu_486_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE or_ln14_2 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_5_fu_490_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_5 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_4_fu_503_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE sum_4 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln14_3_fu_509_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE or_ln14_3 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_7_fu_513_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_7 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sum_6_fu_526_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE sum_6 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln14_4_fu_537_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE or_ln14_4 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_8_fu_541_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_8 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_8_fu_554_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE sum_8 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln14_5_fu_560_p2 SOURCE HLSEindoefening/hls_process_images.c:14 VARIABLE or_ln14_5 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln15_10_fu_564_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE add_ln15_10 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sum_10_fu_577_p2 SOURCE HLSEindoefening/hls_process_images.c:15 VARIABLE sum_10 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME sum_12_fu_599_p3 SOURCE HLSEindoefening/hls_process_images.c:19 VARIABLE sum_12 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_ln20_fu_617_p2 SOURCE HLSEindoefening/hls_process_images.c:20 VARIABLE icmp_ln20 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln21_fu_627_p3 SOURCE HLSEindoefening/hls_process_images.c:21 VARIABLE select_ln21 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln21_fu_583_p2 SOURCE HLSEindoefening/hls_process_images.c:21 VARIABLE add_ln21 LOOP VITIS_LOOP_8_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 4 BRAM 0 URAM 0}} pooling_1_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub_fu_177_p2 SOURCE {} VARIABLE sub LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub2_fu_183_p2 SOURCE {} VARIABLE sub2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_neg_fu_197_p2 SOURCE {} VARIABLE p_neg LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_neg_t_fu_213_p2 SOURCE {} VARIABLE p_neg_t LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME div133_fu_229_p3 SOURCE {} VARIABLE div133 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln30_fu_237_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE icmp_ln30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_fu_255_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_7_fu_275_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_7 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln30_3_fu_298_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE icmp_ln30_3 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_9_fu_303_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_9 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_30ns_62_1_1_U17 SOURCE {} VARIABLE empty_51 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_20s_20s_20_1_1_U16 SOURCE {} VARIABLE empty_52 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_fu_340_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln31_fu_349_p2 SOURCE HLSEindoefening/hls_process_images.c:31 VARIABLE icmp_ln31 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_10_fu_358_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32_10 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_8_fu_367_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32_8 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln34_fu_430_p2 SOURCE HLSEindoefening/hls_process_images.c:34 VARIABLE icmp_ln34 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME pool_val_6_fu_434_p3 SOURCE HLSEindoefening/hls_process_images.c:34 VARIABLE pool_val_6 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln35_fu_440_p2 SOURCE HLSEindoefening/hls_process_images.c:35 VARIABLE icmp_ln35 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME pool_val_8_fu_445_p3 SOURCE HLSEindoefening/hls_process_images.c:35 VARIABLE pool_val_8 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln36_fu_452_p2 SOURCE HLSEindoefening/hls_process_images.c:36 VARIABLE icmp_ln36 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME pool_val_9_fu_457_p3 SOURCE HLSEindoefening/hls_process_images.c:36 VARIABLE pool_val_9 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln46_fu_404_p2 SOURCE HLSEindoefening/hls_process_images.c:46 VARIABLE add_ln46 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln31_fu_409_p2 SOURCE HLSEindoefening/hls_process_images.c:31 VARIABLE add_ln31 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_8_fu_415_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_8 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 0 URAM 0}} pooling_2_1 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub_fu_177_p2 SOURCE {} VARIABLE sub LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub2_fu_183_p2 SOURCE {} VARIABLE sub2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_neg_fu_197_p2 SOURCE {} VARIABLE p_neg LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_neg_t_fu_213_p2 SOURCE {} VARIABLE p_neg_t LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME div133_fu_229_p3 SOURCE {} VARIABLE div133 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln30_fu_237_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE icmp_ln30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_fu_255_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_1_fu_275_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln30_1_fu_298_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE icmp_ln30_1 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_3_fu_303_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_3 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_30ns_62_1_1_U26 SOURCE {} VARIABLE empty_39 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_20s_20s_20_1_1_U25 SOURCE {} VARIABLE empty_40 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_fu_340_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln31_fu_349_p2 SOURCE HLSEindoefening/hls_process_images.c:31 VARIABLE icmp_ln31 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_1_fu_358_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32_1 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_2_fu_367_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32_2 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln38_fu_430_p2 SOURCE HLSEindoefening/hls_process_images.c:38 VARIABLE icmp_ln38 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME pool_val_1_fu_434_p3 SOURCE HLSEindoefening/hls_process_images.c:38 VARIABLE pool_val_1 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln39_fu_440_p2 SOURCE HLSEindoefening/hls_process_images.c:39 VARIABLE icmp_ln39 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME pool_val_3_fu_445_p3 SOURCE HLSEindoefening/hls_process_images.c:39 VARIABLE pool_val_3 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln40_fu_452_p2 SOURCE HLSEindoefening/hls_process_images.c:40 VARIABLE icmp_ln40 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME pool_val_4_fu_457_p3 SOURCE HLSEindoefening/hls_process_images.c:40 VARIABLE pool_val_4 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln46_fu_404_p2 SOURCE HLSEindoefening/hls_process_images.c:46 VARIABLE add_ln46 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln31_fu_409_p2 SOURCE HLSEindoefening/hls_process_images.c:31 VARIABLE add_ln31 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_2_fu_415_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_2 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 0 URAM 0}} pooling_1_2 {BINDINFO {{BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub_fu_177_p2 SOURCE {} VARIABLE sub LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub2_fu_183_p2 SOURCE {} VARIABLE sub2 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_neg_fu_197_p2 SOURCE {} VARIABLE p_neg LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME p_neg_t_fu_213_p2 SOURCE {} VARIABLE p_neg_t LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME div133_fu_229_p3 SOURCE {} VARIABLE div133 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln30_fu_237_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE icmp_ln30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_fu_255_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_4_fu_275_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_4 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln30_2_fu_298_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE icmp_ln30_2 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_6_fu_303_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_6 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_30ns_62_1_1_U33 SOURCE {} VARIABLE empty_45 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_20s_20s_20_1_1_U32 SOURCE {} VARIABLE empty_46 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_fu_340_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln31_fu_349_p2 SOURCE HLSEindoefening/hls_process_images.c:31 VARIABLE icmp_ln31 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_7_fu_358_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32_7 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln32_5_fu_367_p2 SOURCE HLSEindoefening/hls_process_images.c:32 VARIABLE add_ln32_5 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln43_fu_436_p2 SOURCE HLSEindoefening/hls_process_images.c:43 VARIABLE add_ln43 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln43_1_fu_451_p2 SOURCE HLSEindoefening/hls_process_images.c:43 VARIABLE add_ln43_1 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sum_fu_461_p2 SOURCE HLSEindoefening/hls_process_images.c:43 VARIABLE sum LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln46_fu_404_p2 SOURCE HLSEindoefening/hls_process_images.c:46 VARIABLE add_ln46 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln31_fu_409_p2 SOURCE HLSEindoefening/hls_process_images.c:31 VARIABLE add_ln31 LOOP VITIS_LOOP_31_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln30_5_fu_415_p2 SOURCE HLSEindoefening/hls_process_images.c:30 VARIABLE add_ln30_5 LOOP VITIS_LOOP_30_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 6 BRAM 0 URAM 0}} Block_entry_proc_3 {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_32_1_1_U48 SOURCE {} VARIABLE mul_out_0 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln83_fu_146_p2 SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE icmp_ln83 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln88_fu_50_p2 SOURCE HLSEindoefening/hls_process_images.c:88 VARIABLE sub_ln88 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln88_1_fu_66_p2 SOURCE HLSEindoefening/hls_process_images.c:88 VARIABLE sub_ln88_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln88_fu_82_p3 SOURCE HLSEindoefening/hls_process_images.c:88 VARIABLE select_ln88 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln89_fu_98_p2 SOURCE HLSEindoefening/hls_process_images.c:89 VARIABLE sub_ln89 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln89_1_fu_114_p2 SOURCE HLSEindoefening/hls_process_images.c:89 VARIABLE sub_ln89_1 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln89_fu_130_p3 SOURCE HLSEindoefening/hls_process_images.c:89 VARIABLE select_ln89 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE mul PRAGMA {} RTLNAME mul_31s_31s_32_1_1_U47 SOURCE HLSEindoefening/hls_process_images.c:89 VARIABLE mul10_out_0 LOOP {} BUNDLEDNAME {} DSP 3 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setgt PRAGMA {} RTLNAME icmp_ln91_fu_151_p2 SOURCE HLSEindoefening/hls_process_images.c:91 VARIABLE icmp_ln91 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setgt} VISIBLE false}} AREA {DSP 6 BRAM 0 URAM 0}} Block_entry_gmem_wr_proc {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_ln83_fu_272_p2 SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE icmp_ln83 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln83_fu_277_p3 SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE select_ln83 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln83_1_fu_287_p2 SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE icmp_ln83_1 LOOP VITIS_LOOP_83_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln83_fu_292_p2 SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE add_ln83 LOOP VITIS_LOOP_83_1 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setne PRAGMA {} RTLNAME icmp_ln91_fu_308_p2 SOURCE HLSEindoefening/hls_process_images.c:91 VARIABLE icmp_ln91 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setne} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln91_fu_313_p3 SOURCE HLSEindoefening/hls_process_images.c:91 VARIABLE select_ln91 LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln91_1_fu_328_p2 SOURCE HLSEindoefening/hls_process_images.c:91 VARIABLE icmp_ln91_1 LOOP VITIS_LOOP_91_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln91_fu_333_p2 SOURCE HLSEindoefening/hls_process_images.c:91 VARIABLE add_ln91 LOOP VITIS_LOOP_91_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln93_fu_346_p2 SOURCE HLSEindoefening/hls_process_images.c:93 VARIABLE add_ln93 LOOP VITIS_LOOP_91_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln94_fu_357_p2 SOURCE HLSEindoefening/hls_process_images.c:94 VARIABLE add_ln94 LOOP VITIS_LOOP_91_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln95_fu_368_p2 SOURCE HLSEindoefening/hls_process_images.c:95 VARIABLE add_ln95 LOOP VITIS_LOOP_91_2 BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 0 BRAM 0 URAM 0}} process_images {BINDINFO {{BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME conv_output_c_U SOURCE HLSEindoefening/hls_process_images.c:73 VARIABLE conv_output_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 3 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME max_output_c_U SOURCE HLSEindoefening/hls_process_images.c:73 VARIABLE max_output_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 3 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME min_output_c_U SOURCE HLSEindoefening/hls_process_images.c:73 VARIABLE min_output_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 3 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME avg_output_c_U SOURCE HLSEindoefening/hls_process_images.c:73 VARIABLE avg_output_c LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {scalar prop} STORAGESIZE {64 3 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME conv_result_U SOURCE HLSEindoefening/hls_process_images.c:62 VARIABLE conv_result LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4096 URAM 0 STORAGESUBTYPE pipo STORAGESIZE {8 4194304 2} STORAGEUSAGE {ram_1p channel} DISPNAME {bind_storage ram_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME max_result_U SOURCE HLSEindoefening/hls_process_images.c:63 VARIABLE max_result LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1024 URAM 0 STORAGESUBTYPE pipo STORAGESIZE {8 1048576 2} STORAGEUSAGE {ram_1p channel} DISPNAME {bind_storage ram_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME min_result_U SOURCE HLSEindoefening/hls_process_images.c:64 VARIABLE min_result LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1024 URAM 0 STORAGESUBTYPE pipo STORAGESIZE {8 1048576 2} STORAGEUSAGE {ram_1p channel} DISPNAME {bind_storage ram_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME avg_result_U SOURCE HLSEindoefening/hls_process_images.c:65 VARIABLE avg_result LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1024 URAM 0 STORAGESUBTYPE pipo STORAGESIZE {8 1048576 2} STORAGEUSAGE {ram_1p channel} DISPNAME {bind_storage ram_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME mul_loc_channel_U SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE mul_loc_channel LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {task level} STORAGESIZE {32 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME cmp3_loc_channel_U SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE cmp3_loc_channel LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {task level} STORAGESIZE {1 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME mul10_loc_channel_U SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE mul10_loc_channel LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {task level} STORAGESIZE {32 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true} {BINDTYPE storage ID {} IMPL srl LATENCY 0 OPTYPE fifo PRAGMA {} RTLNAME cmp111_loc_channel_U SOURCE HLSEindoefening/hls_process_images.c:83 VARIABLE cmp111_loc_channel LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {task level} STORAGESIZE {1 2 1} STORAGEUSAGE {fifo channel} DISPNAME {bind_storage fifo} VISIBLE true}} AREA {DSP 28 BRAM 7171 URAM 0}} entry_proc {AREA {DSP 0 BRAM 0 URAM 0}} Block_entry_gmem_rd_proc {AREA {DSP 22 BRAM 0 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+Execute       send_msg_by_id INFO @200-1603@%s  and missed bursts 
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.56 seconds; current allocated memory: 462.145 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for process_images.
+INFO: [VLOG 209-307] Generating Verilog RTL for process_images.
+Execute       syn_report -model process_images -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 114.16 MHz
+Command     autosyn done; 2.654 sec.
+Command   csynth_design done; 10.545 sec.
+INFO: [HLS 200-2161] Finished Command csynth_design Elapsed time: 00:00:10; Allocated memory: 144.312 MB.
+Command ap_source done; 11.541 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/SchoolWerk/HAC/HLSEindoefening/solution1 opened at Wed May 14 20:38:06 +0200 2025
+Execute     ap_set_clock -name default -period 12 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+Execute     set_part xc7z020-clg400-1 
+Execute       create_platform xc7z020-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis/2024.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2024.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.809 sec.
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.857 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 0.872 sec.
+Execute   set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+Execute     create_platform xc7z020-clg400-1 -board  
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.123 sec.
+Execute   create_clock -period 12 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 12 -name default 
+Execute   source ./HLSEindoefening/solution1/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./HLSEindoefening/solution1/directives.tcl
+Execute     set_directive_top -name process_images process_images 
+INFO: [HLS 200-1510] Running: set_directive_top -name process_images process_images 
+WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release.
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+Execute     ::AP::init_summary_file csim 
+INFO-FLOW: Running SLX 'csim' proc: ::SLX::run_csim
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     send_msg_by_id INFO @200-2036@%s debug 
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+Execute     source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute     source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute       source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.167 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 0.56 sec.
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:00; Allocated memory: 0.488 MB.
+Command ap_source done; 1.595 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace C:/SchoolWerk/HAC/HLSEindoefening/solution1 opened at Wed May 14 20:39:49 +0200 2025
+Execute     ap_set_clock -name default -period 12 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 12ns.
+Execute     set_part xc7z020-clg400-1 
+Execute       create_platform xc7z020-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: C:/Xilinx/Vitis/2024.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: C:/Xilinx/Vivado/2024.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+Command       create_platform done; 0.784 sec.
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.836 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 0.855 sec.
+Execute   set_part xc7z020-clg400-1 
+INFO: [HLS 200-1510] Running: set_part xc7z020-clg400-1 
+Execute     create_platform xc7z020-clg400-1 -board  
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.126 sec.
+Execute   create_clock -period 12 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 12 -name default 
+Execute   source ./HLSEindoefening/solution1/directives.tcl 
+INFO: [HLS 200-1510] Running: source ./HLSEindoefening/solution1/directives.tcl
+Execute     set_directive_top -name process_images process_images 
+INFO: [HLS 200-1510] Running: set_directive_top -name process_images process_images 
+WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release.
+WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release.
+Execute   export_design -rtl verilog -format ip_catalog 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+Execute     config_export -format=ip_catalog -rtl=verilog 
+Execute     ::AP::init_summary_file package-ip 
+INFO-FLOW: DBG:PUTS: export_design_wrap: -format ip_catalog -rtl verilog
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS:   auto_impl: pack: -export -rtl verilog
+INFO-FLOW: DBG:PROC: ::AESL_AUTOIMPL::auto_impl args='-export -rtl verilog'
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO-FLOW: DBG:PUTS: automg_wrap -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate args='-export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag'
+INFO-FLOW: DBG:PUTS:     auto_generate -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=12.000 (was NA)
+INFO-FLOW: DBG:PUTS:       initCTypeInfo top_module=process_images xml_exists=0
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+INFO-FLOW: DBG:PUTS:       cosim_export_main adding deadlock detection to process_images
+INFO-FLOW: DBG:PUTS:       generate_datafile_ip_script ip_types={vitis sysgen} #gSsdmPorts=0
+INFO-FLOW: DBG:PUTS: Skipping loadAnalyze_DB, #g_database=8
+INFO-FLOW: DBG:PUTS:       generate_json generate_bd_files=0 generate_xo_files=false #modelList=29 #gSsdmPorts=0
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='false' modelList='process_images_mul_32s_31ns_63_1_1
+process_images_mul_20s_20s_20_1_1
+process_images_mul_32s_30ns_62_1_1
+process_images_mul_31s_31s_32_1_1
+process_images_mul_32s_32s_32_1_1
+process_images_conv_result_RAM_AUTO_1R1W_memcore
+process_images_conv_result_RAM_AUTO_1R1W
+process_images_max_result_RAM_AUTO_1R1W_memcore
+process_images_max_result_RAM_AUTO_1R1W
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w64_d3_S
+process_images_fifo_w32_d2_S
+process_images_fifo_w1_d2_S
+process_images_fifo_w32_d2_S
+process_images_fifo_w1_d2_S
+process_images_gmem_m_axi
+process_images_control_s_axi
+process_images_control_r_s_axi
+entry_proc
+convolution_1_1
+pooling_1_1
+pooling_2_1
+pooling_1_2
+Block_entry_gmem_rd_proc
+Block_entry_proc_3
+Block_entry_gmem_wr_proc
+process_images
+' rtl_lang='vlog' bootstrap_tcl='false' outdir='' outfilename=''
+Execute     source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute     source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute       source C:/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/top-io-be.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.rtl_wrap.cfg.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.compgen.dataonly.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/entry_proc.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/convolution_1_1.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_1.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_2_1.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/pooling_1_2.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_rd_proc.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_proc_3.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/Block_entry_gmem_wr_proc.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.constraint.tcl 
+Execute     sc_get_clocks process_images 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS:       generate_syn_sh
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS:       generate_imp_constraints
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.constraint.tcl 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/process_images.tbgen.tcl 
+INFO-FLOW: DBG:PUTS:       delete-temp-dirs (skipped for debug)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:PUTS: read_platform_lib C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/common.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op.gen 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/interface.gen 
+Execute     source C:/SchoolWerk/HAC/HLSEindoefening/solution1/.autopilot/db/global.setting.tcl 
+Execute     source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source C:/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:     IP package: exec C:/SchoolWerk/HAC/HLSEindoefening/solution1/impl/ip/pack.bat
+INFO-FLOW: DBG:PUTS:     IP package: success C:/SchoolWerk/HAC/HLSEindoefening/solution1/impl/ip/pack.bat
+Execute     send_msg_by_id INFO @200-802@%s HLSEindoefening/solution1/impl/export.zip 
+INFO: [HLS 200-802] Generated output file HLSEindoefening/solution1/impl/export.zip
+Command   export_design done; 7.979 sec.
+INFO: [HLS 200-2161] Finished Command export_design Elapsed time: 00:00:07; Allocated memory: 8.441 MB.
+Command ap_source done; 8.997 sec.
 Execute cleanup_all 

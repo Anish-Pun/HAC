@@ -1,0 +1,171 @@
+
+
+================================================================
+== Vitis HLS Report for 'Block_entry_gmem_rd_proc'
+================================================================
+* Date:           Wed May 14 20:37:44 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        HLSEindoefening
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  12.00 ns|  8.760 ns|     3.24 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        ?|        ?|         ?|         ?|    ?|    ?|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 8
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.55>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%img_width_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %img_width" [HLSEindoefening/hls_process_images.c:76]   --->   Operation 9 'read' 'img_width_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%img_height_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %img_height" [HLSEindoefening/hls_process_images.c:76]   --->   Operation 10 'read' 'img_height_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%input_r_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %input_r" [HLSEindoefening/hls_process_images.c:76]   --->   Operation 11 'read' 'input_r_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [2/2] (2.55ns)   --->   "%call_ln76 = call void @convolution.1.1, i8 %gmem, i64 %input_r_read, i8 %conv_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:76]   --->   Operation 12 'call' 'call_ln76' <Predicate = true> <Delay = 2.55> <CoreType = "Generic">   --->   Generic Core
+
+State 2 <SV = 1> <Delay = 2.55>
+ST_2 : Operation 13 [1/2] (2.55ns)   --->   "%call_ln76 = call void @convolution.1.1, i8 %gmem, i64 %input_r_read, i8 %conv_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:76]   --->   Operation 13 'call' 'call_ln76' <Predicate = true> <Delay = 2.55> <CoreType = "Generic">   --->   Generic Core
+
+State 3 <SV = 2> <Delay = 7.56>
+ST_3 : Operation 14 [2/2] (7.56ns)   --->   "%call_ln79 = call void @pooling.1.1, i8 %gmem, i64 %input_r_read, i8 %max_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:79]   --->   Operation 14 'call' 'call_ln79' <Predicate = true> <Delay = 7.56> <CoreType = "Generic">   --->   Generic Core
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 15 [1/2] (0.00ns)   --->   "%call_ln79 = call void @pooling.1.1, i8 %gmem, i64 %input_r_read, i8 %max_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:79]   --->   Operation 15 'call' 'call_ln79' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 5 <SV = 4> <Delay = 7.56>
+ST_5 : Operation 16 [2/2] (7.56ns)   --->   "%call_ln80 = call void @pooling.2.1, i8 %gmem, i64 %input_r_read, i8 %min_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:80]   --->   Operation 16 'call' 'call_ln80' <Predicate = true> <Delay = 7.56> <CoreType = "Generic">   --->   Generic Core
+
+State 6 <SV = 5> <Delay = 0.00>
+ST_6 : Operation 17 [1/2] (0.00ns)   --->   "%call_ln80 = call void @pooling.2.1, i8 %gmem, i64 %input_r_read, i8 %min_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:80]   --->   Operation 17 'call' 'call_ln80' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+
+State 7 <SV = 6> <Delay = 7.56>
+ST_7 : Operation 18 [2/2] (7.56ns)   --->   "%call_ln81 = call void @pooling.1.2, i8 %gmem, i64 %input_r_read, i8 %avg_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:81]   --->   Operation 18 'call' 'call_ln81' <Predicate = true> <Delay = 7.56> <CoreType = "Generic">   --->   Generic Core
+
+State 8 <SV = 7> <Delay = 0.00>
+ST_8 : Operation 19 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem, void @empty, i32 0, i32 0, void @empty_0, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_0, i32 16, i32 16, i32 16, i32 16, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 19 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 20 [1/2] (0.00ns)   --->   "%call_ln81 = call void @pooling.1.2, i8 %gmem, i64 %input_r_read, i8 %avg_result, i32 %img_height_read, i32 %img_width_read" [HLSEindoefening/hls_process_images.c:81]   --->   Operation 20 'call' 'call_ln81' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Generic Core
+ST_8 : Operation 21 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 21 'ret' 'ret_ln0' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 12.000ns, clock uncertainty: 3.240ns.
+
+ <State 1>: 2.552ns
+The critical path consists of the following:
+	wire read operation ('img_width_read', HLSEindoefening/hls_process_images.c:76) on port 'img_width' (HLSEindoefening/hls_process_images.c:76) [10]  (0.000 ns)
+	'call' operation 0 bit ('call_ln76', HLSEindoefening/hls_process_images.c:76) to 'convolution.1.1' [13]  (2.552 ns)
+
+ <State 2>: 2.552ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln76', HLSEindoefening/hls_process_images.c:76) to 'convolution.1.1' [13]  (2.552 ns)
+
+ <State 3>: 7.567ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln79', HLSEindoefening/hls_process_images.c:79) to 'pooling.1.1' [14]  (7.567 ns)
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 7.567ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln80', HLSEindoefening/hls_process_images.c:80) to 'pooling.2.1' [15]  (7.567 ns)
+
+ <State 6>: 0.000ns
+The critical path consists of the following:
+
+ <State 7>: 7.567ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln81', HLSEindoefening/hls_process_images.c:81) to 'pooling.1.2' [16]  (7.567 ns)
+
+ <State 8>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
