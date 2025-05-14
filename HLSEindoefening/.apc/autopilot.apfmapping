@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="hls_process_images.c" path="C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.c"/>
+    <originFiles name="hls_process_images.h" path="C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images.h"/>
+  </source>
+  <testbench>
+    <originFiles name="hls_process_images_tb.c" path="C:\SchoolWerk\HAC\HLSEindoefening\hls_process_images_tb.c"/>
+    <originFiles name="stb_image_write.h" path="C:\SchoolWerk\HAC\HLSEindoefening\stb_image_write.h"/>
+    <originFiles name="stb_image.h" path="C:\SchoolWerk\HAC\HLSEindoefening\stb_image.h"/>
+    <originFiles name="input.png" path="C:\SchoolWerk\HAC\HLSEindoefening\input.png"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

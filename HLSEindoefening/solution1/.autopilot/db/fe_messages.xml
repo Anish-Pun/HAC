@@ -1,0 +1,65 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/SchoolWerk/HAC/HLSEindoefening/solution1/csynth.tcl:19:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=process_images" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/SchoolWerk/HAC/HLSEindoefening/solution1/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=process_images" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:58:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=input offset=slave bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:59:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=conv_output offset=slave bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:60:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=max_output offset=slave bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:61:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=min_output offset=slave bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:62:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=avg_output offset=slave bundle=gmem" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:63:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:91:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:101:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="process_images" ARG_PragmaIsValid="1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="HLSEindoefening/hls_process_images.c:57:0" msg_body="Inlining function 'convolution' into 'process_images'">
+        <args Callee="convolution" Callee-DebugLoc="File HLSEindoefening/hls_process_images.c Line 4 Column 0" Caller="process_images" Caller-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="HLSEindoefening/hls_process_images.c:57:0" msg_body="Inlining function 'max_pooling' into 'process_images'">
+        <args Callee="max_pooling" Callee-DebugLoc="File HLSEindoefening/hls_process_images.c Line 21 Column 0" Caller="process_images" Caller-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="HLSEindoefening/hls_process_images.c:57:0" msg_body="Inlining function 'min_pooling' into 'process_images'">
+        <args Callee="min_pooling" Callee-DebugLoc="File HLSEindoefening/hls_process_images.c Line 34 Column 0" Caller="process_images" Caller-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="HLSEindoefening/hls_process_images.c:57:0" msg_body="Inlining function 'average_pooling' into 'process_images'">
+        <args Callee="average_pooling" Callee-DebugLoc="File HLSEindoefening/hls_process_images.c Line 47 Column 0" Caller="process_images" Caller-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-143" msg_severity="ERROR" msg_loc="HLSEindoefening/hls_process_images.c:65:2" msg_body="in function 'process_images': Arrays must be specified with a constant size">
+        <args Function="process_images" Function-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-143" msg_severity="ERROR" msg_loc="HLSEindoefening/hls_process_images.c:66:5" msg_body="in function 'process_images': Arrays must be specified with a constant size">
+        <args Function="process_images" Function-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-143" msg_severity="ERROR" msg_loc="HLSEindoefening/hls_process_images.c:67:5" msg_body="in function 'process_images': Arrays must be specified with a constant size">
+        <args Function="process_images" Function-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-143" msg_severity="ERROR" msg_loc="HLSEindoefening/hls_process_images.c:68:5" msg_body="in function 'process_images': Arrays must be specified with a constant size">
+        <args Function="process_images" Function-DebugLoc="File HLSEindoefening/hls_process_images.c Line 57 Column 0"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:15:39" msg_body="Ignore address on register port 'vla'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:28:57" msg_body="Ignore address on register port 'vla3'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:41:57" msg_body="Ignore address on register port 'vla7'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:51:57" msg_body="Ignore address on register port 'vla11'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:92:35" msg_body="Ignore address on register port 'vla'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:102:37" msg_body="Ignore address on register port 'vla3'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:103:48" msg_body="Ignore address on register port 'vla7'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="HLSEindoefening/hls_process_images.c:104:48" msg_body="Ignore address on register port 'vla11'"/>
+</xilinx:hls_fe_msgs>
+

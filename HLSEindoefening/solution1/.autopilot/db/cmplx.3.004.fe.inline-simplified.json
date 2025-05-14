@@ -1,0 +1,20 @@
+{
+  "0": {
+    "basicblocks": 54,
+    "calls": "",
+    "file": "hls_process_images.c",
+    "fileloc": 57,
+    "instructions": 266,
+    "loads": {
+      "G": 1,
+      "L": 4,
+      "T": 13
+    },
+    "name": "process_images",
+    "stores": {
+      "L": 4,
+      "T": 4
+    },
+    "total_instructions": 266
+  }
+}

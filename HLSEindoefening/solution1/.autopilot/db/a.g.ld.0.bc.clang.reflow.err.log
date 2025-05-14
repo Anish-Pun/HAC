@@ -1,0 +1,26 @@
+remark: HLSEindoefening/hls_process_images.c:77:5: convolution not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:80:5: max_pooling not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:83:5: min_pooling not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:86:5: average_pooling not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:77:5: convolution not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:80:5: max_pooling not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:83:5: min_pooling not inlined into process_images because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:86:5: average_pooling not inlined into process_images because it should never be inlined (cost=never)
+remark: <unknown>:0:0: process_images not inlined into apatb_process_images_ir because it should never be inlined (cost=never)
+remark: HLSEindoefening/hls_process_images.c:57:0: Inlining function 'convolution' into 'process_images'
+remark: HLSEindoefening/hls_process_images.c:57:0: Inlining function 'max_pooling' into 'process_images'
+remark: HLSEindoefening/hls_process_images.c:57:0: Inlining function 'min_pooling' into 'process_images'
+remark: HLSEindoefening/hls_process_images.c:57:0: Inlining function 'average_pooling' into 'process_images'
+error: HLSEindoefening/hls_process_images.c:65:2: in function 'process_images': Arrays must be specified with a constant size
+error: HLSEindoefening/hls_process_images.c:66:5: in function 'process_images': Arrays must be specified with a constant size
+error: HLSEindoefening/hls_process_images.c:67:5: in function 'process_images': Arrays must be specified with a constant size
+error: HLSEindoefening/hls_process_images.c:68:5: in function 'process_images': Arrays must be specified with a constant size
+warning: HLSEindoefening/hls_process_images.c:15:39: Ignore address on register port 'vla'
+warning: HLSEindoefening/hls_process_images.c:28:57: Ignore address on register port 'vla3'
+warning: HLSEindoefening/hls_process_images.c:41:57: Ignore address on register port 'vla7'
+warning: HLSEindoefening/hls_process_images.c:51:57: Ignore address on register port 'vla11'
+warning: HLSEindoefening/hls_process_images.c:92:35: Ignore address on register port 'vla'
+warning: HLSEindoefening/hls_process_images.c:102:37: Ignore address on register port 'vla3'
+warning: HLSEindoefening/hls_process_images.c:103:48: Ignore address on register port 'vla7'
+warning: HLSEindoefening/hls_process_images.c:104:48: Ignore address on register port 'vla11'
+error: Syn check fail!

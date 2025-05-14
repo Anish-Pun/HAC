@@ -1,0 +1,366 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 77, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          convolution
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 4, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 80, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          max_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 21, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 83, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          min_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 34, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 86, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          average_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 47, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 77, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          convolution
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 4, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 80, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          max_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 21, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 83, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          min_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 34, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 86, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - Callee:          average_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 47, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_process_images_ir
+Args:            
+  - Callee:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_process_images_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                   Column: 0 }
+Function:        process_images
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          convolution
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 4, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                   Column: 0 }
+Function:        process_images
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          max_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 21, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                   Column: 0 }
+Function:        process_images
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          min_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 34, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                   Column: 0 }
+Function:        process_images
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          average_pooling
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 47, 
+                       Column: 0 }
+  - String:          ''' into '''
+  - Caller:          process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''''
+...
+--- !HLSUnsupported
+Pass:            reflow-syncheck
+Name:            UnsupportedNonConstSizeArray
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 65, 
+                   Column: 2 }
+Function:        process_images
+Args:            
+  - String:          'in function '''
+  - Function:        process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''': '
+  - String:          Arrays must be specified with a constant size
+...
+--- !HLSUnsupported
+Pass:            reflow-syncheck
+Name:            UnsupportedNonConstSizeArray
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 66, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - String:          'in function '''
+  - Function:        process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''': '
+  - String:          Arrays must be specified with a constant size
+...
+--- !HLSUnsupported
+Pass:            reflow-syncheck
+Name:            UnsupportedNonConstSizeArray
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 67, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - String:          'in function '''
+  - Function:        process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''': '
+  - String:          Arrays must be specified with a constant size
+...
+--- !HLSUnsupported
+Pass:            reflow-syncheck
+Name:            UnsupportedNonConstSizeArray
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 68, 
+                   Column: 5 }
+Function:        process_images
+Args:            
+  - String:          'in function '''
+  - Function:        process_images
+    DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 57, 
+                       Column: 0 }
+  - String:          ''': '
+  - String:          Arrays must be specified with a constant size
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 15, 
+                   Column: 39 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 28, 
+                   Column: 57 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla3
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 41, 
+                   Column: 57 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla7
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 51, 
+                   Column: 57 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla11
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 92, 
+                   Column: 35 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 102, 
+                   Column: 37 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla3
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 103, 
+                   Column: 48 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla7
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: HLSEindoefening/hls_process_images.c, Line: 104, 
+                   Column: 48 }
+Function:        process_images
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          vla11
+  - String:          ''''
+...
+--- !HLSReportFatalError
+Pass:            reflow-syncheck
+Name:            SynCheckError
+Args:            
+  - Msg:             'Syn check fail!'
+...

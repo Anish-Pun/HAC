@@ -1,0 +1,9 @@
+{
+	"version": "1.0",
+	"modules": {
+		"process_images": {
+			"proto_instances": {
+			}
+		}
+	}
+}

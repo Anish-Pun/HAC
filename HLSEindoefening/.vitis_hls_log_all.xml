@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog>
+        <logs message="ERROR: [HLS 200-1715] Encountered problem during source synthesis" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.607+0200"/>
+        <logs message="ERROR: [HLS 214-135] Syn check fail!" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.601+0200"/>
+        <logs message="ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:68:5)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.547+0200"/>
+        <logs message="ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:67:5)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.542+0200"/>
+        <logs message="ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:66:5)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.536+0200"/>
+        <logs message="ERROR: [HLS 214-143] in function 'process_images': Arrays must be specified with a constant size (HLSEindoefening/hls_process_images.c:65:2)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.529+0200"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla11' (HLSEindoefening/hls_process_images.c:104:48)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.594+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla7' (HLSEindoefening/hls_process_images.c:103:48)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.587+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla3' (HLSEindoefening/hls_process_images.c:102:37)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.581+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla' (HLSEindoefening/hls_process_images.c:92:35)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.575+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla11' (HLSEindoefening/hls_process_images.c:51:57)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.569+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla7' (HLSEindoefening/hls_process_images.c:41:57)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.565+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla3' (HLSEindoefening/hls_process_images.c:28:57)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.559+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 214-450] Ignore address on register port 'vla' (HLSEindoefening/hls_process_images.c:15:39)" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:38.553+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:30.836+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:30.828+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xD;&#xA;Sourcing Tcl script 'C:/SchoolWerk/HAC/HLSEindoefening/solution1/csynth.tcl'" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-14T15:16:29.801+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
