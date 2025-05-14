@@ -1,6 +1,28 @@
 # Running the Project in CUDA
 
-*Instructions for running the CUDA version will be added soon.*
+*More Instructions for running the CUDA version will be added soon.*
+## Requirements
+
+- NVIDIA Jetson Nano
+- microSD card
+- Keyboard, mouse, HDMI display
+- Internet connection via ethernet or USB Wi-Fi adapter
+- CUDA Toolkit installed on Jetson Nano
+
+### Setting Up Jetson Nano
+
+1. **Download Jetson Nano SD Card Image**  
+   - Go to the [NVIDIA Jetson Download Center](https://developer.nvidia.com/embedded/downloads).
+   - Choose the appropriate version (JetPack 4.6.1 is recommended for stability).
+
+2. **Flash the microSD Card**  
+   - Use [Balena Etcher](https://www.balena.io/etcher/) to flash the `.img` file to your microSD card.
+
+3. **Boot and Initial Setup**  
+   - Insert the microSD card into the Jetson Nano.
+   - Connect peripherals (keyboard, mouse, HDMI display).
+   - Power on the device and follow the on-screen setup wizard (user settings, Wi-Fi, etc.).
+
 ---
 
 # Running the Project in Standard C
