@@ -34,6 +34,11 @@ This project is a CUDA application developed for the NVIDIA Jetson Nano. It proc
 - `stb_image.h` and `stb_image_write.h` for image I/O
 
 ---
+## How to Run
+
+See [detailed instructions](INSTRUCTIONS.md) for the project.
+
+---
 
 ## Contributing
 - [Anish](https://github.com/Anish-Pun)
