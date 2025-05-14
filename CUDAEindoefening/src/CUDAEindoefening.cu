@@ -143,12 +143,15 @@ int main() {
     size_t pooled_img_size = pooled_width * pooled_height * channels * sizeof(unsigned char);
 
     // === Device memory ===
-    unsigned char *d_input, *d_output_full, *d_output_pooled;
+    unsigned char *d_input;
+    unsigned char *d_output_conv, *d_output_max, *d_output_min, *d_output_avg;
     int* d_kernel;
 
     cudaMalloc(&d_input, img_size);
-    cudaMalloc(&d_output_full, img_size);
-    cudaMalloc(&d_output_pooled, pooled_img_size);
+    cudaMalloc(&d_output_conv, img_size);
+    cudaMalloc(&d_output_max, pooled_img_size);
+    cudaMalloc(&d_output_min, pooled_img_size);
+    cudaMalloc(&d_output_avg, pooled_img_size);
     cudaMalloc(&d_kernel, kernelSize * kernelSize * sizeof(int));
 
     cudaMemcpy(d_input, input_image, img_size, cudaMemcpyHostToDevice);
@@ -159,8 +162,10 @@ int main() {
     dim3 gridDim_pooled((pooled_width + blockDim.x - 1) / blockDim.x, (pooled_height + blockDim.y - 1) / blockDim.y);
 
     // === Host result buffers ===
-    unsigned char* result_full = (unsigned char*)malloc(img_size);
-    unsigned char* result_pooled = (unsigned char*)malloc(pooled_img_size);
+    unsigned char* result_conv = (unsigned char*)malloc(img_size);
+    unsigned char* result_max  = (unsigned char*)malloc(pooled_img_size);
+    unsigned char* result_min  = (unsigned char*)malloc(pooled_img_size);
+    unsigned char* result_avg  = (unsigned char*)malloc(pooled_img_size);
 
     // === Create CUDA streams ===
     cudaStream_t stream1, stream2, stream3, stream4;
@@ -170,29 +175,31 @@ int main() {
     cudaStreamCreate(&stream4);
     
     // === CONVOLUTION ===
-    convolution_cuda<<<gridDim_full, blockDim, 0, stream1>>>(d_input, d_output_full, width, height, channels, d_kernel, kernelSize);
-    
+    convolution_cuda<<<gridDim_full, blockDim, 0, stream1>>>(d_input, d_output_conv, width, height, channels, d_kernel, kernelSize);
+
     // === MAX POOLING ===
-    max_pooling<<<gridDim_pooled, blockDim, 0, stream2>>>(d_input, d_output_pooled, width, height, channels);
+    max_pooling<<<gridDim_pooled, blockDim, 0, stream2>>>(d_input, d_output_max, width, height, channels);
 
     // === MIN POOLING ===
-    min_pooling<<<gridDim_pooled, blockDim, 0, stream3>>>(d_input, d_output_pooled, width, height, channels);
+    min_pooling<<<gridDim_pooled, blockDim, 0, stream3>>>(d_input, d_output_min, width, height, channels);
 
     // === AVERAGE POOLING ===
-    average_pooling<<<gridDim_pooled, blockDim, 0, stream4>>>(d_input, d_output_pooled, width, height, channels);
+    average_pooling<<<gridDim_pooled, blockDim, 0, stream4>>>(d_input, d_output_avg, width, height, channels);
 
     // === Synchronize streams ===
     cudaDeviceSynchronize();
 
     // === Copy results to host ===
-    cudaMemcpy(result_full, d_output_full, img_size, cudaMemcpyDeviceToHost);
-    cudaMemcpy(result_pooled, d_output_pooled, pooled_img_size, cudaMemcpyDeviceToHost);
+    cudaMemcpy(result_conv, d_output_conv, img_size, cudaMemcpyDeviceToHost);
+    cudaMemcpy(result_max,  d_output_max,  pooled_img_size, cudaMemcpyDeviceToHost);
+    cudaMemcpy(result_min,  d_output_min,  pooled_img_size, cudaMemcpyDeviceToHost);
+    cudaMemcpy(result_avg,  d_output_avg,  pooled_img_size, cudaMemcpyDeviceToHost);
 
     // === Save results ===
-    stbi_write_png("convolution.png", width, height, channels, result_full, width * channels);
-    stbi_write_png("max_pooling.png", pooled_width, pooled_height, channels, result_pooled, pooled_width * channels);
-    stbi_write_png("min_pooling.png", pooled_width, pooled_height, channels, result_pooled, pooled_width * channels);
-    stbi_write_png("average_pooling.png", pooled_width, pooled_height, channels, result_pooled, pooled_width * channels);
+    stbi_write_png("convolution.png", width, height, channels, result_conv, width * channels);
+    stbi_write_png("max_pooling.png", pooled_width, pooled_height, channels, result_max, pooled_width * channels);
+    stbi_write_png("min_pooling.png", pooled_width, pooled_height, channels, result_min, pooled_width * channels);
+    stbi_write_png("average_pooling.png", pooled_width, pooled_height, channels, result_avg, pooled_width * channels);
 
     // === Output ===
     printf("Afbeeldingen opgeslagen:\n");
@@ -203,11 +210,16 @@ int main() {
 
     // === Cleanup ===
     stbi_image_free(input_image);
-    free(result_full);
-    free(result_pooled);
+    free(result_conv);
+    free(result_max);
+    free(result_min);
+    free(result_avg);
+
     cudaFree(d_input);
-    cudaFree(d_output_full);
-    cudaFree(d_output_pooled);
+    cudaFree(d_output_conv);
+    cudaFree(d_output_max);
+    cudaFree(d_output_min);
+    cudaFree(d_output_avg);
     cudaFree(d_kernel);
 
     // === Destroy streams ===
