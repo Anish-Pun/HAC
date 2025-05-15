@@ -1,0 +1,11 @@
+{
+  "0": {
+    "basicblocks": 27,
+    "calls": "",
+    "file": "HLS.c",
+    "fileloc": 66,
+    "instructions": 259,
+    "name": "full_pipeline",
+    "total_instructions": 259
+  }
+}

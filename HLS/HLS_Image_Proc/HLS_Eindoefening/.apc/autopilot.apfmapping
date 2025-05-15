@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="HLS.c" path="C:\HAC\HLS_Image_Proc\Include\HLS.c"/>
+    <originFiles name="HLS.h" path="C:\HAC\HLS_Image_Proc\Include\HLS.h"/>
+    <originFiles name="stb_image.h" path="C:\HAC\HLS_Image_Proc\Include\stb_image.h"/>
+    <originFiles name="stb_image_write.h" path="C:\HAC\HLS_Image_Proc\Include\stb_image_write.h"/>
+  </source>
+  <testbench>
+    <originFiles name="HLS_TB.c" path="C:\HAC\HLS_Image_Proc\Include\HLS_TB.c"/>
+    <originFiles name="input1.png" path="C:\HAC\HLS_Image_Proc\Include\input1.png"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

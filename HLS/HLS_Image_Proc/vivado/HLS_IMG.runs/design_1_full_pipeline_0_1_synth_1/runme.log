@@ -1,0 +1,1004 @@
+
+*** Running vivado
+    with args -log design_1_full_pipeline_0_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_full_pipeline_0_1.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Thu May 15 15:38:52 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_full_pipeline_0_1.tcl -notrace
+create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 486.859 ; gain = 202.008
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/HAC/HLS_Image_Proc/HLS_Eindoefening/solution1/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_full_pipeline_0_1
+Command: synth_design -top design_1_full_pipeline_0_1 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 17772
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1375.457 ; gain = 448.480
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_full_pipeline_0_1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ip/design_1_full_pipeline_0_1/synth/design_1_full_pipeline_0_1.vhd:121]
+	Parameter C_S_AXI_CONTROL_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_S_AXI_CONTROL_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_GMEM_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_GMEM_ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXI_GMEM_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_GMEM_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_GMEM_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_GMEM_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_GMEM_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_GMEM_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_GMEM_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_M_AXI_GMEM_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_M_AXI_GMEM_CACHE_VALUE bound to: 3 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:11' bound to instance 'U0' of component 'full_pipeline' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ip/design_1_full_pipeline_0_1/synth/design_1_full_pipeline_0_1.vhd:293]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:95]
+INFO: [Synth 8-3491] module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.vhd:11' bound to instance 'grp_full_pipeline_Pipeline_VITIS_LOOP_6_2_fu_193' of component 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:920]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.vhd:81]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_mul_32s_32s_32_2_1' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_mul_32s_32s_32_2_1.vhd:7' bound to instance 'mul_32s_32s_32_2_1_U1' of component 'full_pipeline_mul_32s_32s_32_2_1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.vhd:301]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_mul_32s_32s_32_2_1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_mul_32s_32s_32_2_1.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_mul_32s_32s_32_2_1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_mul_32s_32s_32_2_1.vhd:27]
+INFO: [Synth 8-3491] module 'full_pipeline_flow_control_loop_pipe_sequential_init' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_flow_control_loop_pipe_sequential_init.vhd:13' bound to instance 'flow_control_loop_pipe_sequential_init_U' of component 'full_pipeline_flow_control_loop_pipe_sequential_init' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.vhd:316]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_flow_control_loop_pipe_sequential_init' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_flow_control_loop_pipe_sequential_init.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_flow_control_loop_pipe_sequential_init' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_flow_control_loop_pipe_sequential_init.vhd:39]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.vhd:81]
+INFO: [Synth 8-3491] module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2.vhd:11' bound to instance 'grp_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2_fu_212' of component 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:988]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2.vhd:73]
+INFO: [Synth 8-3491] module 'full_pipeline_flow_control_loop_pipe_sequential_init' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_flow_control_loop_pipe_sequential_init.vhd:13' bound to instance 'flow_control_loop_pipe_sequential_init_U' of component 'full_pipeline_flow_control_loop_pipe_sequential_init' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2.vhd:285]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2.vhd:73]
+INFO: [Synth 8-3491] module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2.vhd:11' bound to instance 'grp_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_fu_223' of component 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:1048]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2.vhd:73]
+INFO: [Synth 8-3491] module 'full_pipeline_flow_control_loop_pipe_sequential_init' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_flow_control_loop_pipe_sequential_init.vhd:13' bound to instance 'flow_control_loop_pipe_sequential_init_U' of component 'full_pipeline_flow_control_loop_pipe_sequential_init' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2.vhd:285]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2.vhd:73]
+INFO: [Synth 8-3491] module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2.vhd:11' bound to instance 'grp_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2_fu_234' of component 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:1108]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2.vhd:73]
+INFO: [Synth 8-3491] module 'full_pipeline_flow_control_loop_pipe_sequential_init' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_flow_control_loop_pipe_sequential_init.vhd:13' bound to instance 'flow_control_loop_pipe_sequential_init_U' of component 'full_pipeline_flow_control_loop_pipe_sequential_init' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2.vhd:301]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2.vhd:73]
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 7 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_control_s_axi' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_control_s_axi.vhd:12' bound to instance 'control_s_axi_U' of component 'full_pipeline_control_s_axi' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:1168]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_control_s_axi' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_control_s_axi.vhd:113]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_control_s_axi' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_control_s_axi.vhd:113]
+	Parameter CONSERVATIVE bound to: 1 - type: integer 
+	Parameter USER_MAXREQS bound to: 7 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter C_M_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter CH0_USER_RFIFONUM_WIDTH bound to: 9 - type: integer 
+	Parameter CH0_USER_DW bound to: 32 - type: integer 
+	Parameter CH0_USER_AW bound to: 64 - type: integer 
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:15' bound to instance 'gmem_m_axi_U' of component 'full_pipeline_gmem_m_axi' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:1207]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:124]
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter BUS_ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter BUS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 64 - type: integer 
+	Parameter USER_MAXREQS bound to: 7 - type: integer 
+	Parameter USER_RFIFONUM_WIDTH bound to: 9 - type: integer 
+	Parameter BUFFER_IMPL bound to: block - type: string 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_load' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:521' bound to instance 'load_unit' of component 'full_pipeline_gmem_m_axi_load' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:327]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_load' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:558]
+	Parameter DATA_WIDTH bound to: 96 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_rreq' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:660]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 96 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_srl' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3497' bound to instance 'U_ffo_srl' of component 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3391]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_srl' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 34 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'buff_rdata' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:727]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 34 - type: integer 
+	Parameter ADDR_WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 256 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_mem' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3564' bound to instance 'U_ffo_mem' of component 'full_pipeline_gmem_m_axi_mem' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3446]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_mem' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3582]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_mem' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3582]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_load' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:558]
+	Parameter C_TARGET_ADDR bound to: 0 - type: integer 
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter BUS_ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter BUS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter USER_DW bound to: 32 - type: integer 
+	Parameter USER_AW bound to: 64 - type: integer 
+	Parameter USER_MAXREQS bound to: 7 - type: integer 
+	Parameter BUFFER_IMPL bound to: block - type: string 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_store' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1111' bound to instance 'store_unit' of component 'full_pipeline_gmem_m_axi_store' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:363]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_store' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1150]
+	Parameter DATA_WIDTH bound to: 96 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_wreq' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1258]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 36 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'buff_wdata' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1325]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized4' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter MEM_STYLE bound to: block - type: string 
+	Parameter DATA_WIDTH bound to: 36 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_mem' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3564' bound to instance 'U_ffo_mem' of component 'full_pipeline_gmem_m_axi_mem' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3446]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_mem__parameterized1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3582]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_mem__parameterized1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3582]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized4' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_wrsp' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1780]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized6' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_srl' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3497' bound to instance 'U_ffo_srl' of component 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3391]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized6' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'user_resp' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1797]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized8' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 3 - type: integer 
+	Parameter DEPTH bound to: 7 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_srl' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3497' bound to instance 'U_ffo_srl' of component 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3391]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized3' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized3' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized8' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_store' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1150]
+	Parameter NUM_READ_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_READ_BURST_LENGTH bound to: 16 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_ARUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_RUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter BUS_ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter BUS_DATA_WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_read' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1833' bound to instance 'bus_read' of component 'full_pipeline_gmem_m_axi_read' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:401]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_read' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1881]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_BURST_LENGTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_burst_converter' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2499' bound to instance 'rreq_burst_conv' of component 'full_pipeline_gmem_m_axi_burst_converter' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1980]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_burst_converter' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2526]
+	Parameter DATA_WIDTH bound to: 96 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_reg_slice' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3132' bound to instance 'rs_req' of component 'full_pipeline_gmem_m_axi_reg_slice' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2602]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_reg_slice' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_reg_slice' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_burst_converter' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2526]
+	Parameter DATA_WIDTH bound to: 33 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_reg_slice' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3132' bound to instance 'rs_rdata' of component 'full_pipeline_gmem_m_axi_reg_slice' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2019]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_reg_slice__parameterized1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_reg_slice__parameterized1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_rctl' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2032]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_burst' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2049]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_read' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:1881]
+	Parameter CONSERVATIVE bound to: 1 - type: integer 
+	Parameter C_M_AXI_ID_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_AWUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_WUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_M_AXI_BUSER_WIDTH bound to: 1 - type: integer 
+	Parameter C_USER_VALUE bound to: 0 - type: integer 
+	Parameter C_PROT_VALUE bound to: 0 - type: integer 
+	Parameter C_CACHE_VALUE bound to: 3 - type: integer 
+	Parameter BUS_ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter BUS_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter NUM_WRITE_OUTSTANDING bound to: 16 - type: integer 
+	Parameter MAX_WRITE_BURST_LENGTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_write' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2087' bound to instance 'bus_write' of component 'full_pipeline_gmem_m_axi_write' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:451]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_write' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2143]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter MAX_BURST_LENGTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_burst_converter' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2499' bound to instance 'wreq_burst_conv' of component 'full_pipeline_gmem_m_axi_burst_converter' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2289]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_burst' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2327]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized10' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 8 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_srl' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3497' bound to instance 'U_ffo_srl' of component 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3391]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized5' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized5' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized10' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter CONSERVATIVE bound to: 1 - type: integer 
+	Parameter USED_FIX bound to: 0 - type: bool 
+	Parameter ADDR_WIDTH bound to: 64 - type: integer 
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+	Parameter MAXREQS bound to: 16 - type: integer 
+	Parameter AVERAGE_MODE bound to: 0 - type: bool 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_throttle' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2848' bound to instance 'wreq_throttl' of component 'full_pipeline_gmem_m_axi_throttle' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2417]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_throttle' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2905]
+	Parameter DATA_WIDTH bound to: 72 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'req_fifo' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3047]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized12' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 72 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_srl' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3497' bound to instance 'U_ffo_srl' of component 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3391]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized7' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized7' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized12' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 72 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_reg_slice' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3132' bound to instance 'rs_req' of component 'full_pipeline_gmem_m_axi_reg_slice' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3064]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_reg_slice__parameterized3' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_reg_slice__parameterized3' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+	Parameter DATA_WIDTH bound to: 37 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'data_fifo' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3106]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized14' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+	Parameter DATA_WIDTH bound to: 37 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_srl' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3497' bound to instance 'U_ffo_srl' of component 'full_pipeline_gmem_m_axi_srl' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3391]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized9' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_srl__parameterized9' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3513]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_fifo__parameterized14' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3276]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_throttle' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2905]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_reg_slice' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3132' bound to instance 'rs_resp' of component 'full_pipeline_gmem_m_axi_reg_slice' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2455]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_gmem_m_axi_reg_slice__parameterized5' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_reg_slice__parameterized5' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3149]
+	Parameter DATA_WIDTH bound to: 1 - type: integer 
+	Parameter ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter DEPTH bound to: 16 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_gmem_m_axi_fifo' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:3257' bound to instance 'fifo_resp' of component 'full_pipeline_gmem_m_axi_fifo' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2468]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi_write' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:2143]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_gmem_m_axi' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_gmem_m_axi.vhd:124]
+	Parameter ID bound to: 1 - type: integer 
+	Parameter NUM_STAGE bound to: 2 - type: integer 
+	Parameter din0_WIDTH bound to: 32 - type: integer 
+	Parameter din1_WIDTH bound to: 32 - type: integer 
+	Parameter dout_WIDTH bound to: 64 - type: integer 
+INFO: [Synth 8-3491] module 'full_pipeline_mul_32ns_32ns_64_2_1' declared at 'c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_mul_32ns_32ns_64_2_1.vhd:7' bound to instance 'mul_32ns_32ns_64_2_1_U35' of component 'full_pipeline_mul_32ns_32ns_64_2_1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:1297]
+INFO: [Synth 8-638] synthesizing module 'full_pipeline_mul_32ns_32ns_64_2_1' [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_mul_32ns_32ns_64_2_1.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline_mul_32ns_32ns_64_2_1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_mul_32ns_32ns_64_2_1.vhd:27]
+INFO: [Synth 8-256] done synthesizing module 'full_pipeline' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline.vhd:95]
+INFO: [Synth 8-256] done synthesizing module 'design_1_full_pipeline_0_1' (0#1) [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ip/design_1_full_pipeline_0_1/synth/design_1_full_pipeline_0_1.vhd:121]
+WARNING: [Synth 8-6014] Unused sequential element int_ap_done_reg was removed.  [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ipshared/e873/hdl/vhdl/full_pipeline_control_s_axi.vhd:393]
+WARNING: [Synth 8-7129] Port reset in module full_pipeline_mul_32ns_32ns_64_2_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_BID[0] in module full_pipeline_gmem_m_axi_write is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_BRESP[1] in module full_pipeline_gmem_m_axi_write is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_BRESP[0] in module full_pipeline_gmem_m_axi_write is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_BUSER[0] in module full_pipeline_gmem_m_axi_write is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_RID[0] in module full_pipeline_gmem_m_axi_read is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_RRESP[1] in module full_pipeline_gmem_m_axi_read is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_RRESP[0] in module full_pipeline_gmem_m_axi_read is either unconnected or has no load
+WARNING: [Synth 8-7129] Port in_BUS_RUSER[0] in module full_pipeline_gmem_m_axi_read is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AWADDR[1] in module full_pipeline_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port AWADDR[0] in module full_pipeline_control_s_axi is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ap_done_int in module full_pipeline_flow_control_loop_pipe_sequential_init is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RLAST in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[8] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[7] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[6] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[5] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[4] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[3] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[2] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RLAST in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[8] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[7] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[6] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[5] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[4] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[3] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[2] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RLAST in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[8] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[7] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[6] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[5] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[4] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[3] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[2] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port reset in module full_pipeline_mul_32s_32s_32_2_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_AWREADY in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RLAST in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[8] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[7] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[6] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[5] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[4] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[3] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[2] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RFIFONUM[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_RRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BVALID in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[1] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BRESP[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BID[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port m_axi_gmem_BUSER[0] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[61] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[60] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[59] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[58] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[57] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[56] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[55] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[54] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[53] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[52] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[51] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[50] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sext_ln6[49] in module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1541.230 ; gain = 614.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1541.230 ; gain = 614.254
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1541.230 ; gain = 614.254
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.215 . Memory (MB): peak = 1541.230 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ip/design_1_full_pipeline_0_1/constraints/full_pipeline_ooc.xdc] for cell 'U0'
+Finished Parsing XDC File [c:/HAC/HLS_Image_Proc/vivado/HLS_IMG.gen/sources_1/bd/design_1/ip/design_1_full_pipeline_0_1/constraints/full_pipeline_ooc.xdc] for cell 'U0'
+Parsing XDC File [C:/HAC/HLS_Image_Proc/vivado/HLS_IMG.runs/design_1_full_pipeline_0_1_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/HAC/HLS_Image_Proc/vivado/HLS_IMG.runs/design_1_full_pipeline_0_1_synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1657.770 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.324 . Memory (MB): peak = 1660.484 ; gain = 2.715
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1660.484 ; gain = 733.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1660.484 ; gain = 733.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U0. (constraint file  C:/HAC/HLS_Image_Proc/vivado/HLS_IMG.runs/design_1_full_pipeline_0_1_synth_1/dont_touch.xdc, line 9).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:32 . Memory (MB): peak = 1660.484 ; gain = 733.508
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'full_pipeline_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'full_pipeline_control_s_axi'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_pipeline_gmem_m_axi_reg_slice'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_pipeline_gmem_m_axi_reg_slice__parameterized1'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_pipeline_gmem_m_axi_reg_slice__parameterized3'
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'full_pipeline_gmem_m_axi_reg_slice__parameterized5'
+INFO: [Synth 8-4490] FSM extraction disabled for register 'ap_CS_fsm_reg' through user attribute
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                             0001 |                              011
+*
+                  wridle |                             0010 |                              000
+                  wrdata |                             0100 |                              001
+                  wrresp |                             1000 |                              010
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'wstate_reg' using encoding 'one-hot' in module 'full_pipeline_control_s_axi'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                              001 |                              110
+*
+                  rdidle |                              010 |                              100
+                  rddata |                              100 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'rstate_reg' using encoding 'one-hot' in module 'full_pipeline_control_s_axi'
+INFO: [Synth 8-7082] The signal mem_reg is implemented as Block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (4 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    zero |                               00 |                               10
+                     one |                               10 |                               11
+                     two |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'full_pipeline_gmem_m_axi_reg_slice'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    zero |                               00 |                               10
+                     one |                               10 |                               11
+                     two |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'full_pipeline_gmem_m_axi_reg_slice__parameterized1'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    zero |                               00 |                               10
+                     one |                               10 |                               11
+                     two |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'full_pipeline_gmem_m_axi_reg_slice__parameterized3'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    zero |                               00 |                               10
+                     one |                               10 |                               11
+                     two |                               01 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'full_pipeline_gmem_m_axi_reg_slice__parameterized5'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:35 . Memory (MB): peak = 1660.484 ; gain = 733.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input   64 Bit       Adders := 9     
+	   2 Input   64 Bit       Adders := 5     
+	   2 Input   52 Bit       Adders := 2     
+	   2 Input   47 Bit       Adders := 6     
+	   3 Input   47 Bit       Adders := 6     
+	   2 Input   46 Bit       Adders := 3     
+	   3 Input   46 Bit       Adders := 3     
+	   2 Input   45 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 12    
+	   3 Input   32 Bit       Adders := 3     
+	   4 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 6     
+	   2 Input   12 Bit       Adders := 4     
+	   2 Input    9 Bit       Adders := 2     
+	   2 Input    8 Bit       Adders := 3     
+	   2 Input    6 Bit       Adders := 2     
+	   2 Input    5 Bit       Adders := 19    
+	   2 Input    4 Bit       Adders := 15    
+	   2 Input    3 Bit       Adders := 4     
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	               96 Bit    Registers := 6     
+	               72 Bit    Registers := 3     
+	               64 Bit    Registers := 28    
+	               62 Bit    Registers := 4     
+	               52 Bit    Registers := 2     
+	               47 Bit    Registers := 12    
+	               46 Bit    Registers := 6     
+	               45 Bit    Registers := 2     
+	               37 Bit    Registers := 1     
+	               36 Bit    Registers := 1     
+	               34 Bit    Registers := 1     
+	               33 Bit    Registers := 4     
+	               32 Bit    Registers := 68    
+	               31 Bit    Registers := 11    
+	               30 Bit    Registers := 1     
+	               20 Bit    Registers := 2     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 8     
+	                9 Bit    Registers := 2     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                5 Bit    Registers := 9     
+	                4 Bit    Registers := 18    
+	                3 Bit    Registers := 3     
+	                2 Bit    Registers := 6     
+	                1 Bit    Registers := 164   
++---Multipliers : 
+	              32x32  Multipliers := 2     
++---RAMs : 
+	               8K Bit	(255 X 34 bit)          RAMs := 1     
+	              540 Bit	(15 X 36 bit)          RAMs := 1     
++---Muxes : 
+	   2 Input   96 Bit        Muxes := 2     
+	   2 Input   72 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 11    
+	   2 Input   52 Bit        Muxes := 2     
+	   2 Input   33 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 12    
+	   3 Input   32 Bit        Muxes := 2     
+	   3 Input   31 Bit        Muxes := 1     
+	   2 Input   31 Bit        Muxes := 1     
+	   2 Input   30 Bit        Muxes := 1     
+	   2 Input   27 Bit        Muxes := 1     
+	   2 Input   26 Bit        Muxes := 2     
+	   2 Input   22 Bit        Muxes := 1     
+	   2 Input   20 Bit        Muxes := 3     
+	   2 Input   19 Bit        Muxes := 1     
+	   2 Input   18 Bit        Muxes := 1     
+	   2 Input   17 Bit        Muxes := 1     
+	   2 Input   16 Bit        Muxes := 1     
+	   2 Input   15 Bit        Muxes := 1     
+	   2 Input   14 Bit        Muxes := 1     
+	   2 Input   13 Bit        Muxes := 1     
+	   4 Input   12 Bit        Muxes := 2     
+	   2 Input   12 Bit        Muxes := 1     
+	   2 Input   11 Bit        Muxes := 2     
+	   2 Input   10 Bit        Muxes := 6     
+	   2 Input    9 Bit        Muxes := 4     
+	   2 Input    8 Bit        Muxes := 3     
+	   3 Input    7 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 3     
+	   2 Input    5 Bit        Muxes := 17    
+	   2 Input    4 Bit        Muxes := 26    
+	   4 Input    4 Bit        Muxes := 1     
+	   2 Input    3 Bit        Muxes := 7     
+	   3 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 72    
+	   3 Input    2 Bit        Muxes := 16    
+	   4 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 128   
+	   3 Input    1 Bit        Muxes := 14    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+DSP Report: Generating DSP mul_32s_32s_32_2_1_U1/tmp_product, operation Mode is: A*B.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/tmp_product.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/tmp_product.
+DSP Report: Generating DSP mul_32s_32s_32_2_1_U1/buff0_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mul_32s_32s_32_2_1_U1/buff0_reg is absorbed into DSP mul_32s_32s_32_2_1_U1/buff0_reg.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/buff0_reg.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/buff0_reg.
+DSP Report: Generating DSP mul_32s_32s_32_2_1_U1/tmp_product, operation Mode is: A*B.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/tmp_product.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/tmp_product.
+DSP Report: Generating DSP mul_32s_32s_32_2_1_U1/buff0_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mul_32s_32s_32_2_1_U1/buff0_reg is absorbed into DSP mul_32s_32s_32_2_1_U1/buff0_reg.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/buff0_reg.
+DSP Report: operator mul_32s_32s_32_2_1_U1/tmp_product is absorbed into DSP mul_32s_32s_32_2_1_U1/buff0_reg.
+DSP Report: Generating DSP mul_32ns_32ns_64_2_1_U35/tmp_product, operation Mode is: A*B.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/tmp_product.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/tmp_product.
+DSP Report: Generating DSP mul_32ns_32ns_64_2_1_U35/buff0_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mul_32ns_32ns_64_2_1_U35/buff0_reg is absorbed into DSP mul_32ns_32ns_64_2_1_U35/buff0_reg.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/buff0_reg.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/buff0_reg.
+DSP Report: Generating DSP mul_32ns_32ns_64_2_1_U35/tmp_product, operation Mode is: A*B.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/tmp_product.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/tmp_product.
+DSP Report: Generating DSP mul_32ns_32ns_64_2_1_U35/buff0_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mul_32ns_32ns_64_2_1_U35/buff0_reg is absorbed into DSP mul_32ns_32ns_64_2_1_U35/buff0_reg.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/buff0_reg.
+DSP Report: operator mul_32ns_32ns_64_2_1_U35/tmp_product is absorbed into DSP mul_32ns_32ns_64_2_1_U35/buff0_reg.
+INFO: [Synth 8-7082] The signal store_unit/buff_wdata/fifo_mem_gen.U_ffo_mem/mem_reg is implemented as Block RAM but is better mapped onto distributed LUT RAM for the following reason(s): The depth (4 address bits) is shallow. Please use attribute (* ram_style = "distributed" *) to instruct Vivado to infer distributed LUT RAM.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[47]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[46]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[45]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[44]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[43]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[42]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[41]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[40]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[39]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[38]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[37]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[36]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[35]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[34]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[33]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[32]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[31]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[30]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[29]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[28]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[27]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[26]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[25]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[24]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[23]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[22]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[21]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[20]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[19]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[18]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[17]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[16]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[15]) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[47]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[46]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[45]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[44]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[43]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[42]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[41]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[40]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[39]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[38]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[37]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[36]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[35]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[34]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[33]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[32]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[31]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[30]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[29]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[28]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[27]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[26]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[25]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[24]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[23]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[22]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[21]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[20]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[19]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[18]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (mul_32s_32s_32_2_1_U1/buff0_reg[17]__0) is unused and will be removed from module full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_wstate_reg[0]) is unused and will be removed from module full_pipeline_control_s_axi.
+WARNING: [Synth 8-3332] Sequential element (FSM_onehot_rstate_reg[0]) is unused and will be removed from module full_pipeline_control_s_axi.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[47]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[46]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[45]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[44]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[43]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[42]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[41]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[40]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[39]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[38]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[37]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[36]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[35]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[34]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[33]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[32]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[31]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[30]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[29]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[28]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[27]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[26]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[25]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[24]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[23]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[22]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[21]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[20]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[19]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[18]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[17]) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[47]__0) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[46]__0) is unused and will be removed from module full_pipeline.
+WARNING: [Synth 8-3332] Sequential element (mul_32ns_32ns_64_2_1_U35/buff0_reg[45]__0) is unused and will be removed from module full_pipeline.
+INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:02 ; elapsed = 00:01:06 . Memory (MB): peak = 1660.484 ; gain = 733.508
+---------------------------------------------------------------------------------
+ Sort Area is  mul_32ns_32ns_64_2_1_U35/tmp_product_6 : 0 0 : 2701 5527 : Used 1 time 0
+ Sort Area is  mul_32ns_32ns_64_2_1_U35/tmp_product_6 : 0 1 : 2826 5527 : Used 1 time 0
+ Sort Area is  mul_32ns_32ns_64_2_1_U35/tmp_product_8 : 0 0 : 2759 5466 : Used 1 time 0
+ Sort Area is  mul_32ns_32ns_64_2_1_U35/tmp_product_8 : 0 1 : 2707 5466 : Used 1 time 0
+ Sort Area is  mul_32s_32s_32_2_1_U1/tmp_product_0 : 0 0 : 2701 4912 : Used 1 time 0
+ Sort Area is  mul_32s_32s_32_2_1_U1/tmp_product_0 : 0 1 : 2211 4912 : Used 1 time 0
+ Sort Area is  mul_32s_32s_32_2_1_U1/tmp_product_3 : 0 0 : 2158 4062 : Used 1 time 0
+ Sort Area is  mul_32s_32s_32_2_1_U1/tmp_product_3 : 0 1 : 1904 4062 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping Report (see note below)
++----------------+------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object                                           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|U0/gmem_m_axi_U | load_unit/buff_rdata/fifo_mem_gen.U_ffo_mem/mem_reg  | 255 x 34(READ_FIRST)   | W |   | 255 x 34(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|U0/gmem_m_axi_U | store_unit/buff_wdata/fifo_mem_gen.U_ffo_mem/mem_reg | 15 x 36(READ_FIRST)    | W |   | 15 x 36(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++----------------+------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++----------------------------------------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                                         | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------------------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|full_pipeline                                       | A*B            | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|full_pipeline                                       | (PCIN>>17)+A*B | 16     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|full_pipeline                                       | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|full_pipeline                                       | (PCIN>>17)+A*B | 18     | 16     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++----------------------------------------------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:15 ; elapsed = 00:01:20 . Memory (MB): peak = 1660.484 ; gain = 733.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:01:23 ; elapsed = 00:01:27 . Memory (MB): peak = 1689.383 ; gain = 762.406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++----------------+------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name     | RTL Object                                           | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++----------------+------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|U0/gmem_m_axi_U | load_unit/buff_rdata/fifo_mem_gen.U_ffo_mem/mem_reg  | 255 x 34(READ_FIRST)   | W |   | 255 x 34(WRITE_FIRST)  |   | R | Port A and B     | 1      | 0      | 
+|U0/gmem_m_axi_U | store_unit/buff_wdata/fifo_mem_gen.U_ffo_mem/mem_reg | 15 x 36(READ_FIRST)    | W |   | 15 x 36(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++----------------+------------------------------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance U0/gmem_m_axi_U/load_unit/buff_rdata/fifo_mem_gen.U_ffo_mem/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:01:29 ; elapsed = 00:01:34 . Memory (MB): peak = 1702.918 ; gain = 775.941
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:39 ; elapsed = 00:01:43 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:40 ; elapsed = 00:01:45 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:40 ; elapsed = 00:01:45 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:40 ; elapsed = 00:01:45 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:40 ; elapsed = 00:01:45 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Static Shift Register Report:
++--------------+------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|Module Name   | RTL Name                                                                                                   | Length | Width | Reset Signal | Pull out first Reg | Pull out last Reg | SRL16E | SRLC32E | 
++--------------+------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+|full_pipeline | grp_full_pipeline_Pipeline_VITIS_LOOP_20_1_VITIS_LOOP_21_2_fu_212/icmp_ln21_1_reg_750_pp0_iter4_reg_reg[0] | 5      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|full_pipeline | grp_full_pipeline_Pipeline_VITIS_LOOP_36_1_VITIS_LOOP_37_2_fu_223/icmp_ln37_1_reg_750_pp0_iter4_reg_reg[0] | 5      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|full_pipeline | grp_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2_fu_234/icmp_ln52_reg_733_pp0_iter4_reg_reg[0]   | 4      | 1     | NO           | NO                 | YES               | 1      | 0       | 
+|full_pipeline | grp_full_pipeline_Pipeline_VITIS_LOOP_52_1_VITIS_LOOP_53_2_fu_234/icmp_ln53_1_reg_787_pp0_iter5_reg_reg[0] | 6      | 1     | NO           | YES                | YES               | 1      | 0       | 
+|full_pipeline | ap_CS_fsm_reg[24]                                                                                          | 4      | 1     | YES          | NO                 | YES               | 1      | 0       | 
+|full_pipeline | ap_CS_fsm_reg[9]                                                                                           | 7      | 1     | YES          | NO                 | YES               | 1      | 0       | 
++--------------+------------------------------------------------------------------------------------------------------------+--------+-------+--------------+--------------------+-------------------+--------+---------+
+
+
+Dynamic Shift Register Report:
++------------+--------------------------------+--------+------------+--------+---------+--------+--------+--------+
+|Module Name | RTL Name                       | Length | Data Width | SRL16E | SRLC32E | Mux F7 | Mux F8 | Mux F9 | 
++------------+--------------------------------+--------+------------+--------+---------+--------+--------+--------+
+|dsrl        | fifo_depth_gt1_gen.mem_reg[5]  | 96     | 96         | 96     | 0       | 0      | 0      | 0      | 
+|dsrl__1     | fifo_depth_gt1_gen.mem_reg[14] | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl__2     | fifo_depth_gt1_gen.mem_reg[5]  | 1      | 1          | 1      | 0       | 0      | 0      | 0      | 
+|dsrl__3     | fifo_depth_gt1_gen.mem_reg[14] | 8      | 8          | 8      | 0       | 0      | 0      | 0      | 
+|dsrl__4     | fifo_depth_gt1_gen.mem_reg[14] | 72     | 72         | 72     | 0       | 0      | 0      | 0      | 
+|dsrl__5     | fifo_depth_gt1_gen.mem_reg[14] | 37     | 37         | 37     | 0       | 0      | 0      | 0      | 
++------------+--------------------------------+--------+------------+--------+---------+--------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++----------------------------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name                                         | DSP Mapping     | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | (A*B)'          | 17     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | A*B             | 17     | 17     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|full_pipeline_full_pipeline_Pipeline_VITIS_LOOP_6_2 | (PCIN>>17+A*B)' | 0      | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|full_pipeline                                       | A'*B            | 17     | 15     | -      | -      | 48     | 1    | 0    | -    | -    | -     | 0    | 0    | 
+|full_pipeline                                       | (PCIN>>17+A*B)' | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|full_pipeline                                       | A'*B'           | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|full_pipeline                                       | (PCIN>>17+A*B)' | 0      | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++----------------------------------------------------+-----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |   856|
+|2     |DSP48E1  |     7|
+|7     |LUT1     |   348|
+|8     |LUT2     |  1079|
+|9     |LUT3     |  1590|
+|10    |LUT4     |  1773|
+|11    |LUT5     |   442|
+|12    |LUT6     |  1046|
+|13    |MUXF7    |    32|
+|14    |RAMB18E1 |     2|
+|16    |SRL16E   |   275|
+|17    |FDRE     |  6826|
+|18    |FDSE     |    23|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:40 ; elapsed = 00:01:45 . Memory (MB): peak = 1715.848 ; gain = 788.871
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 275 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:21 ; elapsed = 00:01:40 . Memory (MB): peak = 1715.848 ; gain = 669.617
+Synthesis Optimization Complete : Time (s): cpu = 00:01:41 ; elapsed = 00:01:46 . Memory (MB): peak = 1715.848 ; gain = 788.871
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.256 . Memory (MB): peak = 1724.980 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 897 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1728.680 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: e25a22db
+INFO: [Common 17-83] Releasing license: Synthesis
+160 Infos, 202 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:50 ; elapsed = 00:01:58 . Memory (MB): peak = 1728.680 ; gain = 1228.238
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.047 . Memory (MB): peak = 1728.680 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/HAC/HLS_Image_Proc/vivado/HLS_IMG.runs/design_1_full_pipeline_0_1_synth_1/design_1_full_pipeline_0_1.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_full_pipeline_0_1, cache-ID = ddd09af5b9d5c0a8
+INFO: [Coretcl 2-1174] Renamed 47 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.061 . Memory (MB): peak = 1728.680 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/HAC/HLS_Image_Proc/vivado/HLS_IMG.runs/design_1_full_pipeline_0_1_synth_1/design_1_full_pipeline_0_1.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_full_pipeline_0_1_utilization_synth.rpt -pb design_1_full_pipeline_0_1_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu May 15 15:41:10 2025...

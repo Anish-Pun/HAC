@@ -1,0 +1,71 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "2 3 4 1",
+    "file": "HLS.c",
+    "fileloc": 66,
+    "instructions": 20,
+    "name": "full_pipeline",
+    "total_instructions": 315
+  },
+  "1": {
+    "basicblocks": 14,
+    "calls": "",
+    "file": "HLS.c",
+    "fileloc": 51,
+    "instructions": 55,
+    "loads": {
+      "L": 4
+    },
+    "name": "avg_pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 55
+  },
+  "2": {
+    "basicblocks": 15,
+    "calls": "",
+    "file": "HLS.c",
+    "fileloc": 4,
+    "instructions": 106,
+    "loads": {
+      "L": 18
+    },
+    "name": "convolution2D",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 106
+  },
+  "3": {
+    "basicblocks": 22,
+    "calls": "",
+    "file": "HLS.c",
+    "fileloc": 19,
+    "instructions": 67,
+    "loads": {
+      "L": 4
+    },
+    "name": "max_pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 67
+  },
+  "4": {
+    "basicblocks": 22,
+    "calls": "",
+    "file": "HLS.c",
+    "fileloc": 35,
+    "instructions": 67,
+    "loads": {
+      "L": 4
+    },
+    "name": "min_pooling",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 67
+  }
+}
