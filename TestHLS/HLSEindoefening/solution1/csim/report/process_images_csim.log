@@ -1,0 +1,11 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../hls_process_images_tb.cpp in debug mode
+   Compiling ../../../hls_process_images.cpp in debug mode
+   Generating csim.exe
+[INFO] Start verwerking via HLS functie
+[INFO] Verwerking voltooid.
+[SUCCESS] Vier uitvoerafbeeldingen zijn opgeslagen.
+INFO [HLS SIM]: The maximum depth reached by any hls::stream() instance in the design is 563760
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************
