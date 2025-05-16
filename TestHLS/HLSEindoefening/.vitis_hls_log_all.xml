@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:07:42.384+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:07:31.287+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:07:31.280+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xD;&#xA;Sourcing Tcl script 'C:/SchoolWerk/HAC/HLSEindoefening/solution1/csynth.tcl'" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:07:29.104+0200" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: C:/Xilinx/Vivado/2024.2/tps/win64/jre11.0.16_1 does not exist.&#xD;&#xD;&#xA;&#xD;&#xD;&#xA;****** Vivado v2024.2 (64-bit)&#xD;&#xD;&#xA;  **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024&#xD;&#xD;&#xA;  **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024&#xD;&#xD;&#xA;  **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024&#xD;&#xD;&#xA;  **** Start of session at: Fri May 16 00:09:23 2025&#xD;&#xD;&#xA;    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.&#xD;&#xD;&#xA;    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.&#xD;&#xD;&#xA;&#xD;&#xD;&#xA;source run_ippack.tcl -notrace&#xD;" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:09:25.744+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:09:22.178+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:09:22.169+0200" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xD;&#xA;Sourcing Tcl script 'C:/SchoolWerk/HAC/HLSEindoefening/solution1/export.tcl'" projectName="HLSEindoefening" solutionName="solution1" date="2025-05-16T00:09:20.998+0200" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
