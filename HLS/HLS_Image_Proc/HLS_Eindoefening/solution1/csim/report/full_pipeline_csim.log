@@ -1,9 +1,0 @@
-INFO: [SIM 2] *************** CSIM start ***************
-INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-   Compiling ../../../../Include/HLS_TB.c in debug mode
-   Compiling ../../../../Include/HLS.c in debug mode
-   Generating csim.exe
-Loaded image: 4408x2132
-Done. Results saved.
-INFO: [SIM 1] CSim done with 0 errors.
-INFO: [SIM 3] *************** CSIM finish ***************
