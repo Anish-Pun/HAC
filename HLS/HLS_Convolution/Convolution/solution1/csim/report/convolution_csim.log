@@ -1,0 +1,17 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../Include/Convolution_TB.c in debug mode
+   Compiling ../../../../Include/Convolution.c in debug mode
+   Generating csim.exe
+Processed input1.png -> output1.png
+Processed input2.png -> output2.png
+Processed input3.png -> output3.png
+Processed input4.png -> output4.png
+Processed input5.png -> output5.png
+Processed input6.png -> output6.png
+Processed input7.png -> output7.png
+Processed input8.png -> output8.png
+Processed input9.png -> output9.png
+Processed input10.png -> output10.png
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

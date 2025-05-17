@@ -1,0 +1,648 @@
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+Function:        convolution
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            in_img
+  - String:          ''' for cosimulation.'
+...
+--- !Failure
+Pass:            generate-ir-wrapper
+Name:            MAXIDepthUnspecified
+DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+Function:        convolution
+Args:            
+  - String:          'A depth specification is required for MAXI interface port '''
+  - Name:            out_img
+  - String:          ''' for cosimulation.'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: Include/Convolution.c, Line: 31, Column: 30 }
+Function:        convolution
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_31_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: Include/Convolution.c, Line: 32, Column: 34 }
+Function:        convolution
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_32_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+Function:        convolution
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_31_4
+  - String:          ''' ('
+  - LoopLoc:         'Include/Convolution.c:31:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          convolution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+Function:        convolution
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_32_5
+  - String:          ''' ('
+  - LoopLoc:         'Include/Convolution.c:32:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          convolution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+Function:        convolution
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_32_5
+  - String:          ''' ('
+  - LoopLoc:         'Include/Convolution.c:32:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          convolution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+Function:        convolution
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_32_5
+  - String:          ''' ('
+  - LoopLoc:         'Include/Convolution.c:32:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          convolution
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Convolution.c, Line: 22, Column: 22 }
+Function:        convolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '16384'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        out_imgseq
+  - ArrayName:       out_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_22_1
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:22:22'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: Include/Convolution.c, Line: 24, Column: 13 }
+  - OrigDirection:   write
+  - OrigID:          for.inc.store.4
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.13
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.20
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.29
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep50seq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.47
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.55
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.63
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep51seq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.81
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.89
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_4.load.97
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+Function:        convolution
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '126'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep52seq
+  - ArrayName:       out_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: Include/Convolution.c, Line: 38, Column: 38 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_31_4.store.113
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            IncompatibleStride
+DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+Function:        convolution
+Args:            
+  - String:          Stride is incompatible
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+  - OrigDirection:   write
+  - OrigID:          scevgep52seq
+  - ArrayName:       out_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_27_2
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:27:22'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          scevgep50seq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+  - OrigDirection:   read
+  - OrigID:          scevgep51seq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+Function:        convolution
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+  - OrigDirection:   write
+  - OrigID:          scevgep52seq
+  - ArrayName:       out_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Convolution.c, Line: 22, Column: 22 }
+Function:        convolution
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Convolution.c, Line: 22, Column: 22 }
+  - OrigDirection:   write
+  - OrigID:          out_imgseq
+  - ArrayName:       out_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_22_1
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:22:22'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 22, Column: 22 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16384'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_22_1
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:22:22'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 22, Column: 22 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '16384'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_22_1
+  - String:          '''('
+  - LoopLoc:         'Include/Convolution.c:22:22'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '126'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          ' '
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 28, Column: 26 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of length '
+  - Length:          '126'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_28_3
+  - String:          '''('
+  - LoopLoc:         'Include/Convolution.c:28:26'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq4
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        convolution
+    DebugLoc:        { File: Include/Convolution.c, Line: 7, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Convolution.c, Line: 33, Column: 53 }
+Function:        convolution
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '3'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...

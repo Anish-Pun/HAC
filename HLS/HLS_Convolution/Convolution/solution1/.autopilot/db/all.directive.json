@@ -1,0 +1,44 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "convolution",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "convolution"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Github/HLS_Convolution/Convolution/solution1/directives.tcl",
+    "sourceLine": 7,
+    "success": true
+  },
+  {
+    "functionLabel": "",
+    "functionName": "convolution",
+    "id": 1,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "convolution"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Github/HLS_Convolution/Convolution/solution1/csynth.tcl",
+    "sourceLine": 30,
+    "success": true
+  }
+]

@@ -1,0 +1,49 @@
+---
+MainSourceFile:  'C:/Github/HLS_Convolution/Convolution/solution1/.autopilot/db/Convolution.pp.0.c'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_22_1:  '
+    FileOffset:      22
+    FilePath:        'C:\Github\HLS_Convolution\Include\Convolution.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c'
+        Offset:          7254
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_22_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_27_2:  '
+    FileOffset:      27
+    FilePath:        'C:\Github\HLS_Convolution\Include\Convolution.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c'
+        Offset:          7341
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_27_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_28_3:  '
+    FileOffset:      28
+    FilePath:        'C:\Github\HLS_Convolution\Include\Convolution.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c'
+        Offset:          7385
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_28_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_31_4:  '
+    FileOffset:      31
+    FilePath:        'C:\Github\HLS_Convolution\Include\Convolution.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c'
+        Offset:          7475
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_31_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_32_5:  '
+    FileOffset:      32
+    FilePath:        'C:\Github\HLS_Convolution\Include\Convolution.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c'
+        Offset:          7526
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_32_5: '
+...

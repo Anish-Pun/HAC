@@ -1,0 +1,25 @@
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:182:5: warning: Added loop label VITIS_LOOP_22_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 128 * 128; i++) {
+    ^~~
+    VITIS_LOOP_22_1: 
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:182:5: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:187:5: warning: Added loop label VITIS_LOOP_27_2:   [xilinx-label-all-loops]
+    for (int i = 1; i < 128 - 1; i++) {
+    ^~~
+    VITIS_LOOP_27_2: 
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:187:5: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:188:9: warning: Added loop label VITIS_LOOP_28_3:   [xilinx-label-all-loops]
+        for (int j = 1; j < 128 - 1; j++) {
+        ^~~
+        VITIS_LOOP_28_3: 
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:188:9: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:191:13: warning: Added loop label VITIS_LOOP_31_4:   [xilinx-label-all-loops]
+            for (int ki = -1; ki <= 1; ki++) {
+            ^~~
+            VITIS_LOOP_31_4: 
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:191:13: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:192:17: warning: Added loop label VITIS_LOOP_32_5:   [xilinx-label-all-loops]
+                for (int kj = -1; kj <= 1; kj++) {
+                ^~~
+                VITIS_LOOP_32_5: 
+C:\Github\HLS_Convolution\Convolution\solution1\.autopilot\db\Convolution.pp.0.c:192:17: note: FIX-IT applied suggested code changes

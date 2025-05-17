@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Convolution.c" path="C:\Github\HLS_Convolution\Include\Convolution.c"/>
+    <originFiles name="Convolution.h" path="C:\Github\HLS_Convolution\Include\Convolution.h"/>
+  </source>
+  <testbench>
+    <originFiles name="Convolution_TB.c" path="C:\Github\HLS_Convolution\Include\Convolution_TB.c"/>
+    <originFiles name="stb_image.h" path="C:\Github\HLS_Convolution\Include\stb_image.h"/>
+    <originFiles name="stb_image_resize.h" path="C:\Github\HLS_Convolution\Include\stb_image_resize.h"/>
+    <originFiles name="stb_image_write.h" path="C:\Github\HLS_Convolution\Include\stb_image_write.h"/>
+    <originFiles name="input1.png" path="C:\Github\HLS_Convolution\Images\input1.png"/>
+    <originFiles name="input3.png" path="C:\Github\HLS_Convolution\Images\input3.png"/>
+    <originFiles name="input5.png" path="C:\Github\HLS_Convolution\Images\input5.png"/>
+    <originFiles name="input7.png" path="C:\Github\HLS_Convolution\Images\input7.png"/>
+    <originFiles name="input8.png" path="C:\Github\HLS_Convolution\Images\input8.png"/>
+    <originFiles name="input9.png" path="C:\Github\HLS_Convolution\Images\input9.png"/>
+    <originFiles name="input10.png" path="C:\Github\HLS_Convolution\Images\input10.png"/>
+    <originFiles name="input2.png" path="C:\Github\HLS_Convolution\Images\input2.png"/>
+    <originFiles name="input4.png" path="C:\Github\HLS_Convolution\Images\input4.png"/>
+    <originFiles name="input6.png" path="C:\Github\HLS_Convolution\Images\input6.png"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
