@@ -1,0 +1,40 @@
+---
+MainSourceFile:  'C:/Github/HLS_Pollings/Pollings_HLS/solution1/.autopilot/db/Pollings.pp.0.c'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_20_1:  '
+    FileOffset:      20
+    FilePath:        'C:\Github\HLS_Pollings\Include\Pollings.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c'
+        Offset:          14581
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_20_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_21_2:  '
+    FileOffset:      21
+    FilePath:        'C:\Github\HLS_Pollings\Include\Pollings.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c'
+        Offset:          14620
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_21_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_27_3:  '
+    FileOffset:      27
+    FilePath:        'C:\Github\HLS_Pollings\Include\Pollings.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c'
+        Offset:          14777
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_27_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_28_4:  '
+    FileOffset:      28
+    FilePath:        'C:\Github\HLS_Pollings\Include\Pollings.c'
+    Replacements:    
+      - FilePath:        'C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c'
+        Offset:          14826
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_28_4: '
+...

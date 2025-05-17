@@ -1,0 +1,17 @@
+{
+  "0": {
+    "basicblocks": 26,
+    "calls": "",
+    "file": "Pollings.c",
+    "fileloc": 8,
+    "instructions": 94,
+    "loads": {
+      "T": 4
+    },
+    "name": "pollings",
+    "stores": {
+      "T": 3
+    },
+    "total_instructions": 94
+  }
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="Pollings.c" path="C:\Github\HLS_Pollings\Include\Pollings.c"/>
+    <originFiles name="Pollings.h" path="C:\Github\HLS_Pollings\Include\Pollings.h"/>
+  </source>
+  <testbench>
+    <originFiles name="Pollings_TB.c" path="C:\Github\HLS_Pollings\Include\Pollings_TB.c"/>
+    <originFiles name="stb_image.h" path="C:\Github\HLS_Pollings\Include\stb_image.h"/>
+    <originFiles name="stb_image_resize.h" path="C:\Github\HLS_Pollings\Include\stb_image_resize.h"/>
+    <originFiles name="stb_image_write.h" path="C:\Github\HLS_Pollings\Include\stb_image_write.h"/>
+    <originFiles name="input1.png" path="C:\Github\HLS_Pollings\Images\input1.png"/>
+    <originFiles name="input2.png" path="C:\Github\HLS_Pollings\Images\input2.png"/>
+    <originFiles name="input3.png" path="C:\Github\HLS_Pollings\Images\input3.png"/>
+    <originFiles name="input4.png" path="C:\Github\HLS_Pollings\Images\input4.png"/>
+    <originFiles name="input5.png" path="C:\Github\HLS_Pollings\Images\input5.png"/>
+    <originFiles name="input6.png" path="C:\Github\HLS_Pollings\Images\input6.png"/>
+    <originFiles name="input7.png" path="C:\Github\HLS_Pollings\Images\input7.png"/>
+    <originFiles name="input8.png" path="C:\Github\HLS_Pollings\Images\input8.png"/>
+    <originFiles name="input9.png" path="C:\Github\HLS_Pollings\Images\input9.png"/>
+    <originFiles name="input10.png" path="C:\Github\HLS_Pollings\Images\input10.png"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
