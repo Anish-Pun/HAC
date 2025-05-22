@@ -1,11 +1,13 @@
 # HLS
 
 ## Table of Contents
-- [Project Description](#projectdescription)
-- [Features](#features)
-- [Project Structure](#requirements)
-- [How To run](#how-to-run)
-- [Contributing](#contributing)
+- [HLS](#hls)
+  - [Table of Contents](#table-of-contents)
+  - [Project Description](#project-description)
+  - [Features](#features)
+  - [Project Structure](#project-structure)
+  - [How to Run](#how-to-run)
+  - [Contributing](#contributing)
 
 ---
 
@@ -34,14 +36,14 @@ HLS/
 │   ├── Convolution/                # Vitis HLS project files for convolution
 │   ├── Images/                     # Input images for testing
 │   ├── Include/                    # C source, headers, and stb image libraries
-│   ├── JupyterNotebook/            # Jupyter notebooks for analysis
+│   ├── JupyterConvolution/         # Jupyter notebooks for convolution analysis
 │   └── Vivado/                     # Vivado project for hardware integration
 ├── HLS_Poolings/                   # Pooling modules (max, min, avg)
 │   ├── BlockDesign.pdf             # Block diagram for pooling hardware
 │   ├── Poolings_HLS/               # Vitis HLS project files for pooling
 │   ├── Images/                     # Input/output images for pooling tests
 │   ├── Include/                    # C source, headers, and stb image libraries
-│   └── JupyterNotebook/            # Jupyter notebooks for pooling analysis
+│   └── JupyterPoolings/            # Jupyter notebooks for pooling analysis
 │   └── Vivado/                     # Vivado project for hardware integration
 ```
 **Notes:**
