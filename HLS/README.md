@@ -55,7 +55,7 @@ HLS/
 ---
 ## How to Run
 
-See [detailed instructions](Poolings.ipynb) for the project.
+See [detailed instructions](HLS.ipynb) for the project.
 
 
 ## Contributing
