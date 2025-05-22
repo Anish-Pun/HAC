@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "pollings",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "pollings"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "C:/Github/HLS_Pollings/Pollings_HLS/solution1/csynth.tcl",
+    "sourceLine": 30,
+    "success": true
+  }
+]

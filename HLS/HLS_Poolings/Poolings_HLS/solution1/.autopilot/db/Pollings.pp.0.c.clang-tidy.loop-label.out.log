@@ -1,0 +1,20 @@
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:397:2: warning: Added loop label VITIS_LOOP_24_1:   [xilinx-label-all-loops]
+ for (int i = 0; i < 32; i++) {
+ ^~~
+ VITIS_LOOP_24_1: 
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:397:2: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:398:9: warning: Added loop label VITIS_LOOP_25_2:   [xilinx-label-all-loops]
+        for (int j = 0; j < 32; j++) {
+        ^~~
+        VITIS_LOOP_25_2: 
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:398:9: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:404:13: warning: Added loop label VITIS_LOOP_31_3:   [xilinx-label-all-loops]
+            for (int ki = 0; ki < 2; ki++) {
+            ^~~
+            VITIS_LOOP_31_3: 
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:404:13: note: FIX-IT applied suggested code changes
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:405:17: warning: Added loop label VITIS_LOOP_32_4:   [xilinx-label-all-loops]
+                for (int kj = 0; kj < 2; kj++) {
+                ^~~
+                VITIS_LOOP_32_4: 
+C:\Github\HLS_Pollings\Pollings_HLS\solution1\.autopilot\db\Pollings.pp.0.c:405:17: note: FIX-IT applied suggested code changes

@@ -1,0 +1,17 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../Include/Pollings_TB.c in debug mode
+   Generating csim.exe
+Processed image: input1.png
+Processed image: input2.png
+Processed image: input3.png
+Processed image: input4.png
+Processed image: input5.png
+Processed image: input6.png
+Processed image: input7.png
+Processed image: input8.png
+Processed image: input9.png
+Processed image: input10.png
+All images processed.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

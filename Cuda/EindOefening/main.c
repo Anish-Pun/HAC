@@ -1,18 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "stb_image_write.h"
 
+// Clamp helper
 int clamp(int value, int min_val, int max_val) {
     if (value < min_val) return min_val;
     if (value > max_val) return max_val;
     return value;
 }
 
+// Convolution (same as CUDA logic)
 void convolution_cpu(unsigned char* input, unsigned char* output, int width, int height, int channels, const int* kernel, int kernel_size) {
     int half_k = kernel_size / 2;
     for (int y = 0; y < height; y++) {
@@ -35,6 +38,7 @@ void convolution_cpu(unsigned char* input, unsigned char* output, int width, int
     }
 }
 
+// Max Pooling (2x2)
 void max_pooling_cpu(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int out_width = width / 2;
     int out_height = height / 2;
@@ -56,6 +60,7 @@ void max_pooling_cpu(unsigned char* input, unsigned char* output, int width, int
     }
 }
 
+// Min Pooling (2x2)
 void min_pooling_cpu(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int out_width = width / 2;
     int out_height = height / 2;
@@ -77,6 +82,7 @@ void min_pooling_cpu(unsigned char* input, unsigned char* output, int width, int
     }
 }
 
+// Average Pooling (2x2)
 void average_pooling_cpu(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int out_width = width / 2;
     int out_height = height / 2;
@@ -91,12 +97,13 @@ void average_pooling_cpu(unsigned char* input, unsigned char* output, int width,
                         sum += input[(iy * width + ix) * channels + c];
                     }
                 }
-                output[(y * out_width + x) * channels + c] = sum / 4;
+                output[(y * out_width + x) * channels + c] = (unsigned char)(sum / 4);
             }
         }
     }
 }
 
+// Save raw buffer
 void save_raw(const char* filename, unsigned char* buffer, int size) {
     FILE* f = fopen(filename, "wb");
     if (f) {
@@ -109,12 +116,19 @@ int main() {
     const char* input_path = "input.png";
     int width, height, channels;
 
+    // Profile image loading
+    clock_t start_load = clock();
     unsigned char* input_image = stbi_load(input_path, &width, &height, &channels, 0);
+    clock_t end_load = clock();
+    double load_time = (double)(end_load - start_load) / CLOCKS_PER_SEC;
+
     if (!input_image) {
         printf("Failed to load image.\n");
         return 1;
     }
+    printf("Image loaded in %.4f seconds\n", load_time);
 
+    // Remove alpha channel if present
     if (channels == 4) {
         unsigned char* rgb_image = (unsigned char*)malloc(width * height * 3);
         for (int i = 0; i < width * height; i++) {
@@ -144,27 +158,58 @@ int main() {
     unsigned char* result_min  = (unsigned char*)malloc(pooled_size);
     unsigned char* result_avg  = (unsigned char*)malloc(pooled_size);
 
+    // Profile convolution
+    clock_t start_conv = clock();
     convolution_cpu(input_image, result_conv, width, height, channels, kernel, kernelSize);
+    clock_t end_conv = clock();
+    double conv_time = (double)(end_conv - start_conv) / CLOCKS_PER_SEC;
+    printf("Convolution done in %.4f seconds\n", conv_time);
+
+    // Profile max pooling
+    clock_t start_max = clock();
     max_pooling_cpu(input_image, result_max, width, height, channels);
+    clock_t end_max = clock();
+    double max_time = (double)(end_max - start_max) / CLOCKS_PER_SEC;
+    printf("Max pooling done in %.4f seconds\n", max_time);
+
+    // Profile min pooling
+    clock_t start_min = clock();
     min_pooling_cpu(input_image, result_min, width, height, channels);
+    clock_t end_min = clock();
+    double min_time = (double)(end_min - start_min) / CLOCKS_PER_SEC;
+    printf("Min pooling done in %.4f seconds\n", min_time);
+
+    // Profile average pooling
+    clock_t start_avg = clock();
     average_pooling_cpu(input_image, result_avg, width, height, channels);
+    clock_t end_avg = clock();
+    double avg_time = (double)(end_avg - start_avg) / CLOCKS_PER_SEC;
+    printf("Average pooling done in %.4f seconds\n", avg_time);
 
-    stbi_write_png("convolution.png", width, height, channels, result_conv, width * channels);
-    stbi_write_png("max_pooling.png", pooled_width, pooled_height, channels, result_max, pooled_width * channels);
-    stbi_write_png("min_pooling.png", pooled_width, pooled_height, channels, result_min, pooled_width * channels);
-    stbi_write_png("average_pooling.png", pooled_width, pooled_height, channels, result_avg, pooled_width * channels);
+    // Profile image saving
+    clock_t start_save = clock();
+    stbi_write_png("PictureResult/convolution.png", width, height, channels, result_conv, width * channels);
+    stbi_write_png("PictureResult/max_pooling.png", pooled_width, pooled_height, channels, result_max, pooled_width * channels);
+    stbi_write_png("PictureResult/min_pooling.png", pooled_width, pooled_height, channels, result_min, pooled_width * channels);
+    stbi_write_png("PictureResult/average_pooling.png", pooled_width, pooled_height, channels, result_avg, pooled_width * channels);
+    clock_t end_save = clock();
+    double save_time = (double)(end_save - start_save) / CLOCKS_PER_SEC;
+    printf("Images saved in %.4f seconds\n", save_time);
 
-    // Save raw buffers
-    save_raw("max_pooling.raw", result_max, pooled_size);
-    save_raw("min_pooling.raw", result_min, pooled_size);
-    save_raw("average_pooling.raw", result_avg, pooled_size);
+    // Write profiling results to result_profiling.md
+    FILE* f = fopen("result_profiling.md", "w");
+    if (f) {
+        fprintf(f, "# Profiling Results\n\n");
+        fprintf(f, "- Image load time: %.4f seconds\n", load_time);
+        fprintf(f, "- Convolution time: %.4f seconds\n", conv_time);
+        fprintf(f, "- Max pooling time: %.4f seconds\n", max_time);
+        fprintf(f, "- Min pooling time: %.4f seconds\n", min_time);
+        fprintf(f, "- Average pooling time: %.4f seconds\n", avg_time);
+        fprintf(f, "- Image save time: %.4f seconds\n", save_time);
+        fclose(f);
+    }
 
-    printf("Pooled size: %d x %d x %d = %lu bytes\n", pooled_width, pooled_height, channels, (unsigned long)pooled_size);
-    printf("Afbeeldingen opgeslagen:\n");
-    printf(" - convolution.png\n");
-    printf(" - max_pooling.png\n");
-    printf(" - min_pooling.png\n");
-    printf(" - average_pooling.png\n");
+    printf("Profiling results saved to result_profiling.md\n");
 
     stbi_image_free(input_image);
     free(result_conv);

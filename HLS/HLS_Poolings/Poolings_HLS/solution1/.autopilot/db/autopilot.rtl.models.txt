@@ -1,0 +1,4 @@
+pollings_gmem_m_axi
+pollings_control_s_axi
+pollings_flow_control_loop_pipe
+pollings

@@ -1,0 +1,479 @@
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: Include/Pollings.c, Line: 31, Column: 30 }
+Function:        pollings
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_31_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: Include/Pollings.c, Line: 32, Column: 34 }
+Function:        pollings
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_32_4
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+Function:        pollings
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_31_3
+  - String:          ''' ('
+  - LoopLoc:         'Include/Pollings.c:31:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          pollings
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+Function:        pollings
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_32_4
+  - String:          ''' ('
+  - LoopLoc:         'Include/Pollings.c:32:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          pollings
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+Function:        pollings
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_32_4
+  - String:          ''' ('
+  - LoopLoc:         'Include/Pollings.c:32:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          pollings
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgepseq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:25:26'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_3.load.10
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_3.load.25
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        scevgep8seq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:25:26'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_3.load.52
+  - OrigAccess:      load
+    DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+  - OrigDirection:   read
+  - OrigID:          VITIS_LOOP_31_3.load.67
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '1024'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        max_pool9seq
+  - ArrayName:       max_pool
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_24_1
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:24:19'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: Include/Pollings.c, Line: 39, Column: 28 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_31_3.store.84
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '1024'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        min_pool10seq
+  - ArrayName:       min_pool
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_24_1
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:24:19'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: Include/Pollings.c, Line: 40, Column: 28 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_31_3.store.88
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of length '
+  - Length:          '1024'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        avg_pool11seq
+  - ArrayName:       avg_pool
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_24_1
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:24:19'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: Include/Pollings.c, Line: 41, Column: 28 }
+  - OrigDirection:   write
+  - OrigID:          VITIS_LOOP_31_3.store.95
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+  - OrigDirection:   read
+  - OrigID:          scevgepseq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+  - OrigDirection:   read
+  - OrigID:          scevgep8seq
+  - ArrayName:       in_img
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          max_pool9seq
+  - ArrayName:       max_pool
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:25:26'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          min_pool10seq
+  - ArrayName:       min_pool
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:25:26'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i8
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '0'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          avg_pool11seq
+  - ArrayName:       avg_pool
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ' '
+  - LoopLoc:         'Include/Pollings.c:25:26'
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       writes
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            BurstConflict
+DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+Function:        pollings
+Args:            
+  - String:          'Could not burst due to multiple potential '
+  - Direction:       writes
+  - String:          ' to the same bundle in the same region.'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: Include/Pollings.c, Line: 24, Column: 19 }
+  - OrigDirection:   write
+  - OrigID:          seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq4
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem
+  - String:          ' '
+  - Function:        pollings
+    DebugLoc:        { File: Include/Pollings.c, Line: 10, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: Include/Pollings.c, Line: 33, Column: 35 }
+Function:        pollings
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of length '
+  - Length:          '2'
+  - String:          ' and bit width '
+  - Width:           '8'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
