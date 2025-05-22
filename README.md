@@ -13,12 +13,17 @@ This repository contains multiple projects focused on hardware-accelerated image
 
 - **Cuda/**  
   Projects and exercises using NVIDIA CUDA for GPU-accelerated image processing.
-  - `INSTRUCTIONS.md` – Step-by-step instructions for running CUDA projects.
-  - `EindOefening/` – Final CUDA exercise, including source code and image assets.
+  - `Cuda.ipynb` – Step-by-step instructions for running CUDA projects.
+  - `CudaEindoefening/src/` – Final CUDA exercise, including source code and image assets.
+  - `EindOefeningInC/` - Same exercise but written in standard C.
+
+---
 
 - **HLS/**  
   Projects using High-Level Synthesis (HLS) for FPGA-based image processing.
-  - `HLSEindoefening/` – HLS exercises, testbenches, and related files.
+  - `HLS.ipynb` – Step-by-step instructions for running HLS projects.
+  - `HLS_Convolution/` – HLS exercises, testbenches, and related files.
+  - `HLS_Poolings/` – HLS exercises, testbenches, and related files.
   
 ---
 
