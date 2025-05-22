@@ -112,9 +112,6 @@ int main() {
         return 1;
     }
 
-    // === Initialize CUDA context to reduce timing spikes ===
-    cudaFree(0);
-
     // === Strip alpha channel if present ===
     if (channels == 4) {
         unsigned char* rgb_image = (unsigned char*)malloc(width * height * 3);
