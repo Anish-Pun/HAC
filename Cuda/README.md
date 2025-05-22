@@ -4,6 +4,7 @@
 - [Project Description](#projectdescription)
 - [Features](#features)
 - [Project Structure](#requirements)
+- [How To run](#how-to-run)
 - [Contributing](#contributing)
 
 
@@ -36,7 +37,7 @@ This project is a CUDA application developed for the NVIDIA Jetson Nano. It proc
 ---
 ## How to Run
 
-See [detailed instructions](INSTRUCTIONS.md) for the project.
+See [detailed instructions](Cuda.ipynb) for the project.
 
 ---
 
