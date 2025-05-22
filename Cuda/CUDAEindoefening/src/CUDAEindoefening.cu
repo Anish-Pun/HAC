@@ -6,7 +6,7 @@
 #define STB_IMAGE_WRITE_IMPLEMENTATION
 #include "/home/bowen/CUDAEindoefening/stb/stb_image_write.h"
 
-// Convolution
+// Convolution kernel
 __global__ void convolution_cuda(unsigned char* input, unsigned char* output, int width, int height, int channels, const int* kernel, int kernel_size) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -25,12 +25,12 @@ __global__ void convolution_cuda(unsigned char* input, unsigned char* output, in
                 sum += pixel * kval;
             }
         }
-        sum = min(max(sum, 0), 255);
+        sum = (sum < 0) ? 0 : ((sum > 255) ? 255 : sum);
         output[(y * width + x) * channels + c] = (unsigned char)sum;
     }
 }
 
-// Max Pooling
+// Max Pooling kernel
 __global__ void max_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -47,14 +47,14 @@ __global__ void max_pooling(unsigned char* input, unsigned char* output, int wid
                 int ix = x * 2 + kx;
                 int iy = y * 2 + ky;
                 unsigned char pixel = input[(iy * width + ix) * channels + c];
-                max_val = max(max_val, pixel);
+                max_val = (pixel > max_val) ? pixel : max_val;
             }
         }
         output[(y * out_width + x) * channels + c] = max_val;
     }
 }
 
-// Min Pooling
+// Min Pooling kernel
 __global__ void min_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -71,14 +71,14 @@ __global__ void min_pooling(unsigned char* input, unsigned char* output, int wid
                 int ix = x * 2 + kx;
                 int iy = y * 2 + ky;
                 unsigned char pixel = input[(iy * width + ix) * channels + c];
-                min_val = min(min_val, pixel);
+                min_val = (pixel < min_val) ? pixel : min_val;
             }
         }
         output[(y * out_width + x) * channels + c] = min_val;
     }
 }
 
-// Average Pooling
+// Average Pooling kernel
 __global__ void average_pooling(unsigned char* input, unsigned char* output, int width, int height, int channels) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
@@ -120,7 +120,7 @@ int main() {
             rgb_image[i * 3 + 1] = input_image[i * 4 + 1];
             rgb_image[i * 3 + 2] = input_image[i * 4 + 2];
         }
-        free(input_image);
+        stbi_image_free(input_image);
         input_image = rgb_image;
         channels = 3;
     }
@@ -139,9 +139,8 @@ int main() {
     size_t pooled_height = height / 2;
     size_t pooled_img_size = pooled_width * pooled_height * channels * sizeof(unsigned char);
 
-    // === Device memory ===
-    unsigned char *d_input;
-    unsigned char *d_output_conv, *d_output_max, *d_output_min, *d_output_avg;
+    // === Device memory allocation ===
+    unsigned char *d_input, *d_output_conv, *d_output_max, *d_output_min, *d_output_avg;
     int* d_kernel;
 
     cudaMalloc(&d_input, img_size);
@@ -154,7 +153,7 @@ int main() {
     cudaMemcpy(d_input, input_image, img_size, cudaMemcpyHostToDevice);
     cudaMemcpy(d_kernel, host_kernel, kernelSize * kernelSize * sizeof(int), cudaMemcpyHostToDevice);
 
-    dim3 blockDim(32, 32);
+    dim3 blockDim(16, 16);
     dim3 gridDim_full((width + blockDim.x - 1) / blockDim.x, (height + blockDim.y - 1) / blockDim.y);
     dim3 gridDim_pooled((pooled_width + blockDim.x - 1) / blockDim.x, (pooled_height + blockDim.y - 1) / blockDim.y);
 
@@ -170,27 +169,24 @@ int main() {
     cudaStreamCreate(&stream2);
     cudaStreamCreate(&stream3);
     cudaStreamCreate(&stream4);
-    
-    // === CONVOLUTION ===
+
+    // === Launch kernels on different streams ===
     convolution_cuda<<<gridDim_full, blockDim, 0, stream1>>>(d_input, d_output_conv, width, height, channels, d_kernel, kernelSize);
-
-    // === MAX POOLING ===
     max_pooling<<<gridDim_pooled, blockDim, 0, stream2>>>(d_input, d_output_max, width, height, channels);
-
-    // === MIN POOLING ===
     min_pooling<<<gridDim_pooled, blockDim, 0, stream3>>>(d_input, d_output_min, width, height, channels);
-
-    // === AVERAGE POOLING ===
     average_pooling<<<gridDim_pooled, blockDim, 0, stream4>>>(d_input, d_output_avg, width, height, channels);
 
-    // === Synchronize streams ===
-    cudaDeviceSynchronize();
+    cudaMemcpyAsync(result_conv, d_output_conv, img_size, cudaMemcpyDeviceToHost, stream1);
+    cudaStreamSynchronize(stream1);
 
-    // === Copy results to host ===
-    cudaMemcpy(result_conv, d_output_conv, img_size, cudaMemcpyDeviceToHost);
-    cudaMemcpy(result_max,  d_output_max,  pooled_img_size, cudaMemcpyDeviceToHost);
-    cudaMemcpy(result_min,  d_output_min,  pooled_img_size, cudaMemcpyDeviceToHost);
-    cudaMemcpy(result_avg,  d_output_avg,  pooled_img_size, cudaMemcpyDeviceToHost);
+    cudaMemcpyAsync(result_max, d_output_max, pooled_img_size, cudaMemcpyDeviceToHost, stream2);
+    cudaStreamSynchronize(stream2);
+
+    cudaMemcpyAsync(result_min, d_output_min, pooled_img_size, cudaMemcpyDeviceToHost, stream3);
+    cudaStreamSynchronize(stream3);
+
+    cudaMemcpyAsync(result_avg, d_output_avg, pooled_img_size, cudaMemcpyDeviceToHost, stream4);
+    cudaStreamSynchronize(stream4);
 
     // === Save results ===
     stbi_write_png("convolution.png", width, height, channels, result_conv, width * channels);
@@ -198,7 +194,6 @@ int main() {
     stbi_write_png("min_pooling.png", pooled_width, pooled_height, channels, result_min, pooled_width * channels);
     stbi_write_png("average_pooling.png", pooled_width, pooled_height, channels, result_avg, pooled_width * channels);
 
-    // === Output ===
     printf("Afbeeldingen opgeslagen:\n");
     printf(" - convolution.png\n");
     printf(" - max_pooling.png\n");
@@ -206,12 +201,6 @@ int main() {
     printf(" - average_pooling.png\n");
 
     // === Cleanup ===
-    stbi_image_free(input_image);
-    free(result_conv);
-    free(result_max);
-    free(result_min);
-    free(result_avg);
-
     cudaFree(d_input);
     cudaFree(d_output_conv);
     cudaFree(d_output_max);
@@ -219,11 +208,15 @@ int main() {
     cudaFree(d_output_avg);
     cudaFree(d_kernel);
 
-    // === Destroy streams ===
     cudaStreamDestroy(stream1);
     cudaStreamDestroy(stream2);
     cudaStreamDestroy(stream3);
     cudaStreamDestroy(stream4);
 
+    stbi_image_free(input_image);
+    free(result_conv);
+    free(result_max);
+    free(result_min);
+    free(result_avg);
     return 0;
 }
